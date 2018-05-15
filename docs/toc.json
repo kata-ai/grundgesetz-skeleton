@@ -1,0 +1,39 @@
+[
+  {
+    "id": "overview",
+    "category": "Overview",
+    "items": [
+      {
+        "id": "about",
+        "slug": "/overview/about/",
+        "title": "About"
+      },
+      {
+        "id": "getting-started",
+        "slug": "/overview/getting-started/",
+        "title": "Getting Started"
+      }
+    ]
+  },
+  {
+    "id": "examples",
+    "category": "Examples",
+    "items": [
+      {
+        "id": "page-one",
+        "slug": "/examples/page-one/",
+        "title": "Page One"
+      },
+      {
+        "id": "page-one",
+        "slug": "/examples/page-two/",
+        "title": "Page Two"
+      },
+      {
+        "id": "page-one",
+        "slug": "/examples/page-with-custom-url/",
+        "title": "With Custom URL"
+      }
+    ]
+  }
+]
