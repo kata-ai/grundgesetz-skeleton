@@ -54,3 +54,7 @@ npm run deploy
 ## Credits
 
 Built with [Gatsby](https://www.gatsbyjs.org/) - the blazing-fast static site generator for [React](https://facebook.github.io/react/).
+
+## Authors
+
+* Resi Respati ([@resir014](https://twitter.com/resir014)) – [Kata.ai](https://kata.ai)
