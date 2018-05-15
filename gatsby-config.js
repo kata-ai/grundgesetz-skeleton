@@ -5,12 +5,12 @@ const cssnext = require('postcss-cssnext');
 module.exports = {
   siteMetadata: {
     title: 'Grundgesetz',
-    description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
-    siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
+    description: 'Zero-configuration documentation builder, powered by Gatsby.',
+    siteUrl: 'https://grundgesetz-skeleton.now.sh',
     author: {
       name: 'Resi Respati',
-      url: 'https://twitter.com/resir014',
-      email: 'resir014@gmail.com'
+      url: 'https://resir014.xyz',
+      email: 'resi@kata.ai'
     }
   },
   plugins: [
