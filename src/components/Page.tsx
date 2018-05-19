@@ -5,8 +5,7 @@ const StyledPage = styled('div')`
   display: block;
   flex: 1 1 auto;
   position: relative;
-  padding: ${props => props.theme.dimensions.containerPadding}rem;
-  padding-bottom: 3rem;
+  padding: 0;
 `;
 
 interface PageProps {

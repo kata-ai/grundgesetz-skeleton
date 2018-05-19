@@ -10,7 +10,7 @@ const StyledLayoutRoot = styled('div')`
   flex-direction: column;
   min-height: 100vh;
 
-  @media (min-width: ${props => props.theme.breakpoints.sm}px) {
+  @media (min-width: ${props => props.theme.breakpoints.md}px) {
     flex-direction: row;
   }
 `;

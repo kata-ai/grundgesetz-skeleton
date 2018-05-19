@@ -5,6 +5,8 @@ import Page from '../components/Page';
 import Container from '../components/Container';
 import getPageById from '../utils/getPageById';
 import { MenuNode } from '../interfaces/nodes';
+import MarkdownContent from '../components/MarkdownContent';
+import DocsWrapper from '../components/DocsWrapper';
 
 interface PageTemplateProps {
   data: {
@@ -44,22 +46,24 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
 
   return (
     <Page>
-      <Container>
-        <h1>{markdownRemark.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-        <section>
-          {prevPage && (
-            <>
-              Previous Page: <Link to={prevPage.slug}>{prevPage.title}</Link>
-            </>
-          )}
-          {nextPage && (
-            <>
-              Next Page: <Link to={nextPage.slug}>{nextPage.title}</Link>
-            </>
-          )}
-        </section>
-      </Container>
+      <DocsWrapper>
+        <Container>
+          <h1>{markdownRemark.frontmatter.title}</h1>
+          <MarkdownContent html={markdownRemark.html} />
+        </Container>
+      </DocsWrapper>
+      <section>
+        {prevPage && (
+          <>
+            Previous Page: <Link to={prevPage.slug}>{prevPage.title}</Link>
+          </>
+        )}
+        {nextPage && (
+          <>
+            Next Page: <Link to={nextPage.slug}>{nextPage.title}</Link>
+          </>
+        )}
+      </section>
     </Page>
   );
 };
