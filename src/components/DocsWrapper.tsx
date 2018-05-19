@@ -1,6 +1,6 @@
 import styled from '../utils/styled';
 
-const DocsWrapper = styled('div')`
+const DocsWrapper = styled('article')`
   display: block;
   flex: 1 1 auto;
   position: relative;
