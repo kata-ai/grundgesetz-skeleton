@@ -5,7 +5,6 @@ export interface MenuItem {
 }
 
 export interface MenuNode {
-  id: string;
-  category: string;
+  title: string;
   items: MenuItem[];
 }

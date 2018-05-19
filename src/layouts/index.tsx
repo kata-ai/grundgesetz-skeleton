@@ -54,8 +54,7 @@ export const query = graphql`
     navigationMenus: allTocJson {
       edges {
         node {
-          id
-          category
+          title
           items {
             id
             slug

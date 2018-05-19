@@ -156,12 +156,12 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                   Index
                 </Link>
                 {navigation &&
-                  navigation.map(({ node }, i) => (
-                    <div key={i}>
-                      {node.category}
+                  navigation.map(({ node }) => (
+                    <div key={node.title}>
+                      {node.title}
                       <ul>
-                        {node.items.map((item, y) => (
-                          <li key={y}>
+                        {node.items.map(item => (
+                          <li key={item.id}>
                             <Link to={item.slug} onClick={this.closeNavMenu}>
                               {item.title}
                             </Link>

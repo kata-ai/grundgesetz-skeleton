@@ -1,6 +1,8 @@
 ---
+id: page-three
 permalink: /examples/page-with-custom-url
 title: With Custom URL
+prev: page-two
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio.

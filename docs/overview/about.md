@@ -1,5 +1,7 @@
 ---
+id: about
 title: About
+next: getting-started
 ---
 
 Welcome to Grundgesetz. It's a skeleton for generating accessible documentation pages built on top of [Gatsby](https://www.gatsbyjs.org). It creates static pages from your Markdown documentation files, all prettily formatted with a easy-to-use layout.

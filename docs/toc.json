@@ -1,7 +1,6 @@
 [
   {
-    "id": "overview",
-    "category": "Overview",
+    "title": "Overview",
     "items": [
       {
         "id": "about",
@@ -16,8 +15,7 @@
     ]
   },
   {
-    "id": "examples",
-    "category": "Examples",
+    "title": "Examples",
     "items": [
       {
         "id": "page-one",
@@ -25,12 +23,12 @@
         "title": "Page One"
       },
       {
-        "id": "page-one",
+        "id": "page-two",
         "slug": "/examples/page-two/",
         "title": "Page Two"
       },
       {
-        "id": "page-one",
+        "id": "page-three",
         "slug": "/examples/page-with-custom-url/",
         "title": "With Custom URL"
       }

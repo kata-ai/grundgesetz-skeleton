@@ -1,5 +1,8 @@
 ---
+id: page-two
 title: Page Two
+prev: page-one
+next: page-three
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita ceterorum sententiis semotis relinquitur non mihi cum Torquato, sed virtuti cum voluptate certatio. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Hanc quoque iucunditatem, si vis, transfer in animum; Homines optimi non intellegunt totam rationem everti, si ita res se habeat. Duo Reges: constructio interrete. Quis `const temp: string;` enim redargueret? Ergo infelix una molestia, fellx rursus, cum is ipse anulus in praecordiis piscis inventus est? Quantum Aristoxeni ingenium consumptum videmus in musicis? Neminem videbis ita laudatum, ut artifex `serve` callidus comparandarum voluptatum diceretur. Nunc omni virtuti vitium contrario nomine opponitur.
