@@ -8,6 +8,10 @@ import theme from '../styles/theme';
 import { ThemeProvider } from '../utils/styled';
 import { MenuNode } from '../interfaces/nodes';
 
+import 'normalize.css';
+import '../styles/normalize';
+import 'prism-themes/themes/prism-a11y-dark.css';
+
 interface WrapperProps {
   children: () => any;
   data: {

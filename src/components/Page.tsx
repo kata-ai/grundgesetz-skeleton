@@ -1,19 +1,22 @@
-import * as React from 'react';
-import styled from '../utils/styled';
+import styled, { css } from '../utils/styled';
 
-const StyledPage = styled('div')`
+interface PageProps {
+  docsPage?: boolean;
+}
+
+const Page = styled<PageProps, 'div'>('div')`
   display: block;
   flex: 1 1 auto;
   position: relative;
-  padding: 0;
+  ${props =>
+    props.docsPage
+      ? css`
+          padding: 0;
+        `
+      : css`
+          padding: ${props.theme.dimensions.containerPadding}rem;
+          padding-bottom: 3rem;
+        `};
 `;
-
-interface PageProps {
-  className?: string;
-}
-
-const Page: React.SFC<PageProps> = ({ children, className }) => (
-  <StyledPage className={className}>{children}</StyledPage>
-);
 
 export default Page;

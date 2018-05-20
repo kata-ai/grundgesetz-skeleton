@@ -7,6 +7,7 @@ import getPageById from '../utils/getPageById';
 import { MenuNode } from '../interfaces/nodes';
 import MarkdownContent from '../components/MarkdownContent';
 import DocsWrapper from '../components/DocsWrapper';
+import DocsHeader from '../components/DocsHeader';
 
 interface PageTemplateProps {
   data: {
@@ -45,14 +46,16 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   const nextPage = getPageById(sectionList.edges, next);
 
   return (
-    <Page>
+    <Page docsPage>
       <DocsWrapper>
         <Container>
-          <h1>{markdownRemark.frontmatter.title}</h1>
+          <DocsHeader>
+            <h1>{markdownRemark.frontmatter.title}</h1>
+          </DocsHeader>
           <MarkdownContent html={markdownRemark.html} />
         </Container>
       </DocsWrapper>
-      <section>
+      <aside>
         {prevPage && (
           <>
             Previous Page: <Link to={prevPage.slug}>{prevPage.title}</Link>
@@ -63,7 +66,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
             Next Page: <Link to={nextPage.slug}>{nextPage.title}</Link>
           </>
         )}
-      </section>
+      </aside>
     </Page>
   );
 };

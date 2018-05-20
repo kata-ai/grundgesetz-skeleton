@@ -138,7 +138,7 @@ injectGlobal`
   }
 
   strong {
-    color: $color-heading;
+    color: ${theme.colors.ink}};
   }
 
   ul,

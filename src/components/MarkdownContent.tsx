@@ -1,15 +1,13 @@
 import * as React from 'react';
 import styled from '../utils/styled';
 
-import { media } from '../styles/mixins';
-
 interface MarkdownContentProps {
   className?: string;
   html: string;
 }
 
 const MarkdownContent: React.SFC<MarkdownContentProps> = ({ className, html }) => (
-  <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
+  <section className={className} dangerouslySetInnerHTML={{ __html: html }} />
 );
 
 export default styled(MarkdownContent)`
