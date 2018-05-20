@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 
-import Page from '../components/Page';
-import Container from '../components/Container';
+import Page from 'components/Page';
+import Container from 'components/Container';
 
 export default () => (
   <Page>

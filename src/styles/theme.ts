@@ -1,4 +1,4 @@
-import { Theme } from '../utils/styled';
+import { Theme } from 'utils/styled';
 
 export const brandColors = {
   katablue: '#2a90ff',

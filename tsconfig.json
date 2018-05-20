@@ -4,6 +4,7 @@
     "target": "esnext",
     "jsx": "react",
     "lib": ["dom", "es2015", "es2017"],
+    "baseUrl": "./src/",
     "outDir": "./dist/",
     "sourceMap": true,
     "strict": true,

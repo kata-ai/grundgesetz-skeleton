@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-const path = require('path')
+const path = require('path');
 
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
+  const { createNodeField } = boundActionCreators;
 
   // Sometimes, optional fields tend to get not picked up by the GraphQL
   // interpreter if not a single content uses it. Therefore, we're putting them
@@ -12,13 +12,13 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout } = node.frontmatter
-      const { relativePath } = getNode(node.parent)
+      const { permalink, layout } = node.frontmatter;
+      const { relativePath } = getNode(node.parent);
 
-      let slug = permalink
+      let slug = permalink;
 
       if (!slug) {
-        slug = `/${relativePath.replace('.md', '')}/`
+        slug = `/${relativePath.replace('.md', '')}/`;
       }
 
       // Used to generate URL to view this content.
@@ -26,20 +26,20 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
         node,
         name: 'slug',
         value: slug || ''
-      })
+      });
 
       // Used to determine a page layout.
       createNodeField({
         node,
         name: 'layout',
-        value: layout || '',
-      })
+        value: layout || ''
+      });
     }
   }
-}
+};
 
 exports.createPages = async ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+  const { createPage } = boundActionCreators;
 
   const allMarkdown = await graphql(`
     {
@@ -54,15 +54,15 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
         }
       }
     }
-  `)
+  `);
 
   if (allMarkdown.errors) {
-    console.error(allMarkdown.errors)
-    throw new Error(allMarkdown.errors)
+    console.error(allMarkdown.errors);
+    throw new Error(allMarkdown.errors);
   }
 
   allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const { slug, layout } = node.fields
+    const { slug, layout } = node.fields;
 
     createPage({
       path: slug,
@@ -80,6 +80,6 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
         // Data passed to context is available in page queries as GraphQL variables.
         slug
       }
-    })
-  })
-}
+    });
+  });
+};

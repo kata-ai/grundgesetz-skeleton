@@ -54,6 +54,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-resolve-src',
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-next',
     'gatsby-plugin-sharp',

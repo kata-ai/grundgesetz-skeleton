@@ -1,8 +1,8 @@
 import * as React from 'react';
-import styled from '../utils/styled';
+import styled from 'utils/styled';
 
-import { widths } from '../styles/variables';
-import { getEmSize } from '../styles/mixins';
+import { widths } from 'styles/variables';
+import { getEmSize } from 'styles/mixins';
 
 const StyledContainer = styled('div')`
   position: relative;

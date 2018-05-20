@@ -1,13 +1,13 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 
-import Page from '../components/Page';
-import Container from '../components/Container';
-import getPageById from '../utils/getPageById';
-import { MenuNode } from '../interfaces/nodes';
-import MarkdownContent from '../components/MarkdownContent';
-import DocsWrapper from '../components/DocsWrapper';
-import DocsHeader from '../components/DocsHeader';
+import Page from 'components/Page';
+import Container from 'components/Container';
+import getPageById from 'utils/getPageById';
+import { MenuNode } from 'interfaces/nodes';
+import MarkdownContent from 'components/MarkdownContent';
+import DocsWrapper from 'components/DocsWrapper';
+import DocsHeader from 'components/DocsHeader';
 
 interface PageTemplateProps {
   data: {

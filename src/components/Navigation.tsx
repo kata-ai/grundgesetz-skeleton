@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 
-import styled from '../utils/styled';
+import styled from 'utils/styled';
 import Container from './Container';
-import { MenuNode } from '../interfaces/nodes';
-import { brandColors } from '../styles/theme';
+import { MenuNode } from 'interfaces/nodes';
+import { brandColors } from 'styles/theme';
 
 const Wrapper = styled('header')`
   display: flex;
