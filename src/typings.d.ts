@@ -16,3 +16,10 @@ declare module '*.module.css' {
   const cssModule: CSSModule;
   export = cssModule;
 }
+
+// file types
+
+declare module '*.json' {
+  const name: any;
+  export = name;
+}

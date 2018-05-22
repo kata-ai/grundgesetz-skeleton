@@ -1,5 +1,8 @@
 ---
+id: page-one
 title: Page One
+prev: getting-started
+next: page-two
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Virtutibus igitur rectissime mihi videris et ad consuetudinem nostrae orationis vitia posuisse contraria. <i>Videsne quam sit magna dissensio?</i> Duo Reges: `construct() {}` interrete. <a href="http://loripsum.net/" target="_blank">Primum quid tu dicis breve?</a> <a href="http://loripsum.net/" target="_blank">Quis istum dolorem timet?</a> Torquatus, is qui consul cum Cn. Naturales divitias dixit parabiles esse, quod parvo esset natura contenta.

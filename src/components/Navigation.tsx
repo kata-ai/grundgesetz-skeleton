@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 
-import styled from '../utils/styled';
+import styled from 'utils/styled';
 import Container from './Container';
-import { MenuNode } from '../interfaces/nodes';
-import { brandColors } from '../styles/theme';
+import { MenuNode } from 'interfaces/nodes';
+import { brandColors } from 'styles/theme';
 
 const Wrapper = styled('header')`
   display: flex;
@@ -14,20 +14,20 @@ const Wrapper = styled('header')`
   background-color: ${props => props.theme.colors.drawer.background};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  @media (min-width: ${props => props.theme.breakpoints.sm}px) {
+  @media (min-width: ${props => props.theme.breakpoints.md}px) {
     flex: 0 0 ${props => props.theme.widths.drawer.sm}px;
     box-shadow: none;
     border-bottom: none;
     border-right: 1px solid ${props => props.theme.colors.drawer.border};
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.md}px) {
+  @media (min-width: ${props => props.theme.breakpoints.lg}px) {
     flex: 0 0 ${props => props.theme.widths.drawer.lg}px;
   }
 `;
 
 const WrapperInner = styled('div')`
-  @media (min-width: ${props => props.theme.breakpoints.sm}px) {
+  @media (min-width: ${props => props.theme.breakpoints.md}px) {
     position: fixed;
     width: ${props => props.theme.widths.drawer.sm - 1}px;
     flex: 1 1 auto;
@@ -36,7 +36,7 @@ const WrapperInner = styled('div')`
     overflow-y: auto;
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.md}px) {
+  @media (min-width: ${props => props.theme.breakpoints.lg}px) {
     width: ${props => props.theme.widths.drawer.lg - 1}px;
   }
 `;
@@ -68,7 +68,7 @@ const DocumentationNavMenus = styled<{ isOpen?: boolean }, 'div'>('div')``;
 const DocumentationNavMenusInner = styled<{ isOpen?: boolean }, 'div'>('div')`
   padding: ${props => props.theme.dimensions.containerPadding}rem;
 
-  @media (max-width: ${props => props.theme.breakpoints.sm - 1}px) {
+  @media (max-width: ${props => props.theme.breakpoints.md - 1}px) {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -84,7 +84,7 @@ const DocumentationNavMenusInner = styled<{ isOpen?: boolean }, 'div'>('div')`
     opacity: ${props => (props.isOpen ? 1 : 0)};
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.sm}px) {
+  @media (min-width: ${props => props.theme.breakpoints.md}px) {
     opacity: 1 !important;
     padding-top: 0;
     padding-bottom: 3rem;
@@ -104,7 +104,7 @@ const FloatingNavButtonWrapper = styled('div')`
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.15);
 
-  @media (min-width: ${props => props.theme.breakpoints.sm}px) {
+  @media (min-width: ${props => props.theme.breakpoints.md}px) {
     display: none;
   }
 `;
@@ -156,12 +156,12 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                   Index
                 </Link>
                 {navigation &&
-                  navigation.map(({ node }, i) => (
-                    <div key={i}>
-                      {node.category}
+                  navigation.map(({ node }) => (
+                    <div key={node.title}>
+                      {node.title}
                       <ul>
-                        {node.items.map((item, y) => (
-                          <li key={y}>
+                        {node.items.map(item => (
+                          <li key={item.id}>
                             <Link to={item.slug} onClick={this.closeNavMenu}>
                               {item.title}
                             </Link>

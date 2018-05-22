@@ -1,12 +1,16 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import Navigation from '../components/Navigation';
-import LayoutRoot from '../components/LayoutRoot';
-import LayoutMain from '../components/LayoutMain';
-import theme from '../styles/theme';
-import { ThemeProvider } from '../utils/styled';
-import { MenuNode } from '../interfaces/nodes';
+import Navigation from 'components/Navigation';
+import LayoutRoot from 'components/LayoutRoot';
+import LayoutMain from 'components/LayoutMain';
+import theme from 'styles/theme';
+import { ThemeProvider } from 'utils/styled';
+import { MenuNode } from 'interfaces/nodes';
+
+import 'normalize.css';
+import 'styles/normalize';
+import 'prism-themes/themes/prism-a11y-dark.css';
 
 interface WrapperProps {
   children: () => any;
@@ -54,8 +58,7 @@ export const query = graphql`
     navigationMenus: allTocJson {
       edges {
         node {
-          id
-          category
+          title
           items {
             id
             slug

@@ -1,5 +1,8 @@
 ---
+id: getting-started
 title: Getting Started
+prev: about
+next: page-one
 ---
 
 Install this starter (assuming you have `gatsby-cli` installed) by running the following command:

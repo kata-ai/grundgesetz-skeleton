@@ -1,7 +1,13 @@
 import * as React from 'react';
+import Link from 'gatsby-link';
 
-import Page from '../components/Page';
-import Container from '../components/Container';
+import Page from 'components/Page';
+import Container from 'components/Container';
+import getPageById from 'utils/getPageById';
+import { MenuNode } from 'interfaces/nodes';
+import MarkdownContent from 'components/MarkdownContent';
+import DocsWrapper from 'components/DocsWrapper';
+import DocsHeader from 'components/DocsHeader';
 
 interface PageTemplateProps {
   data: {
@@ -15,24 +21,55 @@ interface PageTemplateProps {
         };
       };
     };
+    sectionList: {
+      edges: Array<{
+        node: MenuNode;
+      }>;
+    };
     markdownRemark: {
       html: string;
       excerpt: string;
       frontmatter: {
+        id: string;
         title: string;
+        prev?: string;
+        next?: string;
       };
     };
   };
 }
 
-const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => (
-  <Page>
-    <Container>
-      <h1>{data.markdownRemark.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </Container>
-  </Page>
-);
+const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
+  const { markdownRemark, sectionList } = data;
+  const { prev, next } = markdownRemark.frontmatter;
+  const prevPage = getPageById(sectionList.edges, prev);
+  const nextPage = getPageById(sectionList.edges, next);
+
+  return (
+    <Page docsPage>
+      <DocsWrapper>
+        <Container>
+          <DocsHeader>
+            <h1>{markdownRemark.frontmatter.title}</h1>
+          </DocsHeader>
+          <MarkdownContent html={markdownRemark.html} />
+        </Container>
+      </DocsWrapper>
+      <aside>
+        {prevPage && (
+          <>
+            Previous Page: <Link to={prevPage.slug}>{prevPage.title}</Link>
+          </>
+        )}
+        {nextPage && (
+          <>
+            Next Page: <Link to={nextPage.slug}>{nextPage.title}</Link>
+          </>
+        )}
+      </aside>
+    </Page>
+  );
+};
 
 export default PageTemplate;
 
@@ -48,11 +85,26 @@ export const query = graphql`
         }
       }
     }
+    sectionList: allTocJson {
+      edges {
+        node {
+          title
+          items {
+            id
+            slug
+            title
+          }
+        }
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt
       frontmatter {
+        id
         title
+        prev
+        next
       }
     }
   }

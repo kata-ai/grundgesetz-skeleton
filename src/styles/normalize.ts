@@ -1,4 +1,4 @@
-import { injectGlobal } from '../utils/styled';
+import { injectGlobal } from 'utils/styled';
 import { onEvent, media } from './mixins';
 
 import theme from './theme';
@@ -138,7 +138,7 @@ injectGlobal`
   }
 
   strong {
-    color: $color-heading;
+    color: ${theme.colors.ink}};
   }
 
   ul,
