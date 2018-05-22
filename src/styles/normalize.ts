@@ -1,204 +1,289 @@
-import { injectGlobal } from 'utils/styled';
-import { onEvent, media } from './mixins';
+// tslint:disable
 
-import theme from './theme';
+import { css } from 'styled-components';
 
-// tslint:disable-next-line:no-unused-expression
-injectGlobal`
-  // Set up a decent box model on the root element
-  html {
-    box-sizing: border-box;
-  }
+export default css`
+/*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
 
-  // Make all elements from the DOM inherit from the parent box-sizing
-  // Since '*' has a specificity of 0, it does not override the 'html value
-  // making all elements inheriting from the root box-sizing value
-  // See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
+/* Document
+   ========================================================================== */
 
-  html {
-    font-size: ${theme.dimensions.fontSize.regular}px !important;
-    line-height: ${theme.dimensions.lineHeight.regular} !important;
-  }
+/**
+ * Use a better box model (opinionated).
+ */
 
-  body {
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    font-family: ${theme.fonts.sansSerif};
-    color: ${theme.colors.gray.copy};
-    background-color: ${theme.colors.white};
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-  }
+html {
+	box-sizing: border-box;
+}
 
-  // Set defaults for links
-  a {
-    color: ${theme.colors.brand};
-    text-decoration: none;
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
 
-    ${onEvent`
-      text-decoration: underline;
-    `}
-  }
+/**
+ * Use a more readable tab size (opinionated).
+ */
 
-  img {
-    max-width: 100%;
-    object-fit: contain;
-    position: relative;
-  }
+:root {
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
 
-  // Figure elements
-  figure {
-    margin: 2rem 0;
-  }
+/**
+ * Correct the line height in all browsers.
+ */
 
-  figcaption {
-    font-size: 80%;
-  }
+html {
+	line-height: 1.15;
+}
 
-  code,
-  kbd,
-  pre,
-  samp {
-    font-family: ${theme.fonts.monospace};
-  }
+/* Sections
+   ========================================================================== */
 
-  table {
-    width: 100%;
-    margin-bottom: 1rem;
-    border: 1px solid ${theme.colors.gray.calm};
-    font-size: 85%;
-    border-collapse: collapse;
-  }
+/**
+ * Remove the margin in all browsers.
+ */
 
-  td,
-  th {
-    padding: .25rem .5rem;
-    border: 1px solid ${theme.colors.gray.calm};
-  }
+body {
+	margin: 0;
+}
 
-  th {
-    text-align: left;
-  }
+/**
+ * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+ */
 
-  tbody {
-    tr {
-      &:nth-child(odd) {
-        td {
-          background-color: ${theme.colors.ui.whisper};
-        }
-        tr {
-          background-color: ${theme.colors.ui.whisper};
-        }
-      }
-    }
-  }
+body {
+	font-family:
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
+		'Segoe UI Symbol';
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 1.414rem;
-    margin-bottom: 0.5rem;
-    color: ${theme.colors.ink};
-    font-weight: 600;
-    line-height: ${theme.dimensions.lineHeight.heading};
-    text-rendering: optimizeLegibility;
-  }
+/**
+ * Correct the font size and margin on \`h1\` elements within \`section\` and
+ * \`article\` contexts in Chrome, Firefox, and Safari.
+ */
 
-  h1 {
-    margin-top: 0;
-    font-size: ${theme.dimensions.headingSizes.h1}rem;
-  }
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
 
-  h2 {
-    font-size: ${theme.dimensions.headingSizes.h2}rem;
-  }
+/* Grouping content
+   ========================================================================== */
 
-  h3 {
-    font-size: ${theme.dimensions.headingSizes.h3}rem;
-  }
+/**
+ * Add the correct height in Firefox.
+ */
 
-  h4,
-  h5,
-  h6 {
-    font-size: ${theme.dimensions.headingSizes.h4}rem;
-  }
+hr {
+	height: 0;
+}
 
-  p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
+/* Text-level semantics
+   ========================================================================== */
 
-  strong {
-    color: ${theme.colors.ink}};
-  }
+/**
+ * Add the correct text decoration in Chrome, Edge, and Safari.
+ */
 
-  ul,
-  ol,
-  dl {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
+abbr[title] {
+	text-decoration: underline dotted;
+}
 
-  dt {
-    font-weight: bold;
-  }
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
 
-  dd {
-    margin-bottom: 0.5rem;
-  }
+b,
+strong {
+	font-weight: bolder;
+}
 
-  hr {
-    position: relative;
-    margin: 1.5rem 0;
-    border: 0;
-    border-top: 1px solid ${theme.colors.ui.light};
-  }
+/**
+ * 1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+ * 2. Correct the odd \`em\` font sizing in all browsers.
+ */
 
-  blockquote {
-    margin: 0.8rem 0;
-    padding: 0.5rem 1rem;
-    border-left: 0.25rem solid ${theme.colors.ui.light};
-    color: ${theme.colors.gray.calm};
+code,
+kbd,
+samp,
+pre {
+	font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
 
-    p {
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+/**
+ * Add the correct font size in all browsers.
+ */
 
-    ${media.md`
-      padding-right: 5rem;
-      padding-left: 1.25rem;
-    `};
-  }
+small {
+	font-size: 80%;
+}
 
-  code {
-    padding: 0.25rem 0.5rem;
-    font-size: 90%;
-    color: ${theme.colors.gray.copy};
-    background-color: ${theme.colors.ui.bright};
-    border-radius: 3px;
-  }
+/**
+ * Prevent \`sub\` and \`sup\` elements from affecting the line height in
+ * all browsers.
+ */
 
-  pre {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    overflow-x: auto;
-  }
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
 
-  pre code {
-    padding: 0;
-    font-size: 90%;
-    color: inherit;
-    background-color: transparent;
-  }
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}
+
+/**
+ * Remove the inheritance of text transform in Edge and Firefox.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * Remove the padding so developers are not caught out when they zero out
+ *    \`fieldset\` elements in all browsers.
+ */
+
+legend {
+	padding: 0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome and Firefox.
+ */
+
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type='search'] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type='search']::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to \`inherit\` in Safari.
+ */
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Chrome and Safari.
+ */
+
+summary {
+	display: list-item;
+}
 `;

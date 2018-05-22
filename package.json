@@ -40,14 +40,12 @@
     "gatsby-transformer-json": "^1.0.17",
     "gatsby-transformer-remark": "^1.7.41",
     "gatsby-transformer-sharp": "^1.6.24",
-    "normalize.css": "^8.0.0",
     "polished": "^1.9.2",
     "prism-themes": "^1.0.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.2.6",
-    "styled-normalize": "^4.0.0",
     "typescript": "^2.8.3"
   },
   "devDependencies": {
