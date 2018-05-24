@@ -4098,9 +4098,9 @@ gatsby-remark-smartypants@^1.4.12:
     retext-smartypants "^2.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@^1.5.35:
-  version "1.5.35"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.35.tgz#1d7a92c60def1ba6f7f33c468cf4832af0e904ed"
+gatsby-source-filesystem@^1.5.36:
+  version "1.5.36"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.36.tgz#273a9940eacdff3bea6d58f114d8478e7ae3a0de"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4115,9 +4115,9 @@ gatsby-source-filesystem@^1.5.35:
     slash "^1.0.0"
     valid-url "^1.0.9"
 
-gatsby-transformer-json@^1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-1.0.17.tgz#b2cb8a4eb935322e577608523d4439bbb40c569f"
+gatsby-transformer-json@^1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-1.0.18.tgz#6629ce4e1c5808501ddf80437873c25822744852"
   dependencies:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
@@ -4156,9 +4156,9 @@ gatsby-transformer-sharp@^1.6.24:
     fs-extra "^4.0.2"
     probe-image-size "^4.0.0"
 
-gatsby@^1.9.260:
-  version "1.9.260"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.260.tgz#365d2c673846511def7250488a954a8a554dd161"
+gatsby@^1.9.261:
+  version "1.9.261"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.261.tgz#ca5352874de3ec359150d1ce592e19ed564d0fc0"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -10333,9 +10333,9 @@ tslib@^1.6.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.1.tgz#a5d1f0532a49221c87755cfcc89ca37197242ba7"
 
-tslint-config-kata@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tslint-config-kata/-/tslint-config-kata-1.0.4.tgz#750d0efa0febca95228d057e5a87c1bfb623f4db"
+tslint-config-kata@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tslint-config-kata/-/tslint-config-kata-1.0.5.tgz#c4a7451337d78f176c72a5272f6e064b4f7e047b"
   dependencies:
     tslint-config-prettier "^1.10.0"
     tslint-consistent-codestyle "^1.13.0"
