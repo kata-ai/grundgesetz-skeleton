@@ -12,6 +12,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "rimraf public",
+    "commit": "git cz",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",
     "lint": "tslint 'src/**/*.{ts,tsx}'",
@@ -56,6 +57,8 @@
     "@types/react-dom": "^16.0.5",
     "@types/react-helmet": "^5.0.6",
     "@types/react-router-dom": "^4.2.6",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "gh-pages": "^1.1.0",
     "prettier": "^1.12.1",
     "rimraf": "^2.6.2",
@@ -63,5 +66,10 @@
     "tslint": "^5.10.0",
     "tslint-config-kata": "^1.0.4",
     "tslint-react": "^3.6.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
