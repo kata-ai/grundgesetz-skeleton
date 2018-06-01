@@ -4,7 +4,7 @@ interface PageProps {
   docsPage?: boolean;
 }
 
-const Page = styled<PageProps, 'div'>('div')`
+const Page = styled<PageProps, 'main'>('main')`
   display: block;
   flex: 1 1 auto;
   position: relative;

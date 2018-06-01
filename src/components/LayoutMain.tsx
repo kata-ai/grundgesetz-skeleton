@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'utils/styled';
 
-const StyledLayoutMain = styled('main')`
+const StyledLayoutMain = styled('div')`
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
