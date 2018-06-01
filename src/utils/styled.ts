@@ -20,6 +20,10 @@ export type Theme = {
     };
     code: string;
     border: string;
+    footer: {
+      background: string;
+      border: string;
+    };
     gray: {
       dark: string;
       copy: string;

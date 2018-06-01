@@ -47,6 +47,10 @@ const theme: Theme = {
       light: brandColors.grey10,
       whisper: brandColors.grey10
     },
+    footer: {
+      background: brandColors.icebluetwo,
+      border: brandColors.icebluethree
+    },
     code: brandColors.grey20,
     gray: {
       dark: brandColors.grey80,

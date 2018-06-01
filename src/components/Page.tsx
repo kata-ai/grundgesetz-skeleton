@@ -5,7 +5,8 @@ interface PageProps {
 }
 
 const Page = styled<PageProps, 'main'>('main')`
-  display: block;
+  display: flex;
+  flex-direction: column;
   flex: 1 1 auto;
   position: relative;
   ${props =>

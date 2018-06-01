@@ -11,6 +11,7 @@ import { MenuNode } from 'interfaces/nodes';
 import 'styles/globals';
 import 'prism-themes/themes/prism-a11y-dark.css';
 import FloatingNavButton from 'components/FloatingNavButton';
+import Footer from 'components/Footer';
 
 interface WrapperProps {
   children: () => any;
@@ -63,7 +64,10 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
             onCloseNavMenu={this.closeDrawer}
           />
           <FloatingNavButton onClick={this.toggleDrawer} drawerIsOpen={drawerIsOpen} />
-          <LayoutMain>{children()}</LayoutMain>
+          <LayoutMain>
+            {children()}
+            <Footer />
+          </LayoutMain>
         </LayoutRoot>
       </ThemeProvider>
     );

@@ -9,7 +9,7 @@ interface ToggleableProps {
 const Wrapper = styled<ToggleableProps, 'button'>('button')`
   display: inline-block;
   position: fixed;
-  bottom: 48px;
+  bottom: 24px;
   right: 24px;
   padding: 0;
   background-color: ${props =>
