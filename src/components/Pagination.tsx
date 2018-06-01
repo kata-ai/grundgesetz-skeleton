@@ -23,12 +23,17 @@ const WrapperInner = styled(Container)`
 const PaginationItem = styled('div')`
   text-align: center;
 
+  &:last-child {
+    margin-top: 2rem;
+  }
+
   @media (min-width: ${breakpoints.sm}px) {
     &:first-child {
       text-align: left;
     }
 
     &:last-child {
+      margin-top: 0;
       text-align: right;
     }
   }
@@ -50,14 +55,6 @@ const PaginationLink = styled(Link)`
   color: ${props => props.theme.colors.gray.copy};
   border-bottom: 1px solid ${props => props.theme.colors.border};
   transition: border-color 0.3s ease;
-
-  &:last-child {
-    margin-top: 2rem;
-
-    @media (min-width: ${breakpoints.sm}px) {
-      margin-top: 0;
-    }
-  }
 
   &:hover,
   &:focus {
