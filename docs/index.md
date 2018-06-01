@@ -10,7 +10,7 @@ Grundgesetz is initially built to solve internal issues in managing documentatio
 
 ## Get Started
 
-Getting started with Grundgesets is as easy as 1-2-3! [Follow the documentation](/getting-started/installation), or select from the sidebar for a specific topic that you want to read.
+Getting started with Grundgesets is as easy as 1-2-3! [Follow the documentation](/getting-started/installation), or select from the left drawer for a specific topic that you want to read.
 
 ## Core Concepts
 

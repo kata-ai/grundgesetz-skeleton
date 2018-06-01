@@ -51,6 +51,14 @@ const PaginationLink = styled(Link)`
   border-bottom: 1px solid ${props => props.theme.colors.border};
   transition: border-color 0.3s ease;
 
+  &:last-child {
+    margin-top: 2rem;
+
+    @media (min-width: ${breakpoints.sm}px) {
+      margin-top: 0;
+    }
+  }
+
   &:hover,
   &:focus {
     text-decoration: none;
