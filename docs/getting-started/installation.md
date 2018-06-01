@@ -1,8 +1,7 @@
 ---
 id: installation
 title: Installation
-prev: about
-next: page-one
+next: development-server
 ---
 
 ## Prerequisites
@@ -27,25 +26,6 @@ Now we have `gatsby-cli` installed, we can now create a project based on the Gru
 gatsby new project-name https://github.com/kata-ai/grundgesetz-skeleton
 ```
 
-Congratulations, you have now bootstrapped Grundgesetz! The project is generated in your folder of choice (in this case `project-name`).
+Congratulations, you have now bootstrapped Grundgesetz!
 
-## Developing
-
-A nodejs >= 6.0.0 setup with [yarn](https://yarnpkg.com/) is recommended.
-
-```bash
-# install dependencies
-yarn
-
-# ...or, for npm
-npm install
-
-# serve with hot reload at localhost:8000
-npm start
-
-# build for production
-npm run build
-
-# build for production and push to gh-pages branch
-npm run deploy
-```
+The project is generated in your folder of choice (in this case `project-name`). In the next section, we will start writing our documentation on-the-fly with the development server.

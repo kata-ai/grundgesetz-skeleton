@@ -8,9 +8,9 @@ Grundgesetz is a skeleton for generating accessible documentation pages built on
 
 Grundgesetz is initially built to solve internal issues in managing documentation for our products at [Kata.ai](https://kata.ai/), but at the same we also found out that it's a good base for quickly deploying a documentation site online, so we put this up for everyone to use.
 
-## Get Started with Grundgesetz!
+## Get Started
 
-Getting started with Grundgesets is as easy as 1-2-3! [Follow the documentation](/getting-started/installation) for more.
+Getting started with Grundgesets is as easy as 1-2-3! [Follow the documentation](/getting-started/installation), or select from the sidebar for a specific topic that you want to read.
 
 ## Core Concepts
 

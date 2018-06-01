@@ -6,6 +6,16 @@
         "id": "installation",
         "slug": "/getting-started/installation/",
         "title": "Installation"
+      },
+      {
+        "id": "development-server",
+        "slug": "/getting-started/development-server/",
+        "title": "Development Server"
+      },
+      {
+        "id": "deploying",
+        "slug": "/getting-started/deploying/",
+        "title": "Deploying"
       }
     ]
   },
