@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Link from 'gatsby-link';
 
 import Page from 'components/Page';
 import Container from 'components/Container';
@@ -8,6 +7,7 @@ import { MenuNode } from 'interfaces/nodes';
 import MarkdownContent from 'components/MarkdownContent';
 import DocsWrapper from 'components/DocsWrapper';
 import DocsHeader from 'components/DocsHeader';
+import Pagination from 'components/Pagination';
 
 interface PageTemplateProps {
   data: {
@@ -55,18 +55,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           <MarkdownContent html={markdownRemark.html} />
         </Container>
       </DocsWrapper>
-      <aside>
-        {prevPage && (
-          <>
-            Previous Page: <Link to={prevPage.slug}>{prevPage.title}</Link>
-          </>
-        )}
-        {nextPage && (
-          <>
-            Next Page: <Link to={nextPage.slug}>{nextPage.title}</Link>
-          </>
-        )}
-      </aside>
+      <Pagination prevPage={prevPage} nextPage={nextPage} />
     </Page>
   );
 };
