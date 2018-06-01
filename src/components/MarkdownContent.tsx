@@ -17,6 +17,7 @@ export default styled(MarkdownContent)`
 
   .gatsby-highlight {
     margin: 1rem 0;
+    font-size: 90%;
 
     code,
     pre {
