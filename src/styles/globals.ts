@@ -1,5 +1,6 @@
 import { injectGlobal } from 'utils/styled';
-import { onEvent, media } from './mixins';
+import { onEvent } from './mixins';
+import { breakpoints } from './variables';
 
 import normalize from './normalize';
 import theme from './theme';
@@ -178,10 +179,10 @@ injectGlobal`
       }
     }
 
-    ${media.md`
+    @media (min-width: ${breakpoints.md}) {
       padding-right: 5rem;
       padding-left: 1.25rem;
-    `};
+    }
   }
 
   code {
