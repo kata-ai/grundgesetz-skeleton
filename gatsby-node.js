@@ -18,7 +18,12 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       let slug = permalink;
 
       if (!slug) {
-        slug = `/${relativePath.replace('.md', '')}/`;
+        if (relativePath === 'index.md') {
+          // If we have homepage set in docs folder, use it.
+          slug = '/';
+        } else {
+          slug = `/${relativePath.replace('.md', '')}/`;
+        }
       }
 
       // Used to generate URL to view this content.
