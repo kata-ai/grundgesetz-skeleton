@@ -1,16 +1,11 @@
 [
   {
-    "title": "Overview",
+    "title": "Getting Started",
     "items": [
       {
-        "id": "about",
-        "slug": "/overview/about/",
-        "title": "About"
-      },
-      {
-        "id": "getting-started",
-        "slug": "/overview/getting-started/",
-        "title": "Getting Started"
+        "id": "installation",
+        "slug": "/getting-started/installation/",
+        "title": "Installation"
       }
     ]
   },

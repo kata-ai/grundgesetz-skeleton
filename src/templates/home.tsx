@@ -2,12 +2,10 @@ import * as React from 'react';
 
 import Page from 'components/Page';
 import Container from 'components/Container';
-import getPageById from 'utils/getPageById';
 import { MenuNode } from 'interfaces/nodes';
 import MarkdownContent from 'components/MarkdownContent';
 import DocsWrapper from 'components/DocsWrapper';
 import DocsHeader from 'components/DocsHeader';
-import Pagination from 'components/Pagination';
 
 interface PageTemplateProps {
   data: {
@@ -40,22 +38,18 @@ interface PageTemplateProps {
 }
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
-  const { markdownRemark, sectionList } = data;
-  const { prev, next } = markdownRemark.frontmatter;
-  const prevPage = getPageById(sectionList.edges, prev);
-  const nextPage = getPageById(sectionList.edges, next);
+  const { markdownRemark } = data;
 
   return (
     <Page docsPage>
       <DocsWrapper>
         <Container>
           <DocsHeader>
-            <h1>{markdownRemark.frontmatter.title}</h1>
+            <h1>Welcome to Grundgesetz!</h1>
           </DocsHeader>
           <MarkdownContent html={markdownRemark.html} />
         </Container>
       </DocsWrapper>
-      {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
     </Page>
   );
 };
@@ -63,7 +57,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
 export default PageTemplate;
 
 export const query = graphql`
-  query PageTemplateQuery($slug: String!) {
+  query HomeTemplateQuery($slug: String!) {
     site {
       siteMetadata {
         title
@@ -71,18 +65,6 @@ export const query = graphql`
         author {
           name
           url
-        }
-      }
-    }
-    sectionList: allTocJson {
-      edges {
-        node {
-          title
-          items {
-            id
-            slug
-            title
-          }
         }
       }
     }

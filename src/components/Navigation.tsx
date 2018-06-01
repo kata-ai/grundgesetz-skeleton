@@ -101,9 +101,6 @@ class Header extends React.Component<HeaderProps> {
           </TitleInner>
           <DocumentationNav>
             <DocumentationNavMenus>
-              <Link to="/" onClick={onCloseNavMenu}>
-                Index
-              </Link>
               {navigation &&
                 navigation.map(({ node }) => (
                   <div key={node.title}>
