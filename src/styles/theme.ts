@@ -41,6 +41,7 @@ const theme: Theme = {
       border: brandColors.icebluethree
     },
     black: brandColors.black,
+    border: brandColors.grey40,
     ui: {
       bright: brandColors.grey20,
       light: brandColors.grey10,

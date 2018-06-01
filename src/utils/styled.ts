@@ -19,6 +19,7 @@ export type Theme = {
       whisper: string;
     };
     code: string;
+    border: string;
     gray: {
       dark: string;
       copy: string;

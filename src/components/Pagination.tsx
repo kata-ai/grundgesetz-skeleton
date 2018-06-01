@@ -48,7 +48,7 @@ const PaginationLink = styled(Link)`
   margin: 0;
   font-size: ${props => props.theme.dimensions.headingSizes.h2}rem;
   color: ${props => props.theme.colors.gray.copy};
-  border-bottom: 1px solid ${props => props.theme.colors.gray.calm};
+  border-bottom: 1px solid ${props => props.theme.colors.border};
   transition: border-color 0.3s ease;
 
   &:hover,
