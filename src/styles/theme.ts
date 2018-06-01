@@ -1,7 +1,7 @@
 import { Theme } from 'utils/styled';
 
 export const brandColors = {
-  katablue: '#2a90ff',
+  katablue: '#006fe6',
   lightkatablue: '#7fbcff',
   softkatablue: '#d8ebff',
 
