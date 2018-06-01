@@ -12,30 +12,17 @@ const Wrapper = styled('aside')`
 
 const WrapperInner = styled(Container)`
   display: flex;
-  flex-direction: column;
-
-  @media (min-width: ${breakpoints.sm}px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 const PaginationItem = styled('div')`
-  text-align: center;
-
-  &:last-child {
-    margin-top: 2rem;
+  &:first-child {
+    text-align: left;
   }
 
-  @media (min-width: ${breakpoints.sm}px) {
-    &:first-child {
-      text-align: left;
-    }
-
-    &:last-child {
-      margin-top: 0;
-      text-align: right;
-    }
+  &:last-child {
+    text-align: right;
   }
 `;
 
@@ -51,7 +38,7 @@ const PaginationHeading = styled('span')`
 
 const PaginationLink = styled(Link)`
   margin: 0;
-  font-size: ${props => props.theme.dimensions.headingSizes.h2}rem;
+  font-size: ${props => props.theme.dimensions.headingSizes.h4}rem;
   color: ${props => props.theme.colors.gray.copy};
   border-bottom: 1px solid ${props => props.theme.colors.border};
   transition: border-color 0.3s ease;
@@ -60,6 +47,10 @@ const PaginationLink = styled(Link)`
   &:focus {
     text-decoration: none;
     border-bottom-color: ${props => props.theme.colors.gray.copy};
+  }
+
+  @media (min-width: ${breakpoints.sm}px) {
+    font-size: ${props => props.theme.dimensions.headingSizes.h3}rem;
   }
 `;
 
