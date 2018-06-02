@@ -1,5 +1,5 @@
 import { injectGlobal } from 'utils/styled';
-import { onEvent } from './mixins';
+import { onEvent, getEmSize } from './mixins';
 import { breakpoints } from './variables';
 
 import normalize from './normalize';
@@ -25,8 +25,12 @@ injectGlobal`
   }
 
   html {
-    font-size: ${theme.dimensions.fontSize.regular}px !important;
-    line-height: ${theme.dimensions.lineHeight.regular} !important;
+    font-size: ${theme.dimensions.fontSize.regular}px;
+    line-height: ${theme.dimensions.lineHeight.regular};
+
+    @media (min-width: ${breakpoints.lg}px) {
+      font-size: ${theme.dimensions.fontSize.large}px;
+    }
   }
 
   body {
@@ -150,6 +154,15 @@ injectGlobal`
   dl {
     margin-top: 0;
     margin-bottom: 1rem;
+  }
+
+  ul {
+    padding-left: 1.45rem;
+
+    li {
+      padding-left: 0;
+      margin-bottom: .5rem;
+    }
   }
 
   dt {
