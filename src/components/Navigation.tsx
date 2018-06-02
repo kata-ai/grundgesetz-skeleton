@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import styled from 'utils/styled';
 import Container from './Container';
 import { MenuNode } from 'interfaces/nodes';
+import NavigationMenu from './NavigationMenu';
 
 interface ToggleableProps {
   isOpen?: boolean;
@@ -75,6 +76,7 @@ const DocumentationNav = styled('nav')`
 
 const DocumentationNavMenus = styled<ToggleableProps, 'div'>('div')`
   padding: 0 ${props => props.theme.dimensions.containerPadding}rem;
+  transition: all 0.3s ease;
 `;
 
 interface HeaderProps {
@@ -107,18 +109,7 @@ class Header extends React.Component<HeaderProps> {
             <DocumentationNavMenus>
               {navigation &&
                 navigation.map(({ node }) => (
-                  <div key={node.title}>
-                    {node.title}
-                    <ul>
-                      {node.items.map(item => (
-                        <li key={item.id}>
-                          <Link to={item.slug} onClick={onCloseNavMenu}>
-                            {item.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <NavigationMenu key={node.title} node={node} onCloseNavMenu={onCloseNavMenu} />
                 ))}
             </DocumentationNavMenus>
           </DocumentationNav>

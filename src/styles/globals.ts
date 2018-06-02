@@ -1,5 +1,5 @@
 import { injectGlobal } from 'utils/styled';
-import { onEvent, getEmSize } from './mixins';
+import { onEvent } from './mixins';
 import { breakpoints } from './variables';
 
 import normalize from './normalize';
