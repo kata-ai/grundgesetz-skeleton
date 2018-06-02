@@ -5,7 +5,11 @@ import styled from 'utils/styled';
 import Container from './Container';
 import { MenuNode } from 'interfaces/nodes';
 
-const Wrapper = styled<{ isOpen?: boolean }, 'header'>('header')`
+interface ToggleableProps {
+  isOpen?: boolean;
+}
+
+const Wrapper = styled<ToggleableProps, 'header'>('header')`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -69,7 +73,7 @@ const DocumentationNav = styled('nav')`
   flex-direction: column;
 `;
 
-const DocumentationNavMenus = styled<{ isOpen?: boolean }, 'div'>('div')`
+const DocumentationNavMenus = styled<ToggleableProps, 'div'>('div')`
   padding: 0 ${props => props.theme.dimensions.containerPadding}rem;
 `;
 
