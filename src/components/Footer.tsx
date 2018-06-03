@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'utils/styled';
 import Container from './Container';
 import { breakpoints } from 'styles/variables';

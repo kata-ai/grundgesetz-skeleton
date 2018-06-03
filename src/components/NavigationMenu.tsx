@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Link from 'gatsby-link';
 import { MenuNode } from 'interfaces/nodes';
 import styled from 'utils/styled';
