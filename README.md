@@ -20,6 +20,8 @@ Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using
 
 Grundgesetz is built on top of [Gatsby](https://www.gatsbyjs.org), a blazing-fast static site generator for React. It takes your React components and Markdown files and builds an optimised static website which can be easily deployed on many static site hosts.
 
+Also, putting the words "blazing fast" into any project's README seems to attract many folks into them lately.
+
 ---
 
 ## Geting Started

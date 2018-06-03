@@ -32,4 +32,6 @@ As mentioned earlier, Grundgesetz builds static web pages of your documentation,
 
 Grundgesetz is built on top of Gatsby, a blazing-fast static site generator for React. It takes your Markdown files and shoves them into the predesigned React templates, and builds an optimised static website which can be easily deployed on many static web hosts.
 
+Also, putting the words "blazing fast" into any project's README seems to attract many folks into them lately.
+
 Want to learn more about Gatsby? [Click here](https://www.gatsbyjs.org).
