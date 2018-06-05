@@ -1,9 +1,11 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import Page from 'components/Page';
 import Container from 'components/Container';
 import getPageById from 'utils/getPageById';
 import { MenuNode } from 'interfaces/nodes';
+import { SiteMetadata } from 'interfaces/gatsby';
 import MarkdownContent from 'components/MarkdownContent';
 import DocsWrapper from 'components/DocsWrapper';
 import DocsHeader from 'components/DocsHeader';
@@ -12,14 +14,7 @@ import Pagination from 'components/Pagination';
 interface PageTemplateProps {
   data: {
     site: {
-      siteMetadata: {
-        title: string;
-        description: string;
-        author: {
-          name: string;
-          url: string;
-        };
-      };
+      siteMetadata: SiteMetadata;
     };
     sectionList: {
       edges: Array<{
@@ -47,6 +42,11 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
 
   return (
     <Page docsPage>
+      <Helmet>
+        <title>{markdownRemark.frontmatter.title}</title>
+        <meta name="description" content={markdownRemark.excerpt} />
+        <meta property="og:description" content={markdownRemark.excerpt} />
+      </Helmet>
       <DocsWrapper>
         <Container>
           <DocsHeader>
@@ -68,9 +68,12 @@ export const query = graphql`
       siteMetadata {
         title
         description
+        siteUrl
+        keywords
         author {
           name
           url
+          email
         }
       }
     }

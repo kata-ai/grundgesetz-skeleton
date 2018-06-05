@@ -7,6 +7,7 @@ module.exports = {
     title: 'Grundgesetz',
     description: 'Zero-configuration documentation builder, powered by Gatsby.',
     siteUrl: 'https://grundgesetz-skeleton.now.sh',
+    keywords: 'gatsbyjs, gatsby, documentation, sample project',
     author: {
       name: 'Resi Respati',
       url: 'https://resir014.xyz',

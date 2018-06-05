@@ -1,12 +1,25 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
 import Page from 'components/Page';
 import NotFoundWrapper from 'components/NotFoundWrapper';
 import styled from 'utils/styled';
+import { SiteMetadata } from 'interfaces/gatsby';
 
-const NotFoundPage = () => (
+interface Props {
+  data: {
+    site: {
+      siteMetadata: SiteMetadata;
+    };
+  };
+}
+
+const NotFoundPage: React.SFC<Props> = ({ data }) => (
   <Page>
+    <Helmet>
+      <title>404: Page not found. &middot; {data.site.siteMetadata.title}</title>
+    </Helmet>
     <NotFoundWrapper>
       <Inner>
         <Title>404</Title>
@@ -22,6 +35,24 @@ const NotFoundPage = () => (
 );
 
 export default NotFoundPage;
+
+export const query = graphql`
+  query NotFoundPageQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+        keywords
+        author {
+          name
+          url
+          email
+        }
+      }
+    }
+  }
+`;
 
 const Inner = styled('div')`
   text-align: center;

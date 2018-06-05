@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import Page from 'components/Page';
 import Container from 'components/Container';
@@ -42,6 +43,9 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
 
   return (
     <Page docsPage>
+      <Helmet>
+        <meta property="og:title" content="Home" />
+      </Helmet>
       <DocsWrapper>
         <Container>
           <DocsHeader>
@@ -62,9 +66,12 @@ export const query = graphql`
       siteMetadata {
         title
         description
+        siteUrl
+        keywords
         author {
           name
           url
+          email
         }
       }
     }
