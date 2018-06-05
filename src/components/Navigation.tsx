@@ -4,7 +4,7 @@ import Link from 'gatsby-link';
 import styled from 'utils/styled';
 import Container from './Container';
 import { MenuNode } from 'interfaces/nodes';
-import NavigationMenu from './NavigationMenu';
+import DocumentationNavMenus from './DocumentationNavMenus';
 
 interface ToggleableProps {
   isOpen?: boolean;
@@ -74,17 +74,12 @@ const DocumentationNav = styled('nav')`
   flex-direction: column;
 `;
 
-const DocumentationNavMenus = styled<ToggleableProps, 'div'>('div')`
-  padding: 0 ${props => props.theme.dimensions.containerPadding}rem;
-  transition: all 0.3s ease;
-`;
-
 interface HeaderProps {
   title: string;
   navigation?: Array<{ node: MenuNode }>;
   open?: boolean;
-  onOpenNavMenu?: (e: React.MouseEvent<any>) => void;
-  onCloseNavMenu?: (e: React.MouseEvent<any>) => void;
+  onOpenNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
+  onCloseNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 class Header extends React.Component<HeaderProps> {
@@ -106,12 +101,7 @@ class Header extends React.Component<HeaderProps> {
             </Container>
           </TitleInner>
           <DocumentationNav>
-            <DocumentationNavMenus>
-              {navigation &&
-                navigation.map(({ node }) => (
-                  <NavigationMenu key={node.title} node={node} onCloseNavMenu={onCloseNavMenu} />
-                ))}
-            </DocumentationNavMenus>
+            <DocumentationNavMenus navigation={navigation} onCloseNavMenu={onCloseNavMenu} />
           </DocumentationNav>
         </WrapperInner>
       </Wrapper>
