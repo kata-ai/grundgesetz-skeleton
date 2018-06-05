@@ -1,8 +1,8 @@
 ---
-id: deploting
+id: deploying
 title: Deploying
 prev: development-server
-next: page-one
+next: project-structure
 ---
 
 TODO!

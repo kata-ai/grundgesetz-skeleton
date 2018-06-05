@@ -20,22 +20,22 @@
     ]
   },
   {
-    "title": "Examples",
+    "title": "Writing",
     "items": [
       {
-        "id": "page-one",
-        "slug": "/examples/page-one/",
-        "title": "Page One"
+        "id": "project-structure",
+        "slug": "/writing/project-structure/",
+        "title": "Project Structure"
       },
       {
-        "id": "page-two",
-        "slug": "/examples/page-two/",
-        "title": "Page Two"
+        "id": "table-of-contents",
+        "slug": "/writing/table-of-contents/",
+        "title": "Table of Contents"
       },
       {
-        "id": "page-three",
-        "slug": "/examples/page-with-custom-url/",
-        "title": "With Custom URL"
+        "id": "writing-in-markdown",
+        "slug": "/writing/writing-in-markdown/",
+        "title": "Writing in Markdoen"
       }
     ]
   }

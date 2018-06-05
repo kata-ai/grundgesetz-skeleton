@@ -32,26 +32,27 @@ Install this starter (assuming you have `gatsby-cli` installed) by running the f
 gatsby new project-name https://github.com/kata-ai/grundgesetz-skeleton
 ```
 
-## Developing
+## Running the server
 
-A nodejs >= 6.0.0 setup with [yarn](https://yarnpkg.com/) is recommended.
+Now that we have the project set up, let's `cd` to the generated project. Here we'll have to install our node dependencies. To do so, run the following command.
 
 ```bash
-# install dependencies
-yarn
-
-# ...or, for npm
+# npm
 npm install
-
-# serve with hot reload at localhost:8000
-npm start
-
-# build for production
-npm run build
-
-# build for production and push to gh-pages branch
-npm run deploy
+# yarn
+yarn
 ```
+
+To start working on our documentation, we need to start a development server.
+
+```bash
+# npm
+npm start
+# yarn
+yarn start
+```
+
+The command above will start a development server with hot-reloading capabilities on `localhost:8000`. From now on, you can start writing your documentation with ease. In the next section, we will learn how to build your pages and deploy them.
 
 ## Credits
 
