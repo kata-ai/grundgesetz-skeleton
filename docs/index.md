@@ -18,9 +18,9 @@ Getting started with Grundgesetz is as easy as 1-2-3! [Follow the documentation]
 
 Grundgesetz is set up for you to get up and running straight away. We know that writing proper documentation often takes a long time, so we aim to create this tool to standardise your documentation format. With Grundgesetz, publishing a documentation takes three basic steps.
 
-* **Write your documentation.** All your docs are written in the familiar Markdown format and go inside the `/docs` folder.
-* **Structure them.** After that, we arrange them neatly into Grundgesetz, and, like table of contents, which is managed through a JSON file, and pagination.
-* **Deploy.** Since Grundgesetz is a static site generator, you can instantly deploy to any static web host.
+- **Write your documentation.** All your docs are written in the familiar Markdown format and go inside the `/docs` folder.
+- **Structure them.** After that, we arrange them neatly into Grundgesetz, and, like table of contents, which is managed through a JSON file, and pagination.
+- **Deploy.** Since Grundgesetz is a static site generator, you can instantly deploy to any static web host.
 
 It will generate permalinks based on the directory tree, but you can override it anytime by setting a `permalink` frontmatter.
 
@@ -32,6 +32,6 @@ As mentioned earlier, Grundgesetz builds static web pages of your documentation,
 
 Grundgesetz is built on top of Gatsby, a blazing-fast static site generator for React. It takes your Markdown files and shoves them into the predesigned React templates, and builds an optimised static website which can be easily deployed on many static web hosts.
 
-Also, putting the words "blazing fast" into any project's README seems to attract many folks into them lately.
+Also, putting the words "blazing fast" into any project's README seems to attract a lot of folks lately.
 
 Want to learn more about Gatsby? [Click here](https://www.gatsbyjs.org).
