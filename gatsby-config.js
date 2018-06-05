@@ -5,6 +5,7 @@ const cssnext = require('postcss-cssnext');
 module.exports = {
   siteMetadata: {
     title: 'Grundgesetz',
+    sidebarTitle: 'Grundgesetz',
     description: 'Zero-configuration documentation builder, powered by Gatsby.',
     siteUrl: 'https://grundgesetz-skeleton.now.sh',
     keywords: 'gatsbyjs, gatsby, documentation, sample project',

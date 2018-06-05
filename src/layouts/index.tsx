@@ -44,26 +44,24 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
 
   render() {
     const { children, data, location } = this.props;
+    const { siteMetadata } = data.site;
     const { drawerIsOpen } = this.state;
 
     return (
       <ThemeProvider theme={theme}>
         <LayoutRoot>
           <Helmet>
-            <title>{data.site.siteMetadata.title}</title>
-            <link rel="canonical" href={`${data.site.siteMetadata.siteUrl}${location.pathname}`} />
-            <meta name="description" content={data.site.siteMetadata.description} />
-            <meta name="keywords" content={data.site.siteMetadata.keywords} />
+            <title>{siteMetadata.title}</title>
+            <link rel="canonical" href={`${siteMetadata.siteUrl}${location.pathname}`} />
+            <meta name="description" content={siteMetadata.description} />
+            <meta name="keywords" content={siteMetadata.keywords} />
             <meta property="og:type" content="website" />
-            <meta property="og:site_name" content={data.site.siteMetadata.title} />
-            <meta property="og:description" content={data.site.siteMetadata.description} />
-            <meta
-              property="og:url"
-              content={`${data.site.siteMetadata.siteUrl}${location.pathname}`}
-            />
+            <meta property="og:site_name" content={siteMetadata.title} />
+            <meta property="og:description" content={siteMetadata.description} />
+            <meta property="og:url" content={`${siteMetadata.siteUrl}${location.pathname}`} />
           </Helmet>
           <Navigation
-            title={data.site.siteMetadata.title}
+            title={siteMetadata.sidebarTitle || siteMetadata.title}
             navigation={data.navigationMenus.edges}
             open={drawerIsOpen}
             onCloseNavMenu={this.closeDrawer}
@@ -94,6 +92,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        sidebarTitle
         description
         siteUrl
         keywords

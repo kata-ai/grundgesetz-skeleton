@@ -6,6 +6,7 @@ export interface SiteAuthor {
 
 export interface SiteMetadata {
   title: string;
+  sidebarTitle: string;
   description: string;
   siteUrl: string;
   keywords: string;
