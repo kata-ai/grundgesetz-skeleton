@@ -35,7 +35,7 @@ interface PageTemplateProps {
 }
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
-  const { markdownRemark, sectionList } = data;
+  const { markdownRemark, sectionList, site } = data;
   const { prev, next } = markdownRemark.frontmatter;
   const prevPage = getPageById(sectionList.edges, prev);
   const nextPage = getPageById(sectionList.edges, next);
@@ -43,8 +43,11 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   return (
     <Page docsPage>
       <Helmet>
-        <title>{markdownRemark.frontmatter.title}</title>
+        <title>
+          {markdownRemark.frontmatter.title} &middot; {site.siteMetadata.title}
+        </title>
         <meta name="description" content={markdownRemark.excerpt} />
+        <meta property="og:title" content={markdownRemark.frontmatter.title} />
         <meta property="og:description" content={markdownRemark.excerpt} />
       </Helmet>
       <DocsWrapper>
