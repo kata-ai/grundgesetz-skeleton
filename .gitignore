@@ -8,6 +8,10 @@ public/
 # Gatsby cache
 .cache/
 
+# npm lockfile
+# since we use yarn, this can be ignored
+/package-lock.json
+
 # Logs
 logs
 *.log
