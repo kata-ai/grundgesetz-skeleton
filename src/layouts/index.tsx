@@ -14,7 +14,6 @@ import 'styles/globals';
 import 'prism-themes/themes/prism-a11y-dark.css';
 import FloatingNavButton from 'components/FloatingNavButton';
 import Footer from 'components/Footer';
-import Overlay from 'components/Overlay';
 
 interface WrapperProps extends RouteComponentProps<{}> {
   children: () => any;
@@ -67,7 +66,6 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
             open={drawerIsOpen}
             onCloseNavMenu={this.closeDrawer}
           />
-          <Overlay visible={drawerIsOpen} onClick={this.closeDrawer} />
           <FloatingNavButton onClick={this.toggleDrawer} drawerIsOpen={drawerIsOpen} />
           <LayoutMain>
             {children()}
