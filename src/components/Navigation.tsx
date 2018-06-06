@@ -32,6 +32,7 @@ const Wrapper = styled<ToggleableProps, 'header'>('header')`
     pointer-events: auto;
     transform: translate(${props => (props.isOpen ? '0' : '-100%')}, 0);
     transition: transform 0.3s ease;
+    z-index: ${props => props.theme.zIndex.drawer};
   }
 
   @media (min-width: ${props => props.theme.breakpoints.lg}px) {

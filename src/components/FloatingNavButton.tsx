@@ -16,7 +16,7 @@ const Wrapper = styled<ToggleableProps, 'button'>('button')`
     props.drawerIsOpen ? props.theme.colors.error : props.theme.colors.brand};
   color: ${props => props.theme.colors.white};
   cursor: pointer;
-  z-index: 3;
+  z-index: ${props => props.theme.zIndex.floatingButton};
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.15);

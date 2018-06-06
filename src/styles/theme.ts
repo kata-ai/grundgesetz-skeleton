@@ -117,6 +117,14 @@ const theme: Theme = {
   // Heights
   heights: {
     header: 60
+  },
+
+  // z-index
+  zIndex: {
+    content: 1,
+    overlay: 90,
+    drawer: 95,
+    floatingButton: 100
   }
 };
 

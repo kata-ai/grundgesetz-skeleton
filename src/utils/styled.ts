@@ -75,6 +75,12 @@ export type Theme = {
   heights: {
     header: number;
   };
+  zIndex: {
+    content: number;
+    overlay: number;
+    drawer: number;
+    floatingButton: number;
+  };
 };
 
 const {
