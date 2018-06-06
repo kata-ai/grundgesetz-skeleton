@@ -6,7 +6,7 @@ interface OverlayProps {
 }
 
 const Overlay = styled<OverlayProps, 'div'>('div')`
-  visibility: ${props => (props.visible ? 'visible' : 'hidden')};
+  opacity: ${props => (props.visible ? 1 : 0)};
   position: absolute;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@ const Overlay = styled<OverlayProps, 'div'>('div')`
   right: 0;
   background-color: ${props => transparentize(0.25, props.theme.colors.black)};
   z-index: ${props => props.theme.zIndex.overlay};
-  transition: visibility 0.3 ease;
+  transition: all 0.3s ease;
 `;
 
 export default Overlay;
