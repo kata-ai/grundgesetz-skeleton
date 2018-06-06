@@ -7,7 +7,7 @@ interface OverlayProps {
 
 const Overlay = styled<OverlayProps, 'div'>('div')`
   opacity: ${props => (props.visible ? 1 : 0)};
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
