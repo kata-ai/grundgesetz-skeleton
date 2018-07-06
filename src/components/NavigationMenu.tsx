@@ -5,11 +5,14 @@ import styled from 'utils/styled';
 
 interface NavigationMenuProps {
   node: MenuNode;
+  menuKey: string;
+  isOpen?: boolean;
+  onClick?: (e: React.MouseEvent<any>) => void;
   onCloseNavMenu?: (e: React.MouseEvent<any>) => void;
 }
 
-interface NavigationMenuState {
-  isOpen: boolean;
+interface ToggleableProps {
+  isOpen?: boolean;
 }
 
 const Root = styled('div')`
@@ -17,7 +20,7 @@ const Root = styled('div')`
   margin-bottom: 1rem;
 `;
 
-const ToggleButton = styled<NavigationMenuState, 'button'>('button')`
+const ToggleButton = styled<ToggleableProps, 'button'>('button')`
   display: block;
   width: 100%;
   margin: 0;
@@ -46,7 +49,7 @@ const ToggleButtonSpan = styled('span')`
   font-weight: 500;
 `;
 
-const ToggleMenu = styled<NavigationMenuState, 'ul'>('ul')`
+const ToggleMenu = styled<ToggleableProps, 'ul'>('ul')`
   display: ${props => (props.isOpen ? 'block' : 'none')};
   max-height: ${props => !props.isOpen && 0};
   list-style-type: none;
@@ -56,27 +59,35 @@ const ToggleMenu = styled<NavigationMenuState, 'ul'>('ul')`
 `;
 
 const ToggleMenuList = styled('li')`
-  margin: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
   font-size: 85%;
   color: ${props => props.theme.colors.gray.calm};
 `;
 
-class NavigationMenu extends React.PureComponent<NavigationMenuProps, NavigationMenuState> {
-  constructor(props: NavigationMenuProps) {
-    super(props);
+const ToggleMenuListLink = styled(Link)`
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: ${props => props.theme.colors.gray.calm};
 
-    this.state = {
-      isOpen: false
-    };
+  &:hover,
+  &:focus {
+    text-decoration: none;
   }
 
+  &.active {
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.brand};
+  }
+`;
+
+class NavigationMenu extends React.PureComponent<NavigationMenuProps, ToggleableProps> {
   render() {
-    const { node, onCloseNavMenu } = this.props;
-    const { isOpen } = this.state;
+    const { node, onCloseNavMenu, onClick, isOpen } = this.props;
 
     return (
       <Root>
-        <ToggleButton onClick={this.toggleNavMenu} isOpen={isOpen}>
+        <ToggleButton onClick={onClick} isOpen={isOpen}>
           <ToggleButtonInner>
             <ToggleButtonSpan>{node.title}</ToggleButtonSpan>
             {isOpen ? (
@@ -106,21 +117,15 @@ class NavigationMenu extends React.PureComponent<NavigationMenuProps, Navigation
         <ToggleMenu isOpen={isOpen}>
           {node.items.map(item => (
             <ToggleMenuList key={item.id}>
-              <Link to={item.slug} onClick={onCloseNavMenu}>
+              <ToggleMenuListLink to={item.slug} activeClassName="active" onClick={onCloseNavMenu}>
                 {item.title}
-              </Link>
+              </ToggleMenuListLink>
             </ToggleMenuList>
           ))}
         </ToggleMenu>
       </Root>
     );
   }
-
-  private toggleNavMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
-    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
-  };
 }
 
 export default NavigationMenu;
