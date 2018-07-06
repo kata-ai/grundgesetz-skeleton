@@ -18,7 +18,7 @@ Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using
 
 ### Blazing Fast
 
-Grundgesetz is built on top of [Gatsby](https://www.gatsbyjs.org), a blazing-fast static site generator for React. It takes your React components and Markdown files and builds an optimised static website which can be easily deployed on many static site hosts.
+Grundgesetz is built on top of [Gatsby](https://www.gatsbyjs.org), a blazing-fast static site generator for React. Grundgesetz is built on top of Gatsby, a blazing-fast static site generator for React. Want to learn more about Gatsby? [Click here](https://www.gatsbyjs.org).
 
 Also, putting the words "blazing fast" into any project's README seems to attract a lot of folks lately.
 

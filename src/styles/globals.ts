@@ -199,8 +199,8 @@ injectGlobal`
   }
 
   code {
-    padding: 0.25rem 0.5rem;
-    font-size: 90%;
+    padding: 0.125rem 0.25rem;
+    font-size: 80%;
     color: ${theme.colors.gray.copy};
     background-color: ${theme.colors.ui.bright};
     border-radius: 3px;

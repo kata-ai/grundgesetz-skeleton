@@ -26,12 +26,10 @@ It will generate permalinks based on the directory tree, but you can override it
 
 ### Instantly Deployable
 
-As mentioned earlier, Grundgesetz builds static web pages of your documentation, which can be instantly deployed to any static web host that you prefer. Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using the built-in `deploy` task. You can also set up a continuous deployment pipeline for hosting providers like [Netlify](https://www.netlify.com/).
+Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using the built-in `deploy` task. You can also set up a continuous deployment pipeline for hosting providers like [Netlify](https://www.netlify.com/).
 
 ### Blazing Fast
 
-Grundgesetz is built on top of Gatsby, a blazing-fast static site generator for React. It takes your Markdown files and shoves them into the predesigned React templates, and builds an optimised static website which can be easily deployed on many static web hosts.
+Grundgesetz is built on top of Gatsby, a blazing-fast static site generator for React. Want to learn more about Gatsby? [Click here](https://www.gatsbyjs.org).
 
 Also, putting the words "blazing fast" into any project's README seems to attract a lot of folks lately.
-
-Want to learn more about Gatsby? [Click here](https://www.gatsbyjs.org).
