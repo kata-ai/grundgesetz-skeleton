@@ -7,7 +7,7 @@ module.exports = {
     title: 'Grundgesetz',
     sidebarTitle: 'Grundgesetz',
     description: 'Zero-configuration documentation builder, powered by Gatsby.',
-    siteUrl: 'https://grundgesetz-skeleton.now.sh',
+    siteUrl: 'https://grundgesetz-skeleton.netlify.com',
     keywords: 'gatsbyjs, gatsby, documentation, sample project',
     author: {
       name: 'Resi Respati',
@@ -52,7 +52,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
+        siteUrl: 'https://grundgesetz-skeleton.netlify.com'
       }
     },
     'gatsby-plugin-styled-components',
