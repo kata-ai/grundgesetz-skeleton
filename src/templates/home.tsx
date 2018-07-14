@@ -7,6 +7,8 @@ import { MenuNode } from 'interfaces/nodes';
 import MarkdownContent from 'components/MarkdownContent';
 import DocsWrapper from 'components/DocsWrapper';
 import DocsHeader from 'components/DocsHeader';
+import FooterWrapper from 'components/FooterWrapper';
+import Footer from 'components/Footer';
 
 interface PageTemplateProps {
   data: {
@@ -54,6 +56,11 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           <MarkdownContent html={markdownRemark.html} />
         </Container>
       </DocsWrapper>
+      <FooterWrapper>
+        <Container>
+          <Footer />
+        </Container>
+      </FooterWrapper>
     </Page>
   );
 };

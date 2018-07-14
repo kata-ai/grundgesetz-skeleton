@@ -5,6 +5,8 @@ import styled from 'utils/styled';
 import Container from './Container';
 import { MenuNode } from 'interfaces/nodes';
 import DocumentationNavMenus from './DocumentationNavMenus';
+import MobileHeader from './MobileHeader';
+import NavButton from './NavButton';
 
 interface ToggleableProps {
   isOpen?: boolean;
@@ -51,11 +53,19 @@ const WrapperInner = styled('div')`
     height: 100vh;
     overflow-y: auto;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    margin-top: ${props => props.theme.heights.header}px;
+  }
 `;
 
 const TitleInner = styled('div')`
   padding: 1rem ${props => props.theme.dimensions.containerPadding}rem;
   color: ${props => props.theme.colors.gray.copy};
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    padding-top: 0;
+  }
 `;
 
 const HomepageLink = styled(Link)`
@@ -80,6 +90,7 @@ interface HeaderProps {
   open?: boolean;
   onOpenNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
   onCloseNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
+  toggleDrawer?: () => void;
 }
 
 class Header extends React.Component<HeaderProps> {
@@ -88,10 +99,13 @@ class Header extends React.Component<HeaderProps> {
   }
 
   render() {
-    const { title, navigation, open, onCloseNavMenu } = this.props;
+    const { title, toggleDrawer, navigation, open, onCloseNavMenu } = this.props;
 
     return (
       <Wrapper isOpen={open}>
+        <MobileHeader absolute transparent>
+          <NavButton onClick={toggleDrawer} drawerIsOpen={open} />
+        </MobileHeader>
         <WrapperInner>
           <TitleInner>
             <Container>

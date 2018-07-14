@@ -41,7 +41,7 @@ const theme: Theme = {
       border: brandColors.icebluethree
     },
     black: brandColors.black,
-    border: brandColors.grey40,
+    border: brandColors.grey30,
     ui: {
       bright: brandColors.grey20,
       light: brandColors.grey10,
@@ -116,15 +116,16 @@ const theme: Theme = {
 
   // Heights
   heights: {
-    header: 60
+    header: 64
   },
 
   // z-index
   zIndex: {
     content: 1,
-    overlay: 90,
-    drawer: 95,
-    floatingButton: 100
+    header: 90,
+    overlay: 95,
+    floatingButton: 100,
+    drawer: 105
   }
 };
 

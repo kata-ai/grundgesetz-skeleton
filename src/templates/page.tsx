@@ -10,6 +10,8 @@ import MarkdownContent from 'components/MarkdownContent';
 import DocsWrapper from 'components/DocsWrapper';
 import DocsHeader from 'components/DocsHeader';
 import Pagination from 'components/Pagination';
+import Footer from 'components/Footer';
+import FooterWrapper from 'components/FooterWrapper';
 
 interface PageTemplateProps {
   data: {
@@ -58,7 +60,12 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           <MarkdownContent html={markdownRemark.html} />
         </Container>
       </DocsWrapper>
-      {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
+      <FooterWrapper>
+        <Container>
+          {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
+          <Footer />
+        </Container>
+      </FooterWrapper>
     </Page>
   );
 };

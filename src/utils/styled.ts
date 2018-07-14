@@ -78,6 +78,7 @@ export type Theme = {
   zIndex: {
     content: number;
     overlay: number;
+    header: number;
     drawer: number;
     floatingButton: number;
   };
