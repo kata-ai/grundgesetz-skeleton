@@ -20,9 +20,9 @@ To start working on our documentation, we need to start a development server.
 
 ```bash
 # npm
-npm start
+npm dev
 # yarn
-yarn start
+yarn dev
 ```
 
 The command above will start a development server with hot-reloading capabilities on `localhost:8000`. From now on, you can start writing your documentation with ease. In the next section, we will learn how to build your pages and deploy them.
@@ -31,5 +31,5 @@ The command above will start a development server with hot-reloading capabilitie
 
 Due to limitations with Gatsby, you might have to restart the server when:
 
-* you add a new Markdown page
-* you updated the `toc.json` file
+- you add a new Markdown page
+- you updated the `toc.json` file
