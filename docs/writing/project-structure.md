@@ -5,7 +5,7 @@ prev: deploying
 next: table-of-contents
 ---
 
-The project structure of Grundgesetz is specifically designed for
+The project structure of Grundgesetz is specifically designed for easy maintenance of documentation and the site's code.
 
 ```
 .
