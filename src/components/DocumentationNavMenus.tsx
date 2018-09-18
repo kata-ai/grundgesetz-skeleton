@@ -16,8 +16,6 @@ class DocumentationNavMenus extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    // TODO: refactor menu components to keep active menu state
-    // (use context API inside Layout components)
     this.state = {
       activeMenuKey: undefined
     };
