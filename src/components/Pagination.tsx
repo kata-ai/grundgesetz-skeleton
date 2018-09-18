@@ -10,6 +10,7 @@ const Wrapper = styled('aside')`
   background-color: ${props => props.theme.colors.ui.light};
   border: 1px solid ${props => props.theme.colors.ui.bright};
   border-radius: 4px;
+  line-height: ${props => props.theme.dimensions.lineHeight.regular};
 `;
 
 const WrapperInner = styled(Container)`
