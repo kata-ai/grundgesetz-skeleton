@@ -4777,6 +4777,12 @@ gatsby-plugin-canonical-urls@^2.0.5:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
+gatsby-plugin-layout@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-1.0.1.tgz#dc893df3d6d8b537d1fc6f35f348762d37f615aa"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
 gatsby-plugin-page-creator@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.0.0.tgz#be8b2ffa4c0a9de6e0db10acdfa4e26b27f81123"

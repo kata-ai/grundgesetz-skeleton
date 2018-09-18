@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
@@ -6,8 +7,9 @@ import Page from 'components/Page';
 import NotFoundWrapper from 'components/NotFoundWrapper';
 import styled from 'utils/styled';
 import { SiteMetadata } from 'interfaces/gatsby';
+import { RouteComponentProps } from '@reach/router';
 
-interface Props {
+interface Props extends RouteComponentProps {
   data: {
     site: {
       siteMetadata: SiteMetadata;
@@ -25,9 +27,7 @@ const NotFoundPage: React.SFC<Props> = ({ data }) => (
         <Title>404</Title>
         <Body>We can't find the page you're looking for.</Body>
         <Body>
-          <Link to="/" href="/">
-            Go back?
-          </Link>
+          <Link to="/">Go back?</Link>
         </Body>
       </Inner>
     </NotFoundWrapper>

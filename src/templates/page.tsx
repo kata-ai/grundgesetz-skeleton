@@ -1,5 +1,7 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import { RouteComponentProps } from '@reach/router';
 
 import Page from 'components/Page';
 import Container from 'components/Container';
@@ -13,7 +15,7 @@ import Pagination from 'components/Pagination';
 import Footer from 'components/Footer';
 import FooterWrapper from 'components/FooterWrapper';
 
-interface PageTemplateProps {
+interface PageTemplateProps extends RouteComponentProps {
   data: {
     site: {
       siteMetadata: SiteMetadata;
