@@ -109,7 +109,7 @@ class Header extends React.Component<HeaderProps> {
         <WrapperInner>
           <TitleInner>
             <Container>
-              <HomepageLink to="/" href="/" onClick={onCloseNavMenu}>
+              <HomepageLink to="/" onClick={onCloseNavMenu}>
                 {title}
               </HomepageLink>
             </Container>
