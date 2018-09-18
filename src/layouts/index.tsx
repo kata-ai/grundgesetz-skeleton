@@ -11,8 +11,9 @@ import { ThemeProvider } from 'utils/styled';
 import { MenuNode } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
 
+import 'modern-normalize';
 import 'styles/globals';
-import 'prism-themes/themes/prism-a11y-dark.css';
+import 'prism-themes/themes/prism-atom-dark.css';
 import NavButton from 'components/NavButton';
 import MobileHeader from 'components/MobileHeader';
 import Overlay from 'components/Overlay';
