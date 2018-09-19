@@ -1,5 +1,4 @@
 import { injectGlobal } from 'utils/styled';
-import { onEvent } from './mixins';
 import { breakpoints } from './variables';
 
 import theme from './theme';
@@ -46,9 +45,9 @@ injectGlobal`
     color: ${theme.colors.brand};
     text-decoration: none;
 
-    ${onEvent`
+    &:hover, &:focus {
       text-decoration: underline;
-    `}
+    }
   }
 
   img {

@@ -125,11 +125,7 @@ export default styled(MarkdownContent)`
   }
 
   code {
-    padding: 0.125rem 0.25rem;
     font-size: 80%;
-    color: ${props => props.theme.colors.gray.copy};
-    background-color: ${props => props.theme.colors.ui.bright};
-    border-radius: 3px;
     white-space: pre-wrap;
   }
 
