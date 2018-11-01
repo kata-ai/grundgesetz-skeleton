@@ -22,7 +22,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.7.1",
+    "babel-plugin-styled-components": "^1.8.0",
     "classnames": "^2.2.6",
     "gatsby": "^2.0.1",
     "gatsby-link": "^2.0.1",
@@ -50,7 +50,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "styled-components": "^3.4.8",
+    "styled-components": "^4.0.3",
     "typescript": "^3.0.3"
   },
   "devDependencies": {
