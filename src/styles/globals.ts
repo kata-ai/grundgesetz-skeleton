@@ -3,7 +3,6 @@ import { breakpoints } from './variables';
 
 import theme from './theme';
 
-// tslint:disable-next-line:no-unused-expression
 const GlobalStyles = createGlobalStyle`
   /* Set up a decent box model on the root element */
   html {

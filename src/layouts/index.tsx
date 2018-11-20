@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
+import { Normalize } from 'styled-normalize';
 import { WindowLocation } from '@reach/router';
 
 import Navigation from 'components/Navigation';
@@ -12,7 +13,6 @@ import { ThemeProvider } from 'utils/styled';
 import { MenuNode } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
 
-import 'modern-normalize';
 import 'prism-themes/themes/prism-atom-dark.css';
 import NavButton from 'components/NavButton';
 import MobileHeader from 'components/MobileHeader';
@@ -58,6 +58,7 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
 
             return (
               <LayoutRoot>
+                <Normalize />
                 <GlobalStyles />
                 <Helmet>
                   <title>{siteMetadata.title}</title>
