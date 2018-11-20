@@ -1,5 +1,3 @@
-import { Theme } from 'utils/styled';
-
 export const brandColors = {
   katablue: '#006fe6',
   lightkatablue: '#7fbcff',
@@ -30,7 +28,7 @@ export const brandColors = {
   yellow: '#ffc400'
 };
 
-const theme: Theme = {
+const theme = {
   // Site colors
   colors: {
     brand: brandColors.katablue,

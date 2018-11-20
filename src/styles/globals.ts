@@ -1,19 +1,21 @@
-import { injectGlobal } from 'utils/styled';
+import { createGlobalStyle } from 'utils/styled';
 import { breakpoints } from './variables';
 
 import theme from './theme';
 
 // tslint:disable-next-line:no-unused-expression
-injectGlobal`
-  // Set up a decent box model on the root element
+const GlobalStyles = createGlobalStyle`
+  /* Set up a decent box model on the root element */
   html {
     box-sizing: border-box;
   }
 
-  // Make all elements from the DOM inherit from the parent box-sizing
-  // Since '*' has a specificity of 0, it does not override the 'html value
-  // making all elements inheriting from the root box-sizing value
-  // See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+  /*
+   * Make all elements from the DOM inherit from the parent box-sizing
+   * Since '*' has a specificity of 0, it does not override the 'html value
+   * making all elements inheriting from the root box-sizing value
+   * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+   */
   *,
   *::before,
   *::after {
@@ -56,7 +58,7 @@ injectGlobal`
     position: relative;
   }
 
-  // Figure elements
+  /* Figure elements */
   figure {
     margin: 2rem 0;
   }
@@ -103,3 +105,5 @@ injectGlobal`
     }
   }
 `;
+
+export default GlobalStyles;

@@ -6,13 +6,13 @@ import { WindowLocation } from '@reach/router';
 import Navigation from 'components/Navigation';
 import LayoutRoot from 'components/LayoutRoot';
 import LayoutMain from 'components/LayoutMain';
+import GlobalStyles from 'styles/globals';
 import theme from 'styles/theme';
 import { ThemeProvider } from 'utils/styled';
 import { MenuNode } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
 
 import 'modern-normalize';
-import 'styles/globals';
 import 'prism-themes/themes/prism-atom-dark.css';
 import NavButton from 'components/NavButton';
 import MobileHeader from 'components/MobileHeader';
@@ -58,6 +58,7 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
 
             return (
               <LayoutRoot>
+                <GlobalStyles />
                 <Helmet>
                   <title>{siteMetadata.title}</title>
                   <meta name="description" content={siteMetadata.description} />
