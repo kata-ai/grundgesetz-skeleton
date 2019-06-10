@@ -3,14 +3,16 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { RouteComponentProps } from '@reach/router';
 
-import Page from 'components/old-layout/Page';
-import Container from 'components/old-layout/Container';
+import { Page } from 'components/layout/Page';
+
+import { Container } from 'components/layout/Container';
+import { DocsWrapper } from 'components/docs/DocsWrapper';
+import { DocsHeader } from 'components/docs/DocsHeader';
+
 import { MenuNode, Edge } from 'interfaces/nodes';
 import MarkdownContent from 'components/old-layout/MarkdownContent';
-import DocsWrapper from 'components/old-layout/DocsWrapper';
-import DocsHeader from 'components/old-layout/DocsHeader';
-import FooterWrapper from 'components/old-layout/FooterWrapper';
-import Footer from 'components/old-layout/Footer';
+// import FooterWrapper from 'components/old-layout/FooterWrapper';
+// import Footer from 'components/old-layout/Footer';
 
 interface PageTemplateProps extends RouteComponentProps {
   data: {
@@ -50,17 +52,10 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
       </Helmet>
       <DocsWrapper>
         <Container>
-          <DocsHeader>
-            <h1>Welcome to Grundgesetz!</h1>
-          </DocsHeader>
+          <DocsHeader>Welcome to Grundgesetz!</DocsHeader>
           <MarkdownContent html={markdownRemark.html} />
         </Container>
       </DocsWrapper>
-      <FooterWrapper>
-        <Container>
-          <Footer />
-        </Container>
-      </FooterWrapper>
     </Page>
   );
 };

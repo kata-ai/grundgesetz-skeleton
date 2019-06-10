@@ -3,17 +3,16 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { RouteComponentProps } from '@reach/router';
 
-import Page from 'components/old-layout/Page';
-import Container from 'components/old-layout/Container';
-import getPageById from 'utils/getPageById';
+import { getPageById } from 'utils/helpers';
 import { MenuNode, Edge } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
+
+import { Page } from 'components/layout/Page';
+import { Container } from 'components/layout/Container';
+import { DocsWrapper } from 'components/docs/DocsWrapper';
+import { DocsHeader } from 'components/docs/DocsHeader';
+
 import MarkdownContent from 'components/old-layout/MarkdownContent';
-import DocsWrapper from 'components/old-layout/DocsWrapper';
-import DocsHeader from 'components/old-layout/DocsHeader';
-import Pagination from 'components/old-layout/Pagination';
-import Footer from 'components/old-layout/Footer';
-import FooterWrapper from 'components/old-layout/FooterWrapper';
 
 interface PageTemplateProps extends RouteComponentProps {
   data: {
@@ -54,18 +53,10 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
       </Helmet>
       <DocsWrapper>
         <Container>
-          <DocsHeader>
-            <h1>{markdownRemark.frontmatter.title}</h1>
-          </DocsHeader>
+          <DocsHeader>{markdownRemark.frontmatter.title}</DocsHeader>
           <MarkdownContent html={markdownRemark.html} />
         </Container>
       </DocsWrapper>
-      <FooterWrapper>
-        <Container>
-          {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
-          <Footer />
-        </Container>
-      </FooterWrapper>
     </Page>
   );
 };

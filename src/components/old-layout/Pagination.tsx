@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 import styled from 'utils/styled';
 import { MenuItem } from 'interfaces/nodes';
 import { breakpoints } from 'styles/variables';
-import Container from './Container';
+import { Container } from '../layout/Container';
 
 const Wrapper = styled('aside')`
   padding: 2rem ${props => props.theme.dimensions.containerPadding}rem;

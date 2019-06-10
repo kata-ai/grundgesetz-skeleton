@@ -8,6 +8,7 @@ import NotFoundWrapper from 'components/old-layout/NotFoundWrapper';
 import styled from 'utils/styled';
 import { SiteMetadata } from 'interfaces/gatsby';
 import { RouteComponentProps } from '@reach/router';
+import { Heading, Text } from 'components/foundations';
 
 interface Props extends RouteComponentProps {
   data: {
@@ -24,11 +25,15 @@ const NotFoundPage: React.SFC<Props> = ({ data }) => (
     </Helmet>
     <NotFoundWrapper>
       <Inner>
-        <Title>404</Title>
-        <Body>We can't find the page you're looking for.</Body>
-        <Body>
+        <Heading as="h1" size={800} color="grey09" m={0}>
+          404
+        </Heading>
+        <Text as="p" size={400} color="grey07">
+          We can't find the page you're looking for.
+        </Text>
+        <Text as="p" size={400} color="grey07">
           <Link to="/">Go back?</Link>
-        </Body>
+        </Text>
       </Inner>
     </NotFoundWrapper>
   </Page>
@@ -56,17 +61,4 @@ export const query = graphql`
 
 const Inner = styled('div')`
   text-align: center;
-`;
-
-const Title = styled('h1')`
-  font-size: 5rem;
-  margin: 0;
-  color: ${props => props.theme.colors.gray.calm};
-`;
-
-const Body = styled('p')`
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-  font-size: 1.25rem;
-  color: ${props => props.theme.colors.gray.calm};
 `;

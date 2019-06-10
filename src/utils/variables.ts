@@ -272,3 +272,26 @@ export const breakpoints = {
   /** 1440px and above */
   xl: 1440
 };
+
+export const layerIndexes = {
+  base: 0,
+  flat: 1,
+  floating: 2,
+  stickyNav: 8,
+  overlay: 16,
+  dialog: 24,
+  popout: 32
+};
+
+export const dimensions = {
+  widths: {
+    sidebar: {
+      sm: 240,
+      md: 280,
+      lg: 200
+    }
+  },
+  heights: {
+    header: 64
+  }
+};

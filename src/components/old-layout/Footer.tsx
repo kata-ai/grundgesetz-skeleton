@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'utils/styled';
-import Container from './Container';
+import { Container } from '../layout/Container';
 import { breakpoints } from 'styles/variables';
 
 const Wrapper = styled('footer')`
@@ -23,11 +23,7 @@ const Footer: React.SFC = () => (
       <p>
         <small>
           Created with{' '}
-          <a
-            href="https://github.com/kata-ai/grundgesetz-skeleton"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://github.com/kata-ai/grundgesetz-skeleton" target="_blank" rel="noopener noreferrer">
             Grundgesetz
           </a>
           .
