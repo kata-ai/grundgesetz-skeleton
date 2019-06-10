@@ -1,4 +1,5 @@
-// styled-components.ts
+// tslint:disable:no-duplicate-imports
+
 import * as styledComponents from 'styled-components';
 import { ThemedStyledComponentsModule } from 'styled-components';
 import theme from 'styles/theme';

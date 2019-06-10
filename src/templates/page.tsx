@@ -6,7 +6,7 @@ import { RouteComponentProps } from '@reach/router';
 import Page from 'components/Page';
 import Container from 'components/Container';
 import getPageById from 'utils/getPageById';
-import { MenuNode } from 'interfaces/nodes';
+import { MenuNode, Edge } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
 import MarkdownContent from 'components/MarkdownContent';
 import DocsWrapper from 'components/DocsWrapper';
@@ -21,9 +21,7 @@ interface PageTemplateProps extends RouteComponentProps {
       siteMetadata: SiteMetadata;
     };
     sectionList: {
-      edges: Array<{
-        node: MenuNode;
-      }>;
+      edges: Edge<MenuNode>[];
     };
     markdownRemark: {
       html: string;

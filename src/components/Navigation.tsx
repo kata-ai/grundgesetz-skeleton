@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 
 import styled from 'utils/styled';
 import Container from './Container';
-import { MenuNode } from 'interfaces/nodes';
+import { MenuNode, Edge } from 'interfaces/nodes';
 import DocumentationNavMenus from './DocumentationNavMenus';
 import MobileHeader from './MobileHeader';
 import NavButton from './NavButton';
@@ -12,7 +12,7 @@ interface ToggleableProps {
   isOpen?: boolean;
 }
 
-const Wrapper = styled<ToggleableProps, 'header'>('header')`
+const Wrapper = styled('header')<ToggleableProps>`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -86,7 +86,7 @@ const DocumentationNav = styled('nav')`
 
 interface HeaderProps {
   title: string;
-  navigation?: Array<{ node: MenuNode }>;
+  navigation?: Edge<MenuNode>[];
   open?: boolean;
   onOpenNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
   onCloseNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'utils/styled';
-import { MenuNode } from 'interfaces/nodes';
+import { MenuNode, Edge } from 'interfaces/nodes';
 import NavigationMenu from './NavigationMenu';
 
 interface Props {
-  navigation?: Array<{ node: MenuNode }>;
+  navigation?: Edge<MenuNode>[];
   onCloseNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
