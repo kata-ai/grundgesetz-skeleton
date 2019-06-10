@@ -4,9 +4,9 @@ import { graphql, StaticQuery } from 'gatsby';
 import { Normalize } from 'styled-normalize';
 import { WindowLocation } from '@reach/router';
 
-import Navigation from 'components/Navigation';
-import LayoutRoot from 'components/LayoutRoot';
-import LayoutMain from 'components/LayoutMain';
+import Navigation from 'components/old-layout/Navigation';
+import LayoutRoot from 'components/old-layout/LayoutRoot';
+import LayoutMain from 'components/old-layout/LayoutMain';
 import GlobalStyles from 'styles/globals';
 import theme from 'styles/theme';
 import { ThemeProvider } from 'utils/styled';
@@ -14,9 +14,10 @@ import { MenuNode, Edge } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
 
 import 'prism-themes/themes/prism-atom-dark.css';
-import NavButton from 'components/NavButton';
-import MobileHeader from 'components/MobileHeader';
-import Overlay from 'components/Overlay';
+import NavButton from 'components/old-layout/NavButton';
+import MobileHeader from 'components/old-layout/MobileHeader';
+import Overlay from 'components/old-layout/Overlay';
+import { AksaraReset } from 'components/foundations';
 
 interface WrapperProps {
   location?: WindowLocation;
@@ -49,44 +50,43 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
     const { drawerIsOpen } = this.state;
 
     return (
-      <ThemeProvider theme={theme}>
-        <StaticQuery query={query}>
-          {(data: DataProps) => {
-            const { siteMetadata } = data.site;
+      <AksaraReset>
+        <ThemeProvider theme={theme}>
+          <StaticQuery query={query}>
+            {(data: DataProps) => {
+              const { siteMetadata } = data.site;
 
-            return (
-              <LayoutRoot>
-                <Normalize />
-                <GlobalStyles />
-                <Helmet>
-                  <title>{siteMetadata.title}</title>
-                  <meta name="description" content={siteMetadata.description} />
-                  <meta name="keywords" content={siteMetadata.keywords} />
-                  <meta property="og:type" content="website" />
-                  <meta property="og:site_name" content={siteMetadata.title} />
-                  <meta property="og:description" content={siteMetadata.description} />
-                  <meta
-                    property="og:url"
-                    content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`}
+              return (
+                <LayoutRoot>
+                  <Normalize />
+                  <GlobalStyles />
+                  <Helmet>
+                    <title>{siteMetadata.title}</title>
+                    <meta name="description" content={siteMetadata.description} />
+                    <meta name="keywords" content={siteMetadata.keywords} />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:site_name" content={siteMetadata.title} />
+                    <meta property="og:description" content={siteMetadata.description} />
+                    <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
+                  </Helmet>
+                  <Navigation
+                    title={siteMetadata.sidebarTitle || siteMetadata.title}
+                    navigation={data.navigationMenus.edges}
+                    open={drawerIsOpen}
+                    onCloseNavMenu={this.closeDrawer}
+                    toggleDrawer={this.toggleDrawer}
                   />
-                </Helmet>
-                <Navigation
-                  title={siteMetadata.sidebarTitle || siteMetadata.title}
-                  navigation={data.navigationMenus.edges}
-                  open={drawerIsOpen}
-                  onCloseNavMenu={this.closeDrawer}
-                  toggleDrawer={this.toggleDrawer}
-                />
-                <Overlay visible={drawerIsOpen} onClick={this.closeDrawer} />{' '}
-                <MobileHeader>
-                  <NavButton onClick={this.toggleDrawer} drawerIsOpen={drawerIsOpen} />
-                </MobileHeader>
-                <LayoutMain>{children}</LayoutMain>
-              </LayoutRoot>
-            );
-          }}
-        </StaticQuery>
-      </ThemeProvider>
+                  <Overlay visible={drawerIsOpen} onClick={this.closeDrawer} />{' '}
+                  <MobileHeader>
+                    <NavButton onClick={this.toggleDrawer} drawerIsOpen={drawerIsOpen} />
+                  </MobileHeader>
+                  <LayoutMain>{children}</LayoutMain>
+                </LayoutRoot>
+              );
+            }}
+          </StaticQuery>
+        </ThemeProvider>
+      </AksaraReset>
     );
   }
 

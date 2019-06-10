@@ -3,8 +3,8 @@ import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
-import Page from 'components/Page';
-import NotFoundWrapper from 'components/NotFoundWrapper';
+import Page from 'components/old-layout/Page';
+import NotFoundWrapper from 'components/old-layout/NotFoundWrapper';
 import styled from 'utils/styled';
 import { SiteMetadata } from 'interfaces/gatsby';
 import { RouteComponentProps } from '@reach/router';
