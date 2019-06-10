@@ -7,7 +7,7 @@ next: writing-in-markdown
 
 The `toc.json` file inside the `docs/` folder holds our table of contents. It will be automatically populated on the left-side drawer as a sectioned menu.
 
-```
+```json
 [
   {
     "title": "Menu Section 1",

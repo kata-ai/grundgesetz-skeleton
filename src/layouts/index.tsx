@@ -11,8 +11,6 @@ import { Overlay } from 'components/layout/Overlay';
 import { MenuNode, Edge } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
 
-import 'prism-themes/themes/prism-atom-dark.css';
-
 interface IndexLayoutProps {
   location?: WindowLocation;
 }

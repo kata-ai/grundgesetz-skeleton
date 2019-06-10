@@ -11,8 +11,9 @@ import { Page } from 'components/layout/Page';
 import { Container } from 'components/layout/Container';
 import { DocsWrapper } from 'components/docs/DocsWrapper';
 import { DocsHeader } from 'components/docs/DocsHeader';
+import { MarkdownContent } from 'components/page/Markdown';
 
-import MarkdownContent from 'components/old-layout/MarkdownContent';
+import { renderAst } from 'utils';
 
 interface PageTemplateProps extends RouteComponentProps {
   data: {
@@ -23,11 +24,12 @@ interface PageTemplateProps extends RouteComponentProps {
       edges: Edge<MenuNode>[];
     };
     markdownRemark: {
-      html: string;
+      htmlAst: any;
       excerpt: string;
       frontmatter: {
         id: string;
         title: string;
+        description?: string;
         prev?: string;
         next?: string;
       };
@@ -53,8 +55,8 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
       </Helmet>
       <DocsWrapper>
         <Container>
-          <DocsHeader>{markdownRemark.frontmatter.title}</DocsHeader>
-          <MarkdownContent html={markdownRemark.html} />
+          <DocsHeader title={markdownRemark.frontmatter.title} subtitle={markdownRemark.frontmatter.description} />
+          <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
         </Container>
       </DocsWrapper>
     </Page>
@@ -91,7 +93,7 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       excerpt
       frontmatter {
         id

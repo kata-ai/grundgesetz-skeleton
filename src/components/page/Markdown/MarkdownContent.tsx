@@ -1,16 +1,24 @@
 import React from 'react';
-import { styledWrapper as styled, breakpoints } from 'utils';
+import { styledWrapper as styled, breakpoints, space } from 'utils';
 
 interface MarkdownContentProps {
   className?: string;
-  html: string;
+  html?: string;
 }
 
-const MarkdownContent: React.SFC<MarkdownContentProps> = ({ className, html }) => (
-  <section className={className} dangerouslySetInnerHTML={{ __html: html }} />
-);
+const MarkdownContent: React.SFC<MarkdownContentProps> = ({ className, html, children }) => {
+  if (html) {
+    return <section className={className} dangerouslySetInnerHTML={{ __html: html }} />;
+  }
+
+  return <section className={className}>{children}</section>;
+};
 
 export default styled(MarkdownContent)`
+  .gatsby-highlight {
+    margin: ${space.md}px 0;
+  }
+
   a[href^='#fn-'],
   a[href^='#fnref-'] {
     display: inline-block;

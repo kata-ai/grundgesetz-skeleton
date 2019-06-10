@@ -8,9 +8,10 @@ import { Page } from 'components/layout/Page';
 import { Container } from 'components/layout/Container';
 import { DocsWrapper } from 'components/docs/DocsWrapper';
 import { DocsHeader } from 'components/docs/DocsHeader';
+import MarkdownContent from 'components/page/Markdown/MarkdownContent';
 
 import { MenuNode, Edge } from 'interfaces/nodes';
-import MarkdownContent from 'components/old-layout/MarkdownContent';
+import { renderAst } from 'utils';
 // import FooterWrapper from 'components/old-layout/FooterWrapper';
 // import Footer from 'components/old-layout/Footer';
 
@@ -30,7 +31,7 @@ interface PageTemplateProps extends RouteComponentProps {
       edges: Edge<MenuNode>[];
     };
     markdownRemark: {
-      html: string;
+      htmlAst: any;
       excerpt: string;
       frontmatter: {
         id: string;
@@ -52,8 +53,8 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
       </Helmet>
       <DocsWrapper>
         <Container>
-          <DocsHeader>Welcome to Grundgesetz!</DocsHeader>
-          <MarkdownContent html={markdownRemark.html} />
+          <DocsHeader title="Welcome to Grundgesetz!" />
+          <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
         </Container>
       </DocsWrapper>
     </Page>
@@ -78,7 +79,7 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       excerpt
       frontmatter {
         id

@@ -59,7 +59,7 @@ class NavigationMenu extends React.PureComponent<NavigationMenuProps, Toggleable
 
     return (
       <Box mb="md">
-        <Heading as="h3" size={100} color="grey04" mb="md">
+        <Heading as="h3" size={100} color="grey04" mb="sm">
           {node.title}
         </Heading>
         <ToggleMenu>
