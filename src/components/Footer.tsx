@@ -29,7 +29,8 @@ const Footer: React.SFC = () => (
             rel="noopener noreferrer"
           >
             Grundgesetz
-          </a>.
+          </a>
+          .
         </small>
       </p>
     </Container>

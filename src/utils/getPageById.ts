@@ -1,12 +1,12 @@
-import { MenuNode, MenuItem } from 'interfaces/nodes';
+import { MenuNode, MenuItem, Edge } from 'interfaces/nodes';
 
-const getPageById = (sectionList: Array<{ node: MenuNode }>, templateFile?: string) => {
+const getPageById = (sectionList: Edge<MenuNode>[], templateFile?: string) => {
   if (!templateFile) {
     return undefined;
   }
 
   const sectionItems = sectionList.map(({ node }) => node.items);
-  const flattenedSectionItems: MenuItem[] = [].concat.apply([], sectionItems);
+  const flattenedSectionItems: MenuItem[] = [].concat([], sectionItems as any);
 
   return flattenedSectionItems.find(item => item.id === templateFile);
 };

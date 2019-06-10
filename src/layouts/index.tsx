@@ -10,7 +10,7 @@ import LayoutMain from 'components/LayoutMain';
 import GlobalStyles from 'styles/globals';
 import theme from 'styles/theme';
 import { ThemeProvider } from 'utils/styled';
-import { MenuNode } from 'interfaces/nodes';
+import { MenuNode, Edge } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
 
 import 'prism-themes/themes/prism-atom-dark.css';
@@ -31,9 +31,7 @@ interface DataProps {
     siteMetadata: SiteMetadata;
   };
   navigationMenus: {
-    edges: Array<{
-      node: MenuNode;
-    }>;
+    edges: Edge<MenuNode>[];
   };
 }
 
