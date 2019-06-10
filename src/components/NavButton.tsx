@@ -5,7 +5,7 @@ interface ToggleableProps {
   drawerIsOpen?: boolean;
 }
 
-const Wrapper = styled<ToggleableProps, 'button'>('button')`
+const Wrapper = styled('button')<ToggleableProps>`
   display: inline-block;
   padding: 0;
   color: ${props => props.theme.colors.white};
@@ -30,7 +30,7 @@ const Wrapper = styled<ToggleableProps, 'button'>('button')`
   }
 `;
 
-const Inner = styled<ToggleableProps, 'div'>('div')`
+const Inner = styled('div')<ToggleableProps>`
   display: flex;
   flex-direction: row;
   align-items: center;

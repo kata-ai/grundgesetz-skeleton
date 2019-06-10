@@ -8,7 +8,7 @@ interface MobileHeaderProps {
   transparent?: boolean;
 }
 
-const Wrapper = styled<MobileHeaderProps, 'div'>('div')`
+const Wrapper = styled('div')<MobileHeaderProps>`
   position: ${props => (props.absolute ? 'absolute' : 'fixed')};
   top: 0;
   left: 0;

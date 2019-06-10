@@ -5,7 +5,7 @@ interface OverlayProps {
   visible?: boolean;
 }
 
-const Overlay = styled<OverlayProps, 'div'>('div')`
+const Overlay = styled('div')<OverlayProps>`
   position: fixed;
   top: 0;
   left: 0;

@@ -20,7 +20,7 @@ const Root = styled('div')`
   margin-bottom: 1rem;
 `;
 
-const ToggleButton = styled<ToggleableProps, 'button'>('button')`
+const ToggleButton = styled('button')<ToggleableProps>`
   display: block;
   width: 100%;
   margin: 0;
@@ -38,7 +38,7 @@ const ToggleButton = styled<ToggleableProps, 'button'>('button')`
   transition: all 0.3s ease;
 `;
 
-const ToggleButtonInner = styled<ToggleableProps, 'div'>('div')`
+const ToggleButtonInner = styled('div')<ToggleableProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -55,7 +55,7 @@ const ToggleButtonSpan = styled('span')`
   font-weight: 500;
 `;
 
-const ToggleMenu = styled<ToggleableProps, 'ul'>('ul')`
+const ToggleMenu = styled('ul')<ToggleableProps>`
   display: ${props => (props.isOpen ? 'block' : 'none')};
   max-height: ${props => !props.isOpen && 0};
   list-style-type: none;

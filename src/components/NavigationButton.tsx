@@ -4,7 +4,7 @@ interface NavigationButtonProps {
   visible?: boolean;
 }
 
-const NavigationButton = styled<NavigationButtonProps, 'button'>('button')`
+const NavigationButton = styled('button')<NavigationButtonProps>`
   margin: 0;
   padding: 0;
   border: none;
