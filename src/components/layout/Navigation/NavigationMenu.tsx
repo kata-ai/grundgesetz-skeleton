@@ -55,27 +55,23 @@ const ToggleMenuListLink = styled(Link)`
   }
 `;
 
-class NavigationMenu extends React.PureComponent<NavigationMenuProps, ToggleableProps> {
-  render() {
-    const { node } = this.props;
+const NavigationMenu: React.FC<NavigationMenuProps> = ({ node }) => {
+  return (
+    <Box mb="md">
+      <Heading as="h3" size={100} color="grey04" mb="sm">
+        {node.title}
+      </Heading>
+      <ToggleMenu>
+        {node.items.map(item => (
+          <ToggleMenuList key={item.id}>
+            <ToggleMenuListLink to={item.slug} activeClassName="active">
+              {item.title}
+            </ToggleMenuListLink>
+          </ToggleMenuList>
+        ))}
+      </ToggleMenu>
+    </Box>
+  );
+};
 
-    return (
-      <Box mb="md">
-        <Heading as="h3" size={100} color="grey04" mb="sm">
-          {node.title}
-        </Heading>
-        <ToggleMenu>
-          {node.items.map(item => (
-            <ToggleMenuList key={item.id}>
-              <ToggleMenuListLink to={item.slug} activeClassName="active">
-                {item.title}
-              </ToggleMenuListLink>
-            </ToggleMenuList>
-          ))}
-        </ToggleMenu>
-      </Box>
-    );
-  }
-}
-
-export default NavigationMenu;
+export default React.memo(NavigationMenu);
