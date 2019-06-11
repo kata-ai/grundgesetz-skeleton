@@ -58,17 +58,14 @@ module.exports = {
         siteUrl: 'https://grundgesetz-skeleton.netlify.com'
       }
     },
-    {
-      resolve: 'gatsby-plugin-layout',
-      options: {
-        component: require.resolve('./src/layouts/index.tsx')
-      }
-    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-resolve-src',
+    'gatsby-plugin-catch-links',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-netlify-cache',
+    'gatsby-plugin-netlify'
   ]
 };

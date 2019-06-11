@@ -1,0 +1,14 @@
+[
+  {
+    "id": "getting-started",
+    "label": "Getting Started",
+    "href": "/getting-started/installation/",
+    "external": false
+  },
+  {
+    "id": "github",
+    "label": "GitHub",
+    "href": "https://github.com/kata-ai/grundgesetz-skeleton",
+    "external": true
+  }
+]

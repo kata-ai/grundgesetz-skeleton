@@ -3,14 +3,19 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { RouteComponentProps } from '@reach/router';
 
-import Page from 'components/Page';
-import Container from 'components/Container';
+import { Page } from 'components/layout/Page';
+
+import { Container } from 'components/layout/Container';
+import { DocsWrapper } from 'components/docs/DocsWrapper';
+import { DocsHeader } from 'components/docs/DocsHeader';
+import MarkdownContent from 'components/page/Markdown/MarkdownContent';
+
 import { MenuNode, Edge } from 'interfaces/nodes';
-import MarkdownContent from 'components/MarkdownContent';
-import DocsWrapper from 'components/DocsWrapper';
-import DocsHeader from 'components/DocsHeader';
-import FooterWrapper from 'components/FooterWrapper';
-import Footer from 'components/Footer';
+import { Footer, FooterWrapper } from 'components/layout/Footer';
+import IndexLayout from 'layouts';
+import renderAst from 'utils/renderAst';
+// import FooterWrapper from 'components/old-layout/FooterWrapper';
+// import Footer from 'components/old-layout/Footer';
 
 interface PageTemplateProps extends RouteComponentProps {
   data: {
@@ -28,7 +33,7 @@ interface PageTemplateProps extends RouteComponentProps {
       edges: Edge<MenuNode>[];
     };
     markdownRemark: {
-      html: string;
+      htmlAst: any;
       excerpt: string;
       frontmatter: {
         id: string;
@@ -44,24 +49,22 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   const { markdownRemark } = data;
 
   return (
-    <Page docsPage>
-      <Helmet>
-        <meta property="og:title" content="Home" />
-      </Helmet>
-      <DocsWrapper>
-        <Container>
-          <DocsHeader>
-            <h1>Welcome to Grundgesetz!</h1>
-          </DocsHeader>
-          <MarkdownContent html={markdownRemark.html} />
-        </Container>
-      </DocsWrapper>
-      <FooterWrapper>
-        <Container>
-          <Footer />
-        </Container>
-      </FooterWrapper>
-    </Page>
+    <IndexLayout>
+      <Page docsPage>
+        <Helmet>
+          <meta property="og:title" content="Home" />
+        </Helmet>
+        <DocsWrapper>
+          <Container>
+            <DocsHeader title="Welcome to Grundgesetz!" />
+            <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <FooterWrapper>
+              <Footer />
+            </FooterWrapper>
+          </Container>
+        </DocsWrapper>
+      </Page>
+    </IndexLayout>
   );
 };
 
@@ -83,7 +86,7 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       excerpt
       frontmatter {
         id

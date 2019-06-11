@@ -1,4 +1,11 @@
-export interface MenuItem {
+export interface HeaderMenuItem {
+  id: string;
+  label: string;
+  href: string;
+  external: boolean;
+}
+
+export interface TocItem {
   id: string;
   slug: string;
   title: string;
@@ -6,7 +13,7 @@ export interface MenuItem {
 
 export interface MenuNode {
   title: string;
-  items: MenuItem[];
+  items: TocItem[];
 }
 
 export interface Edge<T> {
