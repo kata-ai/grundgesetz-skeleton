@@ -4,17 +4,17 @@
     "items": [
       {
         "id": "installation",
-        "slug": "/getting-started/installation/",
+        "slug": "/getting-started/installation",
         "title": "Installation"
       },
       {
         "id": "development-server",
-        "slug": "/getting-started/development-server/",
+        "slug": "/getting-started/development-server",
         "title": "Development Server"
       },
       {
         "id": "deploying",
-        "slug": "/getting-started/deploying/",
+        "slug": "/getting-started/deploying",
         "title": "Deploying"
       }
     ]
@@ -24,17 +24,17 @@
     "items": [
       {
         "id": "project-structure",
-        "slug": "/writing/project-structure/",
+        "slug": "/writing/project-structure",
         "title": "Project Structure"
       },
       {
         "id": "table-of-contents",
-        "slug": "/writing/table-of-contents/",
+        "slug": "/writing/table-of-contents",
         "title": "Table of Contents"
       },
       {
         "id": "writing-in-markdown",
-        "slug": "/writing/writing-in-markdown/",
+        "slug": "/writing/writing-in-markdown",
         "title": "Writing in Markdown"
       }
     ]

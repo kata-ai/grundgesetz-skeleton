@@ -1,3 +1,4 @@
+import { LinkGetProps } from '@reach/router';
 import { MenuNode, TocItem, Edge } from 'interfaces/nodes';
 import { Color, themeProps, Space } from '../components/Theme';
 
@@ -14,4 +15,9 @@ export const getPageById = (sectionList: Edge<MenuNode>[], templateFile?: string
   const flattenedSectionItems: TocItem[] = ([] as TocItem[]).concat(...sectionItems);
 
   return flattenedSectionItems.find(item => item.id === templateFile);
+};
+
+/** Workaround for activeClassName: https://github.com/gatsbyjs/gatsby/issues/7737 */
+export const isActive = ({ isPartiallyCurrent }: LinkGetProps) => {
+  return isPartiallyCurrent ? { className: 'active' } : {};
 };

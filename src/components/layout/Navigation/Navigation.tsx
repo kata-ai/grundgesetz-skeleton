@@ -4,10 +4,12 @@ import { Link } from 'gatsby';
 
 import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { determineFontDimensions, Heading } from 'components/foundations';
+import { colors, layerIndexes, breakpoints, dimensions } from 'utils/variables';
+import { isActive } from 'utils/helpers';
+
 import { NavigationContext, NavigationActionTypes } from './NavigationContext';
 import NavigationMenu from './NavigationMenu';
 import NavButton from './NavButton';
-import { colors, layerIndexes, breakpoints, dimensions } from 'utils/variables';
 
 interface ToggleableProps {
   isOpen?: boolean;
@@ -201,7 +203,7 @@ function Navigation({ title, navigation, headerMenus }: NavigationProps) {
               }
 
               return (
-                <Link key={node.id} activeClassName="active" to={node.href}>
+                <Link key={node.id} getProps={isActive} to={node.href}>
                   {node.label}
                 </Link>
               );

@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import { MenuNode } from 'interfaces/nodes';
 import { Heading, Box } from 'components/foundations';
 import { colors, space } from 'utils/variables';
+import { isActive } from 'utils/helpers';
 
 interface NavigationMenuProps {
   node: MenuNode;
@@ -64,7 +65,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ node }) => {
       <ToggleMenu>
         {node.items.map(item => (
           <ToggleMenuList key={item.id}>
-            <ToggleMenuListLink to={item.slug} activeClassName="active">
+            <ToggleMenuListLink to={item.slug} getProps={isActive}>
               {item.title}
             </ToggleMenuListLink>
           </ToggleMenuList>

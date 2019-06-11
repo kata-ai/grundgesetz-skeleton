@@ -7,6 +7,7 @@ import { Header, HeaderInner } from '../Header';
 import { NavButton } from '../Navigation';
 import { Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { breakpoints, dimensions, colors, textSizes } from 'utils/variables';
+import { isActive } from 'utils/helpers';
 import { determineFontDimensions } from 'components/foundations';
 
 interface LayoutMainInnerProps {
@@ -118,7 +119,7 @@ const LayoutMain: React.SFC<LayoutMainProps> = ({ children, title, className, he
                 }
 
                 return (
-                  <Link key={node.id} activeClassName="active" to={node.href}>
+                  <Link key={node.id} getProps={isActive} to={node.href}>
                     {node.label}
                   </Link>
                 );
