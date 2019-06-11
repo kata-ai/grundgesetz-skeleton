@@ -1,4 +1,4 @@
-import styled from 'utils/styled';
+import { styledWrapper as styled } from 'utils';
 
 const DocsWrapper = styled('article')`
   display: block;

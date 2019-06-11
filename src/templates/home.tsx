@@ -12,6 +12,7 @@ import MarkdownContent from 'components/page/Markdown/MarkdownContent';
 
 import { MenuNode, Edge } from 'interfaces/nodes';
 import { renderAst } from 'utils';
+import { Footer, FooterWrapper } from 'components/layout/Footer';
 // import FooterWrapper from 'components/old-layout/FooterWrapper';
 // import Footer from 'components/old-layout/Footer';
 
@@ -57,6 +58,11 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
         </Container>
       </DocsWrapper>
+      <FooterWrapper>
+        <Container>
+          <Footer />
+        </Container>
+      </FooterWrapper>
     </Page>
   );
 };

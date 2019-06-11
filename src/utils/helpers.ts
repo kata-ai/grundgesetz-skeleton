@@ -11,7 +11,8 @@ export const getPageById = (sectionList: Edge<MenuNode>[], templateFile?: string
   }
 
   const sectionItems = sectionList.map(({ node }) => node.items);
-  const flattenedSectionItems: MenuItem[] = [].concat([], sectionItems as any);
+  const flattenedSectionItems: MenuItem[] = ([] as MenuItem[]).concat(...sectionItems);
+  console.log(flattenedSectionItems);
 
   return flattenedSectionItems.find(item => item.id === templateFile);
 };

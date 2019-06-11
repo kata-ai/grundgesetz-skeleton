@@ -1,7 +1,7 @@
-import styled from 'utils/styled';
+import { styledWrapper as styled, space } from 'utils';
 
 const FooterWrapper = styled('div')`
-  margin-top: 40px;
+  margin-top: ${space.xxl}px;
   padding: 0 24px;
 `;
 

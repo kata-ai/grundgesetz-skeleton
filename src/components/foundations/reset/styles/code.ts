@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { colors, paragraphSizes } from 'utils';
+import { colors, paragraphSizes, textSizes } from 'utils';
 
 const code = css`
   /*
@@ -16,8 +16,8 @@ const code = css`
     font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
       'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier,
       monospace;
-    font-size: ${paragraphSizes[400].fontSize}px;
-    line-height: ${paragraphSizes[400].lineHeight}px;
+    font-size: ${textSizes[300].fontSize}px;
+    line-height: ${textSizes[300].lineHeight}px;
     direction: ltr;
     text-align: left;
     white-space: pre;
@@ -31,23 +31,7 @@ const code = css`
     -ms-hyphens: none;
     hyphens: none;
     background: ${colors.grey01};
-    color: #5e6687;
-  }
-
-  pre[class*='language-']::-moz-selection,
-  pre[class*='language-'] ::-moz-selection,
-  code[class*='language-']::-moz-selection,
-  code[class*='language-'] ::-moz-selection {
-    text-shadow: none;
-    background: #dfe2f1;
-  }
-
-  pre[class*='language-']::selection,
-  pre[class*='language-'] ::selection,
-  code[class*='language-']::selection,
-  code[class*='language-'] ::selection {
-    text-shadow: none;
-    background: #dfe2f1;
+    color: ${colors.grey07};
   }
 
   /* Code blocks */
@@ -63,6 +47,8 @@ const code = css`
     border-radius: 0.3em;
     background: none;
     color: ${colors.blue05};
+    font-size: ${paragraphSizes[400].fontSize}px;
+    line-height: ${paragraphSizes[400].lineHeight}px;
   }
 
   .token.comment,

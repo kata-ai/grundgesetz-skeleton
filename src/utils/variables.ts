@@ -289,7 +289,8 @@ export const dimensions = {
       sm: 240,
       md: 280,
       lg: 200
-    }
+    },
+    containerPadding: space.lg
   },
   heights: {
     header: 64

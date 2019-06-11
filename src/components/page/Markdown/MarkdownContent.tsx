@@ -16,7 +16,7 @@ const MarkdownContent: React.SFC<MarkdownContentProps> = ({ className, html, chi
 
 export default styled(MarkdownContent)`
   .gatsby-highlight {
-    margin: ${space.md}px 0;
+    margin: ${space.sm}px 0;
   }
 
   a[href^='#fn-'],
