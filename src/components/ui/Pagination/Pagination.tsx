@@ -90,6 +90,10 @@ const PaginationLink = styled(Link)`
         }
       }
     }
+
+    ${PaginationTitle} {
+      color: ${colors.grey07};
+    }
   }
 `;
 
