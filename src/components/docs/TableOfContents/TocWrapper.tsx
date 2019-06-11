@@ -48,7 +48,7 @@ const TocWrapper = styled('section')<ToggleableProps>`
     list-style-type: none;
 
     p {
-      margin: 0 0 0.5rem;
+      margin: 0;
     }
 
     ul {
