@@ -27,32 +27,32 @@ const ToggleMenuList = styled('li')`
   margin: 0;
   font-size: 85%;
   color: ${colors.grey07};
-`;
 
-const ToggleMenuListLink = styled(Link)`
-  display: block;
-  padding: ${space.xs}px;
-  border: 2px solid transparent;
-  border-radius: 2px;
-  color: ${colors.grey07};
-
-  &:hover,
-  &:focus {
-    background-color: ${colors.grey02};
+  a {
+    display: block;
+    padding: ${space.xs}px;
+    border: 2px solid transparent;
+    border-radius: 2px;
     color: ${colors.grey07};
-    text-decoration: none;
-  }
 
-  &:focus {
-    outline: none;
-    background-color: ${colors.blue01};
-    border-color: ${colors.blue05};
-  }
+    &:hover,
+    &:focus {
+      background-color: ${colors.grey02};
+      color: ${colors.grey07};
+      text-decoration: none;
+    }
 
-  &.active {
-    color: ${colors.grey07};
-    background-color: ${colors.blue01};
-    border-color: transparent;
+    &:focus {
+      outline: none;
+      background-color: ${colors.blue01};
+      border-color: ${colors.blue05};
+    }
+
+    &.active {
+      color: ${colors.grey07};
+      background-color: ${colors.blue01};
+      border-color: transparent;
+    }
   }
 `;
 
@@ -65,9 +65,9 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ node }) => {
       <ToggleMenu>
         {node.items.map(item => (
           <ToggleMenuList key={item.id}>
-            <ToggleMenuListLink to={item.slug} getProps={isActive}>
+            <Link to={item.slug} getProps={isActive}>
               {item.title}
-            </ToggleMenuListLink>
+            </Link>
           </ToggleMenuList>
         ))}
       </ToggleMenu>
