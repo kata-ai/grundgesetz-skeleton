@@ -1,8 +1,9 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import { styledWrapper as styled, colors, breakpoints, space } from 'utils';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 import { TocItem } from 'interfaces/nodes';
 import { Text, Heading } from 'components/foundations';
+import { space, breakpoints, colors } from 'utils/variables';
 
 const Wrapper = styled('aside')`
   margin-bottom: ${space.xl}px;

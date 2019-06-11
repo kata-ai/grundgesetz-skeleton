@@ -1,11 +1,13 @@
 import React from 'react';
-import { styledWrapper as styled, dimensions, breakpoints, colors, textSizes } from 'utils';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+
 import { NavigationContext, NavigationActionTypes } from '../Navigation/NavigationContext';
 import { Header, HeaderInner } from '../Header';
-import { Link } from 'gatsby';
-import { determineFontDimensions } from 'components/foundations';
 import { NavButton } from '../Navigation';
 import { Edge, HeaderMenuItem } from 'interfaces/nodes';
+import { breakpoints, dimensions, colors, textSizes } from 'utils/variables';
+import { determineFontDimensions } from 'components/foundations';
 
 interface LayoutMainInnerProps {
   className?: string;

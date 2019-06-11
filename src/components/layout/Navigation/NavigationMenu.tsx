@@ -1,8 +1,10 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+
 import { MenuNode } from 'interfaces/nodes';
-import { styledWrapper as styled, space, colors } from 'utils';
 import { Heading, Box } from 'components/foundations';
+import { colors, space } from 'utils/variables';
 
 interface NavigationMenuProps {
   node: MenuNode;

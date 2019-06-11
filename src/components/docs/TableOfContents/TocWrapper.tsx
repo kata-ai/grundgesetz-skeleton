@@ -1,4 +1,5 @@
-import { styledWrapper as styled, breakpoints, dimensions, colors, layerIndexes } from 'utils';
+import styled from 'styled-components';
+import { dimensions, breakpoints, colors, layerIndexes } from 'utils/variables';
 
 interface ToggleableProps {
   isOpen?: boolean;

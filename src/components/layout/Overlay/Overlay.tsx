@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { styledWrapper as styled, layerIndexes, breakpoints } from 'utils';
+import styled, { css } from 'styled-components';
+
 import { NavigationContext } from '../Navigation/NavigationContext';
-import { css } from 'styled-components';
+import { breakpoints, layerIndexes } from 'utils/variables';
 
 interface OverlayProps {
   visible?: boolean;

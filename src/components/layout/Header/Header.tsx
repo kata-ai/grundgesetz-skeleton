@@ -1,6 +1,6 @@
 import React from 'react';
-import { styledWrapper as styled, colors, layerIndexes, dimensions, breakpoints } from 'utils';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
+import { breakpoints, colors, dimensions, layerIndexes } from 'utils/variables';
 
 interface HeaderProps {
   navigation?: boolean;

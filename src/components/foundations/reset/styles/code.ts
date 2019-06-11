@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { colors, paragraphSizes, textSizes } from 'utils';
+import { colors, paragraphSizes, textSizes } from 'utils/variables';
 
 const code = css`
   /*

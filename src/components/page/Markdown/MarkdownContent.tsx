@@ -1,5 +1,6 @@
 import React from 'react';
-import { styledWrapper as styled, breakpoints, space } from 'utils';
+import styled from 'styled-components';
+import { space, breakpoints } from 'utils/variables';
 
 interface MarkdownContentProps {
   className?: string;

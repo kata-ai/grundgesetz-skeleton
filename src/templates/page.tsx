@@ -13,11 +13,11 @@ import { DocsWrapper } from 'components/docs/DocsWrapper';
 import { DocsHeader } from 'components/docs/DocsHeader';
 import { MarkdownContent } from 'components/page/Markdown';
 
-import { renderAst } from 'utils';
 import { FooterWrapper, Footer } from 'components/layout/Footer';
 import { Pagination } from 'components/ui/Pagination';
 import { TocWrapper, TocFloatingButton } from 'components/docs/TableOfContents';
 import IndexLayout from 'layouts';
+import renderAst from 'utils/renderAst';
 
 interface PageTemplateProps extends RouteComponentProps {
   data: {

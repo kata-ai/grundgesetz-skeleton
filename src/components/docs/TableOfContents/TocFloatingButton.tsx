@@ -1,5 +1,6 @@
 import React from 'react';
-import { styledWrapper as styled, colors, layerIndexes, breakpoints } from 'utils';
+import styled from 'styled-components';
+import { colors, layerIndexes, breakpoints } from 'utils/variables';
 
 interface ToggleableProps {
   isOpen?: boolean;

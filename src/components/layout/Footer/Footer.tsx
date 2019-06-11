@@ -1,5 +1,6 @@
 import React from 'react';
-import { styledWrapper as styled, colors, textSizes } from 'utils';
+import styled from 'styled-components';
+import { colors, textSizes } from 'utils/variables';
 
 const Wrapper = styled('footer')`
   padding-top: 24px;

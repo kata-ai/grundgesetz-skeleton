@@ -1,13 +1,13 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import styled, { css } from 'styled-components';
+import { Link } from 'gatsby';
 
-import { styledWrapper as styled, breakpoints, colors, layerIndexes, dimensions } from 'utils';
 import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { determineFontDimensions, Heading } from 'components/foundations';
 import { NavigationContext, NavigationActionTypes } from './NavigationContext';
 import NavigationMenu from './NavigationMenu';
-import { css } from 'styled-components';
 import NavButton from './NavButton';
+import { colors, layerIndexes, breakpoints, dimensions } from 'utils/variables';
 
 interface ToggleableProps {
   isOpen?: boolean;

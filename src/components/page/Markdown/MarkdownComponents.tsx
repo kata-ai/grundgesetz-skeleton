@@ -1,6 +1,7 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import { Heading, Paragraph } from 'components/foundations';
-import { styledWrapper as styled, space, textSizes, colors } from 'utils';
+import { space, textSizes, colors } from 'utils/variables';
 
 const UnorderedList = styled('ul')`
   margin: ${space.sm}px 0;

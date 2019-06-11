@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
 import { WindowLocation } from '@reach/router';
@@ -6,7 +7,7 @@ import { WindowLocation } from '@reach/router';
 import { NavigationContextProvider } from 'components/layout/Navigation/NavigationContext';
 
 import { SiteMetadata } from 'interfaces/gatsby';
-import { styledWrapper as styled, breakpoints } from 'utils';
+import { breakpoints } from 'utils/variables';
 
 const StyledLayoutRoot = styled('div')`
   display: flex;

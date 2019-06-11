@@ -1,4 +1,5 @@
-import { styledWrapper as styled, breakpoints } from 'utils';
+import { breakpoints } from 'utils/variables';
+import styled from 'styled-components';
 
 interface DocsWrapperProps {
   hasToc?: boolean;
