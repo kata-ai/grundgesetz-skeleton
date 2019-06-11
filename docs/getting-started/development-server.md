@@ -26,10 +26,3 @@ yarn dev
 ```
 
 The command above will start a development server with hot-reloading capabilities on `localhost:8000`. From now on, you can start writing your documentation with ease. In the next section, we will learn how to build your pages and deploy them.
-
-## Caveats
-
-Due to limitations with Gatsby, you might have to restart the server when:
-
-- you add a new Markdown page
-- you updated the `toc.json` file

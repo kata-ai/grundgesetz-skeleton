@@ -15,6 +15,14 @@ module.exports = {
   },
   plugins: [
     {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'uploads'
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
@@ -25,6 +33,21 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'uploads'
+            }
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 704,
+              quality: 90,
+              wrapperStyle: 'margin-top: 32px; margin-bottom: 32px;',
+              linkImagesToOriginal: false
+            }
+          },
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
@@ -39,15 +62,7 @@ module.exports = {
           },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-autolink-headers',
-          'gatsby-remark-smartypants',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 1140,
-              quality: 90,
-              linkImagesToOriginal: false
-            }
-          }
+          'gatsby-remark-smartypants'
         ]
       }
     },
