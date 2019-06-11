@@ -13,6 +13,7 @@ import MarkdownContent from 'components/page/Markdown/MarkdownContent';
 import { MenuNode, Edge } from 'interfaces/nodes';
 import { renderAst } from 'utils';
 import { Footer, FooterWrapper } from 'components/layout/Footer';
+import IndexLayout from 'layouts';
 // import FooterWrapper from 'components/old-layout/FooterWrapper';
 // import Footer from 'components/old-layout/Footer';
 
@@ -48,20 +49,22 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   const { markdownRemark } = data;
 
   return (
-    <Page docsPage>
-      <Helmet>
-        <meta property="og:title" content="Home" />
-      </Helmet>
-      <DocsWrapper>
-        <Container>
-          <DocsHeader title="Welcome to Grundgesetz!" />
-          <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
-          <FooterWrapper>
-            <Footer />
-          </FooterWrapper>
-        </Container>
-      </DocsWrapper>
-    </Page>
+    <IndexLayout>
+      <Page docsPage>
+        <Helmet>
+          <meta property="og:title" content="Home" />
+        </Helmet>
+        <DocsWrapper>
+          <Container>
+            <DocsHeader title="Welcome to Grundgesetz!" />
+            <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <FooterWrapper>
+              <Footer />
+            </FooterWrapper>
+          </Container>
+        </DocsWrapper>
+      </Page>
+    </IndexLayout>
   );
 };
 

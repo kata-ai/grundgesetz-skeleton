@@ -28,7 +28,6 @@
     "gatsby-link": "^2.1.1",
     "gatsby-plugin-canonical-urls": "^2.0.13",
     "gatsby-plugin-catch-links": "^2.0.15",
-    "gatsby-plugin-layout": "^1.0.15",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-resolve-src": "^2.0.0",
     "gatsby-plugin-sharp": "^2.1.3",

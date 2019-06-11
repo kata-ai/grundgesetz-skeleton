@@ -1,5 +1,4 @@
-import { styledWrapper as styled } from 'utils';
-import { dimensions } from 'utils';
+import { styledWrapper as styled, dimensions } from 'utils';
 
 interface PageProps {
   docsPage?: boolean;

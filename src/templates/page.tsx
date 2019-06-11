@@ -17,6 +17,7 @@ import { renderAst } from 'utils';
 import { FooterWrapper, Footer } from 'components/layout/Footer';
 import { Pagination } from 'components/ui/Pagination';
 import { TocWrapper, TocFloatingButton } from 'components/docs/TableOfContents';
+import IndexLayout from 'layouts';
 
 interface PageTemplateProps extends RouteComponentProps {
   data: {
@@ -49,34 +50,36 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   const nextPage = getPageById(sectionList.edges, next);
 
   return (
-    <Page docsPage>
-      <Helmet>
-        <title>
-          {markdownRemark.frontmatter.title} &middot; {site.siteMetadata.title}
-        </title>
-        <meta name="description" content={markdownRemark.excerpt} />
-        <meta property="og:title" content={markdownRemark.frontmatter.title} />
-        <meta property="og:description" content={markdownRemark.excerpt} />
-      </Helmet>
-      <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
-        {markdownRemark.tableOfContents && (
-          <TocWrapper
-            isOpen={tocIsOpen}
-            onClick={() => setTocIsOpen(!tocIsOpen)}
-            dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }}
-          />
-        )}
-        <Container>
-          <DocsHeader title={markdownRemark.frontmatter.title} subtitle={markdownRemark.frontmatter.description} />
-          <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
-          <FooterWrapper>
-            {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
-            <Footer />
-          </FooterWrapper>
-        </Container>
-        <TocFloatingButton tocIsOpen={tocIsOpen} onClick={() => setTocIsOpen(!tocIsOpen)} />
-      </DocsWrapper>
-    </Page>
+    <IndexLayout>
+      <Page docsPage>
+        <Helmet>
+          <title>
+            {markdownRemark.frontmatter.title} &middot; {site.siteMetadata.title}
+          </title>
+          <meta name="description" content={markdownRemark.excerpt} />
+          <meta property="og:title" content={markdownRemark.frontmatter.title} />
+          <meta property="og:description" content={markdownRemark.excerpt} />
+        </Helmet>
+        <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
+          {markdownRemark.tableOfContents && (
+            <TocWrapper
+              isOpen={tocIsOpen}
+              onClick={() => setTocIsOpen(!tocIsOpen)}
+              dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }}
+            />
+          )}
+          <Container>
+            <DocsHeader title={markdownRemark.frontmatter.title} subtitle={markdownRemark.frontmatter.description} />
+            <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <FooterWrapper>
+              {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
+              <Footer />
+            </FooterWrapper>
+          </Container>
+          <TocFloatingButton tocIsOpen={tocIsOpen} onClick={() => setTocIsOpen(!tocIsOpen)} />
+        </DocsWrapper>
+      </Page>
+    </IndexLayout>
   );
 };
 
