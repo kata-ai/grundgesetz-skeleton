@@ -1,6 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import Link from 'gatsby-link';
+import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
 
 import { Page, NotFoundWrapper } from 'components/layout/Page';
