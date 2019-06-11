@@ -66,6 +66,7 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-resolve-src',
+    'gatsby-plugin-catch-links',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
