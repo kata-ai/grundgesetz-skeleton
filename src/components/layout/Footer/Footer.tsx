@@ -2,7 +2,7 @@ import React from 'react';
 import { styledWrapper as styled, colors, textSizes } from 'utils';
 
 const Wrapper = styled('footer')`
-  padding: 24px 0 32px;
+  padding-top: 24px;
   border-top: 1px solid ${colors.grey02};
 
   p {

@@ -1,11 +1,23 @@
-import { styledWrapper as styled } from 'utils';
+import { styledWrapper as styled, breakpoints } from 'utils';
 
-const DocsWrapper = styled('article')`
-  display: block;
+interface DocsWrapperProps {
+  hasToc?: boolean;
+}
+
+const DocsWrapper = styled('article')<DocsWrapperProps>`
+  display: flex;
+  flex-direction: column;
   flex: 1 1 auto;
   position: relative;
   padding: 32px;
-  padding-bottom: 3rem;
+
+  @media (min-width: ${breakpoints.lg}px) {
+    flex-direction: ${props => props.hasToc && 'row-reverse'};
+  }
+
+  @media (max-width: ${breakpoints.lg - 1}px) {
+    overflow-x: auto;
+  }
 `;
 
 export default DocsWrapper;

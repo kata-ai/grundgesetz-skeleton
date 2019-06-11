@@ -6,7 +6,7 @@ import { WindowLocation } from '@reach/router';
 import { NavigationContextProvider } from 'components/layout/Navigation/NavigationContext';
 
 import { SiteMetadata } from 'interfaces/gatsby';
-import { styledWrapper as styled } from 'utils';
+import { styledWrapper as styled, breakpoints } from 'utils';
 import { AksaraReset } from 'components/foundations';
 
 const StyledLayoutRoot = styled('div')`
@@ -14,7 +14,7 @@ const StyledLayoutRoot = styled('div')`
   flex-direction: column;
   min-height: 100vh;
 
-  @media (min-width: ${props => props.theme.breakpoints.md}px) {
+  @media (min-width: ${breakpoints.md}px) {
     flex-direction: row;
   }
 `;

@@ -170,7 +170,7 @@ function Navigation({ title, navigation, headerMenus }: NavigationProps) {
           <HomepageLink
             to="/"
             size={determineFontDimensions('heading', 400)}
-            onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}
+            onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
           >
             {title}
           </HomepageLink>

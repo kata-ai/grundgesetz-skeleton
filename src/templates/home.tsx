@@ -56,13 +56,11 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
         <Container>
           <DocsHeader title="Welcome to Grundgesetz!" />
           <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+          <FooterWrapper>
+            <Footer />
+          </FooterWrapper>
         </Container>
       </DocsWrapper>
-      <FooterWrapper>
-        <Container>
-          <Footer />
-        </Container>
-      </FooterWrapper>
     </Page>
   );
 };

@@ -97,7 +97,7 @@ const LayoutMain: React.SFC<LayoutMainProps> = ({ children, title, className, he
             <HomepageLink
               to="/"
               size={determineFontDimensions('heading', 400)}
-              onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}
+              onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
             >
               {title}
             </HomepageLink>

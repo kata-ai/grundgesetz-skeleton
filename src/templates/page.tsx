@@ -16,6 +16,7 @@ import { MarkdownContent } from 'components/page/Markdown';
 import { renderAst } from 'utils';
 import { FooterWrapper, Footer } from 'components/layout/Footer';
 import { Pagination } from 'components/ui/Pagination';
+import { TocWrapper, TocFloatingButton } from 'components/docs/TableOfContents';
 
 interface PageTemplateProps extends RouteComponentProps {
   data: {
@@ -27,6 +28,7 @@ interface PageTemplateProps extends RouteComponentProps {
     };
     markdownRemark: {
       htmlAst: any;
+      tableOfContents: string;
       excerpt: string;
       frontmatter: {
         id: string;
@@ -40,6 +42,7 @@ interface PageTemplateProps extends RouteComponentProps {
 }
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
+  const [tocIsOpen, setTocIsOpen] = React.useState(false);
   const { markdownRemark, sectionList, site } = data;
   const { prev, next } = markdownRemark.frontmatter;
   const prevPage = getPageById(sectionList.edges, prev);
@@ -55,18 +58,24 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
         <meta property="og:title" content={markdownRemark.frontmatter.title} />
         <meta property="og:description" content={markdownRemark.excerpt} />
       </Helmet>
-      <DocsWrapper>
+      <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
+        {markdownRemark.tableOfContents && (
+          <TocWrapper
+            isOpen={tocIsOpen}
+            onClick={() => setTocIsOpen(!tocIsOpen)}
+            dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }}
+          />
+        )}
         <Container>
           <DocsHeader title={markdownRemark.frontmatter.title} subtitle={markdownRemark.frontmatter.description} />
           <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+          <FooterWrapper>
+            {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
+            <Footer />
+          </FooterWrapper>
         </Container>
+        <TocFloatingButton tocIsOpen={tocIsOpen} onClick={() => setTocIsOpen(!tocIsOpen)} />
       </DocsWrapper>
-      <FooterWrapper>
-        <Container>
-          {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
-          <Footer />
-        </Container>
-      </FooterWrapper>
     </Page>
   );
 };
@@ -102,6 +111,7 @@ export const query = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
+      tableOfContents
       excerpt
       frontmatter {
         id
