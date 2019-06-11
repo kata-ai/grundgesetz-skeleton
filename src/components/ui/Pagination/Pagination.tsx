@@ -164,11 +164,11 @@ const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
                     d="M.238 8.565l7.329 7.187a.837.837 0 0 0 1.164 0 .795.795 0 0 0 0-1.14L1.984 7.994l6.747-6.617a.796.796 0 0 0 0-1.141.837.837 0 0 0-1.165 0L.237 7.423a.804.804 0 0 0 .001 1.142z"
                   />
                 </defs>
-                <g fill="none" fill-rule="evenodd" transform="translate(8 4)">
+                <g fill="none" fillRule="evenodd" transform="translate(8 4)">
                   <mask id="ic-chevron-left-mask" fill="#fff">
                     <use xlinkHref="#ic-chevron-left" />
                   </mask>
-                  <use fill="none" fill-rule="nonzero" xlinkHref="#ic-chevron-left" />
+                  <use fill="none" fillRule="nonzero" xlinkHref="#ic-chevron-left" />
                   <g fill="none" mask="url(#ic-chevron-left-mask)">
                     <path d="M-8-4h24v24H-8z" />
                   </g>
@@ -206,11 +206,11 @@ const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
                     d="M8.742 7.423L1.414.236a.837.837 0 0 0-1.165 0 .795.795 0 0 0 0 1.14l6.747 6.618L.25 14.61a.796.796 0 0 0 0 1.141.837.837 0 0 0 1.165 0l7.328-7.187a.803.803 0 0 0 0-1.142z"
                   />
                 </defs>
-                <g fill="none" fill-rule="evenodd" transform="translate(8 4)">
+                <g fill="none" fillRule="evenodd" transform="translate(8 4)">
                   <mask id="ic-chevron-right-mask" fill="#fff">
                     <use xlinkHref="#ic-chevron-right" />
                   </mask>
-                  <use fill="none" fill-rule="nonzero" xlinkHref="#ic-chevron-right" />
+                  <use fill="none" fillRule="nonzero" xlinkHref="#ic-chevron-right" />
                   <g fill="none" mask="url(#ic-chevron-right-mask)">
                     <path d="M-8-4h24v24H-8z" />
                   </g>

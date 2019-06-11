@@ -41,7 +41,7 @@ const NavButton: React.FC<NavButtonProps> = ({ height, width, fill, icon, childr
       <Root {...rest}>
         <VisuallyHidden>{children}</VisuallyHidden>
         <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0)">
+          <g clipPath="url(#clip0)">
             <path d="M21 7H3C2.4 7 2 6.6 2 6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6C22 6.6 21.6 7 21 7Z" fill={fill} />
             <path
               d="M21 13H3C2.4 13 2 12.6 2 12C2 11.4 2.4 11 3 11H21C21.6 11 22 11.4 22 12C22 12.6 21.6 13 21 13Z"
