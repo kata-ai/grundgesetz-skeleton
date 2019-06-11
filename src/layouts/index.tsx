@@ -8,7 +8,7 @@ import { LayoutMain } from 'components/layout/LayoutMain';
 import { Navigation } from 'components/layout/Navigation';
 import { Overlay } from 'components/layout/Overlay';
 
-import { MenuNode, Edge } from 'interfaces/nodes';
+import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
 
 interface IndexLayoutProps {
@@ -21,6 +21,9 @@ interface DataProps {
   };
   navigationMenus: {
     edges: Edge<MenuNode>[];
+  };
+  headerMenus: {
+    edges: Edge<HeaderMenuItem>[];
   };
 }
 
@@ -44,9 +47,12 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children }) => {
             <Navigation
               title={siteMetadata.sidebarTitle || siteMetadata.title}
               navigation={data.navigationMenus.edges}
+              headerMenus={data.headerMenus.edges}
             />
             <Overlay />
-            <LayoutMain title={siteMetadata.sidebarTitle || siteMetadata.title}>{children}</LayoutMain>
+            <LayoutMain title={siteMetadata.sidebarTitle || siteMetadata.title} headerMenus={data.headerMenus.edges}>
+              {children}
+            </LayoutMain>
           </LayoutRoot>
         );
       }}
@@ -81,6 +87,16 @@ const query = graphql`
             slug
             title
           }
+        }
+      }
+    }
+    headerMenus: allMenuJson {
+      edges {
+        node {
+          id
+          label
+          href
+          external
         }
       }
     }

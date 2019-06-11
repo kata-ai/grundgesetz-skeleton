@@ -1,25 +1,27 @@
 import React from 'react';
-import { styledWrapper as styled, dimensions, breakpoints, colors } from 'utils';
+import { styledWrapper as styled, dimensions, breakpoints, colors, textSizes } from 'utils';
 import { NavigationContext, NavigationActionTypes } from '../Navigation/NavigationContext';
 import { Header, HeaderInner } from '../Header';
 import { Link } from 'gatsby';
 import { determineFontDimensions } from 'components/foundations';
 import { NavButton } from '../Navigation';
+import { Edge, HeaderMenuItem } from 'interfaces/nodes';
 
-interface LayoutMainProps {
+interface LayoutMainInnerProps {
   className?: string;
   isNavigationOpen?: boolean;
 }
 
-interface TitleableProps extends LayoutMainProps {
+interface LayoutMainProps extends LayoutMainInnerProps {
   title: string;
+  headerMenus?: Edge<HeaderMenuItem>[];
 }
 
 interface FontSizeProps {
   size: ReturnType<typeof determineFontDimensions>;
 }
 
-const StyledLayoutMain = styled('div')<LayoutMainProps>`
+const StyledLayoutMain = styled('div')<LayoutMainInnerProps>`
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
@@ -39,10 +41,35 @@ const LogoWrapper = styled('div')`
   margin: 0 24px;
 `;
 
+const DocumentationMenu = styled('nav')`
+  display: flex;
+  flex-direction: row;
+
+  a {
+    padding: 8px 0;
+    color: ${colors.grey07};
+    font-size: ${textSizes[300].fontSize}px;
+    line-height: ${textSizes[300].lineHeight}px;
+    font-weight: 600;
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: ${colors.blue07};
+      text-decoration: none;
+      outline: none;
+    }
+
+    &:not(:first-child) {
+      margin-left: 24px;
+    }
+  }
+`;
+
 const HomepageLink = styled(Link)<FontSizeProps>`
   color: ${colors.grey09};
   font-size: ${props => props.size.fontSize};
-  font-size: ${props => props.size.lineHeight};
+  line-height: ${props => props.size.lineHeight};
   font-weight: ${props => props.size.fontWeight};
 
   &:hover,
@@ -52,7 +79,7 @@ const HomepageLink = styled(Link)<FontSizeProps>`
   }
 `;
 
-const LayoutMain: React.SFC<TitleableProps> = ({ children, title, className }) => {
+const LayoutMain: React.SFC<LayoutMainProps> = ({ children, title, className, headerMenus }) => {
   const { state, dispatch } = React.useContext(NavigationContext);
 
   return (
@@ -75,6 +102,26 @@ const LayoutMain: React.SFC<TitleableProps> = ({ children, title, className }) =
               {title}
             </HomepageLink>
           </LogoWrapper>
+        </HeaderInner>
+        <HeaderInner hideOnMobile>
+          <DocumentationMenu>
+            {headerMenus &&
+              headerMenus.map(({ node }) => {
+                if (node.external) {
+                  return (
+                    <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
+                      {node.label}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link key={node.id} activeClassName="active" to={node.href}>
+                    {node.label}
+                  </Link>
+                );
+              })}
+          </DocumentationMenu>
         </HeaderInner>
       </Header>
       {children}

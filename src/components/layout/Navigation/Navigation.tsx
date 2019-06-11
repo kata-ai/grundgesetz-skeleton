@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import { styledWrapper as styled, breakpoints, colors, layerIndexes, dimensions } from 'utils';
-import { MenuNode, Edge } from 'interfaces/nodes';
+import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { determineFontDimensions, Heading } from 'components/foundations';
 import { NavigationContext, NavigationActionTypes } from './NavigationContext';
 import NavigationMenu from './NavigationMenu';
@@ -50,9 +50,8 @@ const Wrapper = styled('aside')<ToggleableProps>`
   }
 `;
 
-const WrapperInner = styled('div')`
+const WrapperInner = styled('nav')`
   margin-top: ${dimensions.heights.header}px;
-  padding: 24px 0;
 
   @media (min-width: ${breakpoints.lg}px) {
     width: 200px;
@@ -127,18 +126,41 @@ const HomepageLink = styled(Link)<FontSizeProps>`
   }
 `;
 
-const DocumentationNav = styled('nav')`
+const DocumentationMenu = styled('div')`
   display: flex;
   flex-direction: column;
-  padding: 0 24px;
+  padding: 16px 24px;
+  border-bottom: 1px solid ${colors.grey02};
+
+  a {
+    padding: 8px 0;
+    color: ${colors.grey07};
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: ${colors.blue07};
+      text-decoration: none;
+      outline: none;
+    }
+  }
+
+  ${HideOnDesktop}
+`;
+
+const DocumentationNav = styled('div')`
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
 `;
 
 interface NavigationProps {
   title: string;
   navigation?: Edge<MenuNode>[];
+  headerMenus?: Edge<HeaderMenuItem>[];
 }
 
-function Navigation({ title, navigation }: NavigationProps) {
+function Navigation({ title, navigation, headerMenus }: NavigationProps) {
   const { state, dispatch } = React.useContext(NavigationContext);
 
   return (
@@ -167,6 +189,24 @@ function Navigation({ title, navigation }: NavigationProps) {
         </HeaderInner>
       </Header>
       <WrapperInner>
+        <DocumentationMenu>
+          {headerMenus &&
+            headerMenus.map(({ node }) => {
+              if (node.external) {
+                return (
+                  <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
+                    {node.label}
+                  </a>
+                );
+              }
+
+              return (
+                <Link key={node.id} activeClassName="active" to={node.href}>
+                  {node.label}
+                </Link>
+              );
+            })}
+        </DocumentationMenu>
         <DocumentationNav onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}>
           {navigation &&
             navigation.map(({ node }) => <NavigationMenu key={node.title} menuKey={node.title} node={node} />)}

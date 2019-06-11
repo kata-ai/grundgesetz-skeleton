@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import { styledWrapper as styled, colors, breakpoints, space } from 'utils';
-import { MenuItem } from 'interfaces/nodes';
+import { TocItem } from 'interfaces/nodes';
 import { Text, Heading } from 'components/foundations';
 
 const Wrapper = styled('aside')`
@@ -142,8 +142,8 @@ const PaginationBlock = styled('div')`
 `;
 
 interface PaginationProps {
-  prevPage?: MenuItem;
-  nextPage?: MenuItem;
+  prevPage?: TocItem;
+  nextPage?: TocItem;
 }
 
 const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
