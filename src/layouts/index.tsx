@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
 import { WindowLocation } from '@reach/router';
 
+import { AksaraReset } from 'components/foundations';
 import { LayoutRoot } from 'components/layout/LayoutRoot';
 import { LayoutMain } from 'components/layout/LayoutMain';
 import { Navigation } from 'components/layout/Navigation';
@@ -34,26 +35,28 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children }) => {
         const { siteMetadata } = data.site;
 
         return (
-          <LayoutRoot>
-            <Helmet>
-              <title>{siteMetadata.title}</title>
-              <meta name="description" content={siteMetadata.description} />
-              <meta name="keywords" content={siteMetadata.keywords} />
-              <meta property="og:type" content="website" />
-              <meta property="og:site_name" content={siteMetadata.title} />
-              <meta property="og:description" content={siteMetadata.description} />
-              <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
-            </Helmet>
-            <Navigation
-              title={siteMetadata.sidebarTitle || siteMetadata.title}
-              navigation={data.navigationMenus.edges}
-              headerMenus={data.headerMenus.edges}
-            />
-            <Overlay />
-            <LayoutMain title={siteMetadata.sidebarTitle || siteMetadata.title} headerMenus={data.headerMenus.edges}>
-              {children}
-            </LayoutMain>
-          </LayoutRoot>
+          <AksaraReset>
+            <LayoutRoot>
+              <Helmet>
+                <title>{siteMetadata.title}</title>
+                <meta name="description" content={siteMetadata.description} />
+                <meta name="keywords" content={siteMetadata.keywords} />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content={siteMetadata.title} />
+                <meta property="og:description" content={siteMetadata.description} />
+                <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
+              </Helmet>
+              <Navigation
+                title={siteMetadata.sidebarTitle || siteMetadata.title}
+                navigation={data.navigationMenus.edges}
+                headerMenus={data.headerMenus.edges}
+              />
+              <Overlay />
+              <LayoutMain title={siteMetadata.sidebarTitle || siteMetadata.title} headerMenus={data.headerMenus.edges}>
+                {children}
+              </LayoutMain>
+            </LayoutRoot>
+          </AksaraReset>
         );
       }}
     </StaticQuery>

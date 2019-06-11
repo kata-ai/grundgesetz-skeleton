@@ -7,7 +7,6 @@ import { NavigationContextProvider } from 'components/layout/Navigation/Navigati
 
 import { SiteMetadata } from 'interfaces/gatsby';
 import { styledWrapper as styled, breakpoints } from 'utils';
-import { AksaraReset } from 'components/foundations';
 
 const StyledLayoutRoot = styled('div')`
   display: flex;
@@ -37,20 +36,18 @@ const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location 
         const { siteMetadata } = data.site;
 
         return (
-          <AksaraReset>
-            <StyledLayoutRoot className={className}>
-              <Helmet>
-                <title>{siteMetadata.title}</title>
-                <meta name="description" content={siteMetadata.description} />
-                <meta name="keywords" content={siteMetadata.keywords} />
-                <meta property="og:type" content="website" />
-                <meta property="og:site_name" content={siteMetadata.title} />
-                <meta property="og:description" content={siteMetadata.description} />
-                <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
-              </Helmet>
-              {children}
-            </StyledLayoutRoot>
-          </AksaraReset>
+          <StyledLayoutRoot className={className}>
+            <Helmet>
+              <title>{siteMetadata.title}</title>
+              <meta name="description" content={siteMetadata.description} />
+              <meta name="keywords" content={siteMetadata.keywords} />
+              <meta property="og:type" content="website" />
+              <meta property="og:site_name" content={siteMetadata.title} />
+              <meta property="og:description" content={siteMetadata.description} />
+              <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
+            </Helmet>
+            {children}
+          </StyledLayoutRoot>
         );
       }}
     </StaticQuery>
