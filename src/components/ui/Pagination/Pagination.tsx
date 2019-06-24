@@ -30,7 +30,6 @@ const PaginationButton = styled('div')`
   height: 32px;
   border-radius: 4px;
   background-color: ${colors.grey02};
-  transition: all 0.3s ease;
 
   svg {
     g {
@@ -58,7 +57,6 @@ const PaginationLink = styled(Link)`
   flex-direction: row;
   align-items: center;
   margin: 0;
-  transition: all 0.3s ease;
 
   &:hover,
   &:focus {
@@ -142,9 +140,7 @@ const PaginationItem = styled('div')`
   }
 `;
 
-const PaginationBlock = styled('div')`
-  transition: all 0.3s ease;
-`;
+const PaginationBlock = styled('div')``;
 
 interface PaginationProps {
   prevPage?: TocItem;
