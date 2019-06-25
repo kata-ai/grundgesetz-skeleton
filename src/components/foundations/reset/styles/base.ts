@@ -80,6 +80,30 @@ const base = css`
       height: 18px;
     }
   }
+
+  /* https://github.com/reach/reach-ui/blob/master/packages/skip-nav/styles.css */
+  [data-reach-skip-link] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  [data-reach-skip-link]:focus {
+    padding: 1rem;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: white;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    clip: auto;
+  }
 `;
 
 export default base;

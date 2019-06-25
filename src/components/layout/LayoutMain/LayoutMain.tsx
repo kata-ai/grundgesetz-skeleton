@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { SkipNavContent } from '@reach/skip-nav';
 
 import { NavigationContext, NavigationActionTypes } from '../Navigation/NavigationContext';
 import { Header, HeaderInner } from '../Header';
@@ -127,7 +128,7 @@ const LayoutMain: React.SFC<LayoutMainProps> = ({ children, title, className, he
           </DocumentationMenu>
         </HeaderInner>
       </Header>
-      {children}
+      <SkipNavContent>{children}</SkipNavContent>
     </StyledLayoutMain>
   );
 };

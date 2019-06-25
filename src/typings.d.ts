@@ -51,3 +51,8 @@ declare module '*.json' {
 }
 
 declare module 'rehype-react';
+
+declare module '@reach/skip-nav' {
+  class SkipNavLink extends React.Component {}
+  class SkipNavContent extends React.Component {}
+}

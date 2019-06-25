@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
 import { WindowLocation } from '@reach/router';
+import { SkipNavLink } from '@reach/skip-nav';
 
 import { NavigationContextProvider } from 'components/layout/Navigation/NavigationContext';
 
@@ -47,6 +48,7 @@ const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location 
               <meta property="og:description" content={siteMetadata.description} />
               <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
             </Helmet>
+            <SkipNavLink />
             {children}
           </StyledLayoutRoot>
         );

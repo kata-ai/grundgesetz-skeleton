@@ -14,7 +14,7 @@ const isFixed = css`
   }
 `;
 
-const Wrapper = styled('div')<HeaderProps>`
+const Wrapper = styled('header')<HeaderProps>`
   display: flex;
   flex-direction: column;
   position: ${props => (props.fixed ? 'fixed' : props.absolute ? 'absolute' : 'relative')};
