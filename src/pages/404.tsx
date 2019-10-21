@@ -1,11 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
+import { RouteComponentProps } from '@reach/router';
 
 import { Page, NotFoundWrapper } from 'components/layout/Page';
-import { styledWrapper as styled } from 'utils/primitives';
 import { SiteMetadata } from 'interfaces/gatsby';
-import { RouteComponentProps } from '@reach/router';
 import { Heading, Text } from 'components/foundations';
 import IndexLayout from 'layouts';
 

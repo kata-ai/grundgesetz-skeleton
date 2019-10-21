@@ -1,6 +1,5 @@
 import * as React from 'react';
-
-import { styledWrapper as styled } from 'utils/primitives';
+import styled from 'styled-components';
 
 import { HeadingSizes } from '../../Theme';
 import { determineFontDimensions } from '../utils';

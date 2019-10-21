@@ -1,4 +1,4 @@
-import { styledWrapper as styled } from 'utils/primitives';
+import styled from 'styled-components';
 
 const Container = styled('div')`
   position: relative;
