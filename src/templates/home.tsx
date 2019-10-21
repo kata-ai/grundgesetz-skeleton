@@ -52,11 +52,11 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
     <IndexLayout>
       <Page docsPage>
         <Helmet>
-          <meta property="og:title" content="Home" />
+          <meta property="og:title" content={markdownRemark.frontmatter.title} />
         </Helmet>
         <DocsWrapper>
           <Container>
-            <DocsHeader title="Welcome to Grundgesetz!" />
+            <DocsHeader title={markdownRemark.frontmatter.title} />
             <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
             <FooterWrapper>
               <Footer />
