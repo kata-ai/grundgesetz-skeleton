@@ -21,13 +21,13 @@ export interface TextProps extends TypographyProps {
   /** What HTML element to render the text as. */
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
   /** Size value of the text. */
-  size?: keyof TextSizes;
+  scale?: keyof TextSizes;
 }
 
 /**
  * Text component provided as a styled component primitive.
  */
-export const Text: React.SFC<TextProps> = ({ children, as, size, ...rest }) => (
+export const Text: React.SFC<TextProps> = ({ children, as, scale: size, ...rest }) => (
   <StyledText as={as} {...determineFontDimensions('text', size)} {...rest}>
     {children}
   </StyledText>
@@ -35,7 +35,7 @@ export const Text: React.SFC<TextProps> = ({ children, as, size, ...rest }) => (
 
 Text.defaultProps = {
   as: 'span',
-  size: 300,
+  scale: 300,
   margin: 0
 };
 

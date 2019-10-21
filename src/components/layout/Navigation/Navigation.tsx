@@ -178,7 +178,7 @@ function Navigation({ title, navigation, headerMenus }: NavigationProps) {
           </HomepageLink>
         </HeaderInner>
         <HeaderInner hideOnDesktop>
-          <Heading as="h1" size={400}>
+          <Heading as="h1" scale={400}>
             Menu
           </Heading>
           <NavButton

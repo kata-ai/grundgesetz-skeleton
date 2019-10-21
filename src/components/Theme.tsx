@@ -7,7 +7,7 @@ export const themeProps = {
   space,
   fonts,
   breakpoints: [`${breakpoints.sm}px`, `${breakpoints.md}px`, `${breakpoints.lg}px`, `${breakpoints.xl}px`],
-  fontSizes: {
+  typeScale: {
     heading: headingSizes,
     paragraph: paragraphSizes,
     text: textSizes
@@ -22,7 +22,7 @@ export const Theme = (props: { children: React.ReactNode }) => {
   );
 };
 
-export type FontSizes = typeof themeProps.fontSizes;
+export type TypeScale = typeof themeProps.typeScale;
 export type HeadingSizes = typeof headingSizes;
 export type TextSizes = typeof textSizes;
 export type Color = keyof typeof themeProps['colors'];
