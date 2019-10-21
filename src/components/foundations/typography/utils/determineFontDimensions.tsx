@@ -1,4 +1,4 @@
-import { themeProps, TypeScale } from 'components/Theme';
+import { themeProps, TypeScale } from '../../Theme';
 
 /**
  * Determines font sizes based on the text type and size index.

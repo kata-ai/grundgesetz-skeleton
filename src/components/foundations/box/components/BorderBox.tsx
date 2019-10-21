@@ -10,7 +10,8 @@ import {
 
 import { styledWrapper } from 'utils/primitives';
 import { getColor } from 'utils/helpers';
-import { Color } from 'components/Theme';
+import { Color } from 'components/foundations';
+
 import { Box, BoxProps } from './Box';
 
 export interface BorderBoxProps
