@@ -1,4 +1,7 @@
-/** Color values mapped by Aksara color ID. */
+/**
+ * Example color values. The default here uses the colours used by the Aksara
+ * design system. You can modify these according to your needs.
+ */
 export const colors = {
   // Blue
   /** Blue01 - Glitter */
@@ -154,6 +157,7 @@ export const systemFonts =
 
 export const fonts = {
   system: systemFonts,
+  // Example for including additional fonts to the default sans-serif stack.
   sansSerif: `Barlow, ${systemFonts}`,
   monospace: "'SF Mono', Inconsolata, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;"
 };

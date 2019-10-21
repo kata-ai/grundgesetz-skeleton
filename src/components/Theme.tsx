@@ -14,9 +14,6 @@ export const themeProps = {
   }
 };
 
-/**
- * Aksara theme provider
- */
 export const Theme = (props: { children: React.ReactNode }) => {
   return (
     <ThemeProvider theme={themeProps}>
