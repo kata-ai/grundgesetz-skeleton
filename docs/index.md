@@ -10,6 +10,10 @@ Grundgesetz is initially built to solve internal issues in managing documentatio
 
 ![Default Grundgesetz homepage](/img/homepage.png)
 
+## What's with the name?
+
+It's German for "constitution". We had a thing with German codenames here at Kata.ai.
+
 ## Get Started
 
 Getting started with Grundgesetz is as easy as 1-2-3! [Follow the documentation](/getting-started/installation), or select from the left drawer for a specific guide that you want to read.
@@ -32,4 +36,4 @@ Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using
 
 Grundgesetz is built on top of Gatsby, a blazing-fast static site generator for React. Want to learn more about Gatsby? [Click here](https://www.gatsbyjs.org).
 
-Also, putting the words "blazing fast" into any project's README seems to attract a lot of folks lately.
+Also, putting the words "blazing fast" into any project's README seems to attract a lot of folks lately. So I put it in here. Sorry.

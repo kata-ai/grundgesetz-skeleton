@@ -6,6 +6,12 @@ Welcome to Grundgesetz. It's a skeleton for generating accessible documentation 
 
 Grundgesetz is initially built to solve internal issues in managing documentation for our products at [Kata.ai](https://kata.ai/), but at the same we also found out that it's a good base for quickly deploying a documentation site online, so we put this up for everyone to use.
 
+## What's with the name?
+
+It's German for "constitution". We had a thing with German codenames here at Kata.ai.
+
+## Core Concepts
+
 ### Just Your Docs
 
 Grundgesetz is set up for you to get up and running straight away. All your docs are written in Markdown and go inside the `/docs` folder. The table of contents is managed through a JSON file.
@@ -20,7 +26,7 @@ Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using
 
 Grundgesetz is built on top of [Gatsby](https://www.gatsbyjs.org), a blazing-fast static site generator for React. Want to learn more about Gatsby? [Click here](https://www.gatsbyjs.org).
 
-Also, putting the words "blazing fast" into any project's README seems to attract a lot of folks lately.
+Also, putting the words "blazing fast" into any project's README seems to attract a lot of folks lately. So I put it in here. Sorry.
 
 ---
 
