@@ -14,7 +14,7 @@ The `toc.json` file inside the `docs/` folder holds our table of contents. It wi
     "items": [
       {
         "id": "page-1",
-        "slug": "/section-1/page-1/",
+        "slug": "/section-1/page-1",
         "title": "Page 1"
       },
       {
@@ -34,7 +34,7 @@ The `toc.json` file inside the `docs/` folder holds our table of contents. It wi
     "items": [
       {
         "id": "page-1",
-        "slug": "/section-2/page-1/",
+        "slug": "/section-2/page-1",
         "title": "Page 1"
       },
       {

@@ -1,6 +1,6 @@
 # grundgesetz-skeleton
 
-> You have a documentation. I turn them into a website. Any questions?
+> You have a documentation. I turn it into a website. Any questions?
 
 Welcome to Grundgesetz. It's a skeleton for generating accessible documentation pages built on top of [Gatsby](https://www.gatsbyjs.org). It creates static pages from your Markdown documentation files, all prettily formatted with a easy-to-use layout.
 
