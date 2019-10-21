@@ -12,9 +12,11 @@ const DocsHeader: React.FC<DocsHeaderProps> = ({ title, subtitle }) => {
       <Heading as="h1" scale={800} color="grey09">
         {title}
       </Heading>
-      <Text as="p" scale={400} mt="md">
-        {subtitle}
-      </Text>
+      {subtitle && (
+        <Text as="p" scale={400} mt="md">
+          {subtitle}
+        </Text>
+      )}
     </Box>
   );
 };
