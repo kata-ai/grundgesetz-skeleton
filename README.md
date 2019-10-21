@@ -84,7 +84,9 @@ npm dev
 yarn dev
 ```
 
-The command above will start a development server with hot-reloading capabilities on `localhost:8000`. From now on, you can start writing your documentation with ease. In the next section, we will learn how to build your pages and deploy them.
+The command above will start a development server with hot-reloading capabilities on `localhost:8000`. From now on, you can start writing your documentation with ease.
+
+Read the [docs](https://grundgesetz-skeleton.netlify.com/getting-started/deploying) for tips on how to deploy your new docs website to production.
 
 ## Credits
 
