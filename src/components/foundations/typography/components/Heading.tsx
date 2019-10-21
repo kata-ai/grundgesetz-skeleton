@@ -1,8 +1,7 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
-import { styledWrapper as styled } from 'utils/primitives';
-import { HeadingSizes } from 'components/Theme';
-
+import { HeadingSizes } from '../../Theme';
 import { determineFontDimensions } from '../utils';
 import { Typography, TypographyProps } from './Typography';
 
@@ -14,25 +13,25 @@ export interface HeadingProps extends TypographyProps {
   /** What HTML element to render the text as. */
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
   /** Size value of the heading. */
-  size?: keyof HeadingSizes;
+  scale?: keyof HeadingSizes;
 }
 
 /**
  * This is a base `Text` element to handle typography elements.
  */
 const StyledText = styled(Typography)<HeadingProps>`
-  ${props => props.size === 100 && 'text-transform: uppercase;'}
+  ${props => props.scale === 100 && 'text-transform: uppercase;'}
 `;
 
 /**
  * Heading component provided as a styled component primitive.
  */
-export const Heading: React.SFC<HeadingProps> = ({ children, as, size, color, ...rest }) => (
+export const Heading: React.SFC<HeadingProps> = ({ children, as, scale: size, color, ...rest }) => (
   <StyledText
     as={as}
     color={size === 100 ? 'grey05' : color}
     {...determineFontDimensions('heading', size)}
-    size={size}
+    scale={size}
     {...rest}
   >
     {children}
@@ -42,7 +41,7 @@ export const Heading: React.SFC<HeadingProps> = ({ children, as, size, color, ..
 Heading.defaultProps = {
   as: 'h2',
   color: 'grey09',
-  size: 800,
+  scale: 800,
   margin: 0
 };
 

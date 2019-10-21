@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
 import { WindowLocation } from '@reach/router';
 
-import { AksaraReset } from 'components/foundations';
+import { ThemeReset } from 'components/foundations';
 import { LayoutRoot } from 'components/layout/LayoutRoot';
 import { LayoutMain } from 'components/layout/LayoutMain';
 import { Navigation } from 'components/layout/Navigation';
@@ -35,7 +35,7 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children }) => {
         const { siteMetadata } = data.site;
 
         return (
-          <AksaraReset>
+          <ThemeReset>
             <LayoutRoot>
               <Helmet>
                 <title>{siteMetadata.title}</title>
@@ -56,7 +56,7 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children }) => {
                 {children}
               </LayoutMain>
             </LayoutRoot>
-          </AksaraReset>
+          </ThemeReset>
         );
       }}
     </StaticQuery>

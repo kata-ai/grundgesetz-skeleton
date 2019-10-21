@@ -1,6 +1,6 @@
 # Typography
 
-Typography primitives for Aksara UI Kit.
+Typography primitives provided by grundgesetz-skeleton.
 
 ## Usage
 
@@ -9,11 +9,11 @@ Typography primitives for Aksara UI Kit.
 The heading component is used for all headings.
 
 ```jsx
-import { AksaraReset, Heading } from '@aksara/ui-kit';
+import { ThemeReset, Heading } from 'path/to/components/foundations';
 
 export default function MyApp({ children }) {
   return (
-    <AksaraReset>
+    <ThemeReset>
       <Heading size={900}>We are making AI technology accessible to everyone</Heading>
       <Heading size={800}>We are making AI technology accessible to everyone</Heading>
       <Heading size={700}>We are making AI technology accessible to everyone</Heading>
@@ -22,7 +22,7 @@ export default function MyApp({ children }) {
       <Heading size={400}>We are making AI technology accessible to everyone</Heading>
       <Heading size={300}>We are making AI technology accessible to everyone</Heading>
       <Heading size={200}>We are making AI technology accessible to everyone</Heading>
-    </AksaraReset>
+    </ThemeReset>
   );
 }
 ```
@@ -30,11 +30,11 @@ export default function MyApp({ children }) {
 Heading renders a `h2` by default. If you would like to determine which HTML element it renders, you can use the `as` prop.
 
 ```jsx
-<AksaraReset>
+<ThemeReset>
   <Heading size={700} as="h3">
     We are making AI technology accessible to everyone
   </Heading>
-</AksaraReset>
+</ThemeReset>
 ```
 
 ### `Text` component
@@ -42,15 +42,15 @@ Heading renders a `h2` by default. If you would like to determine which HTML ele
 The text component is used for single line text.
 
 ```jsx
-import { AksaraReset, Text } from '@aksara/ui-kit';
+import { ThemeReset, Heading } from 'path/to/components/foundations';
 
 export default function MyApp({ children }) {
   return (
-    <AksaraReset>
+    <ThemeReset>
       <Text size={400}>We are making AI technology accessible to everyone</Text>
       <Text size={300}>We are making AI technology accessible to everyone</Text>
       <Text size={200}>We are making AI technology accessible to everyone</Text>
-    </AksaraReset>
+    </ThemeReset>
   );
 }
 ```
@@ -58,13 +58,31 @@ export default function MyApp({ children }) {
 Text renders a `span` by default. If you would like to determine which HTML element it renders, you can use the `as` prop.
 
 ```jsx
-<AksaraReset>
+<ThemeReset>
   <Text size={300} as="p">
     We are making AI technology accessible to everyone
   </Heading>
-</AksaraReset>
+</ThemeReset>
 ```
 
 ### `Paragraph` component
 
-[TODO]
+Renders a paragraph-sized text by default
+
+```jsx
+import { ThemeReset, Heading } from 'path/to/components/foundations';
+
+export default function MyApp() {
+  return (
+    <ThemeReset>
+      <Paragraph>
+        We are Kata.ai, an Indonesian conversational Artificial Intelligence company, focused on understanding human
+        conversation so we can improve the way humans collaborate with technology to be more productive and empowered.
+        Kata.ai’s Natural Language Processing (NLP) technology powers multi-purpose chatbots for major corporations in
+        Indonesia across different industries, including FMCG, Telecommunication, Banking & Financial Service, and
+        Retail.
+      </Paragraph>
+    </ThemeReset>
+  );
+}
+```

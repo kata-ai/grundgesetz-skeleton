@@ -1,25 +1,25 @@
-import { themeProps, FontSizes } from 'components/Theme';
+import { themeProps, TypeScale } from '../../Theme';
 
 /**
  * Determines font sizes based on the text type and size index.
  *
  * @param textType Either `text` or `heading`.
- * @param size The size key.
+ * @param scale The size key.
  */
-export function determineFontDimensions(textType: keyof FontSizes, size: number = 400) {
-  const match: any = (themeProps.fontSizes[textType] as any)[size];
+export function determineFontDimensions(textType: keyof TypeScale, scale: number = 400) {
+  const match: any = (themeProps.typeScale[textType] as any)[scale];
 
   if (textType === 'heading') {
     const styleProps = {
       fontSize: `${match.fontSize}px`,
       lineHeight: `${match.lineHeight}px`,
-      fontWeight: size <= 400 ? 600 : 500,
+      fontWeight: scale <= 400 ? 600 : 500,
       letterSpacing: `${match.letterSpacing}px`
     };
 
     return {
       ...styleProps,
-      ...(size === 100 ? { textTransform: 'uppercase' } : {})
+      ...(scale === 100 ? { textTransform: 'uppercase' } : {})
     };
   }
 

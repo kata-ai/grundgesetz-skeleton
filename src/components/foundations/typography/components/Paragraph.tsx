@@ -1,8 +1,7 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
-import { TextSizes } from 'components/Theme';
-import { styledWrapper as styled } from 'utils/primitives';
-
+import { TextSizes } from '../../Theme';
 import { determineFontDimensions } from '../utils';
 import { Typography, TypographyProps } from './Typography';
 
@@ -21,14 +20,14 @@ export interface ParagraphProps extends TypographyProps {
   /** What HTML element to render the text as. */
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
   /** Size value of the text. */
-  size?: keyof TextSizes;
+  scale?: keyof TextSizes;
 }
 
 /**
  * Paragraph component provided as a styled component primitive.
  */
-export const Paragraph: React.SFC<ParagraphProps> = ({ children, as, size, ...rest }) => (
-  <StyledText as={as} {...determineFontDimensions('paragraph', size)} {...rest}>
+export const Paragraph: React.SFC<ParagraphProps> = ({ children, as, scale, ...rest }) => (
+  <StyledText as={as} {...determineFontDimensions('paragraph', scale)} {...rest}>
     {children}
   </StyledText>
 );
@@ -36,7 +35,7 @@ export const Paragraph: React.SFC<ParagraphProps> = ({ children, as, size, ...re
 Paragraph.defaultProps = {
   as: 'p',
   color: 'grey07',
-  size: 300,
+  scale: 300,
   margin: 0
 };
 

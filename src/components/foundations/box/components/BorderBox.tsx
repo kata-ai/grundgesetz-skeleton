@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {
   BackgroundProps,
   HeightProps,
@@ -8,9 +9,9 @@ import {
   WidthProps
 } from 'styled-system';
 
-import { styledWrapper } from 'utils/primitives';
 import { getColor } from 'utils/helpers';
-import { Color } from 'components/Theme';
+import { Color } from 'components/foundations';
+
 import { Box, BoxProps } from './Box';
 
 export interface BorderBoxProps
@@ -30,7 +31,7 @@ export interface BorderBoxProps
 /**
  * An extended `Box` with additional hooks to set border.
  */
-export const BorderBox = styledWrapper(Box)<BorderBoxProps>`
+export const BorderBox = styled(Box)<BorderBoxProps>`
   border: 1px solid ${props => getColor(props.borderColor ? props.borderColor : 'grey02')};
   ${borderRadius};
   ${props => props.noOverflow && 'overflow: hidden;'}

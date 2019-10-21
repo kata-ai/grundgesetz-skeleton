@@ -1,4 +1,4 @@
 import GlobalStyles from './components/GlobalStyles';
-import AksaraReset from './components/AksaraReset';
+import ThemeReset from './components/ThemeReset';
 
-export { GlobalStyles, AksaraReset };
+export { GlobalStyles, ThemeReset };

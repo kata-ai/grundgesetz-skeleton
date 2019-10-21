@@ -9,9 +9,9 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 /**
  * Link component provided as a styled component primitive.
  */
-export const Link: React.SFC<LinkProps> = ({ children, size, ...rest }) => {
+export const Link: React.SFC<LinkProps> = ({ children, scale, ...rest }) => {
   return (
-    <Text as="a" {...determineFontDimensions('text', size)} {...rest}>
+    <Text as="a" {...determineFontDimensions('text', scale)} {...rest}>
       {children}
     </Text>
   );

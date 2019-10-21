@@ -173,10 +173,10 @@ const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
               </svg>
             </PaginationButton>
             <PaginationBlock>
-              <PaginationHeading size={200} color="grey04" display="block">
+              <PaginationHeading scale={200} color="grey04" display="block">
                 Previous
               </PaginationHeading>
-              <PaginationTitle size={400} display="inline-block" lineHeight="32px">
+              <PaginationTitle scale={400} display="inline-block" lineHeight="32px">
                 {prevPage.title}
               </PaginationTitle>
             </PaginationBlock>
@@ -188,10 +188,10 @@ const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
         {nextPage && (
           <PaginationLink to={nextPage.slug}>
             <PaginationBlock>
-              <PaginationHeading size={200} color="grey04" display="block">
+              <PaginationHeading scale={200} color="grey04" display="block">
                 Next
               </PaginationHeading>
-              <PaginationTitle size={400} display="inline-block" lineHeight="32px">
+              <PaginationTitle scale={400} display="inline-block" lineHeight="32px">
                 {nextPage.title}
               </PaginationTitle>
             </PaginationBlock>

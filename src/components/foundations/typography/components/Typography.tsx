@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {
   display,
   maxWidth,
@@ -22,8 +23,6 @@ import {
   LetterSpacingProps
 } from 'styled-system';
 
-import { primitives } from 'utils/primitives';
-
 export interface TypographyProps
   extends DisplayProps,
     MaxWidthProps,
@@ -42,7 +41,7 @@ export interface TypographyProps
 /**
  * This is a base `Text` element to handle typography elements.
  */
-export const Typography = primitives.Text<TypographyProps>`
+export const Typography = styled('span')<TypographyProps>`
   ${display};
   ${maxWidth};
   ${space};

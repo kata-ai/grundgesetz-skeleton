@@ -1,11 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
+import { RouteComponentProps } from '@reach/router';
 
 import { Page, NotFoundWrapper } from 'components/layout/Page';
-import { styledWrapper as styled } from 'utils/primitives';
 import { SiteMetadata } from 'interfaces/gatsby';
-import { RouteComponentProps } from '@reach/router';
 import { Heading, Text } from 'components/foundations';
 import IndexLayout from 'layouts';
 
@@ -25,13 +25,13 @@ const NotFoundPage: React.SFC<Props> = ({ data }) => (
       </Helmet>
       <NotFoundWrapper>
         <Inner>
-          <Heading as="h1" size={800} color="grey09" m={0}>
+          <Heading as="h1" scale={800} color="grey09" m={0}>
             404
           </Heading>
-          <Text as="p" size={400} color="grey07">
+          <Text as="p" scale={400} color="grey07">
             We can't find the page you're looking for.
           </Text>
-          <Text as="p" size={400} color="grey07">
+          <Text as="p" scale={400} color="grey07">
             <Link to="/">Go back?</Link>
           </Text>
         </Inner>
