@@ -1,21 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, textSizes } from 'utils/variables';
+import { colors } from 'utils/variables';
+import { Paragraph } from 'components/foundations';
 
 const Wrapper = styled('footer')`
   padding-top: 24px;
   border-top: 1px solid ${colors.grey02};
-
-  p {
-    margin: 0;
-    font-size: ${textSizes[300].fontSize}px;
-    line-height: ${textSizes[300].lineHeight}px;
-  }
 `;
 
 const Footer: React.SFC = () => (
   <Wrapper>
-    <p>
+    <Paragraph margin={0}>
       <small>
         Created with{' '}
         <a href="https://github.com/kata-ai/grundgesetz-skeleton" target="_blank" rel="noopener noreferrer">
@@ -23,7 +18,7 @@ const Footer: React.SFC = () => (
         </a>
         .
       </small>
-    </p>
+    </Paragraph>
   </Wrapper>
 );
 
