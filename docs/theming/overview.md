@@ -2,6 +2,7 @@
 id: theming-overview
 title: Theming Overview
 prev: writing-in-markdown
+next: theming-variables
 ---
 
 Grundgesetz comes with a built-in, opinionated design which focuses on readability, but we also provide possibilities for people to extend the look of Grundgesetz by providing some foundational components for you to use.
