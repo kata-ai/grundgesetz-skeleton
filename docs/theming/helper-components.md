@@ -108,7 +108,7 @@ Typography primitives provided by grundgesetz-skeleton.
 
 ### Usage
 
-#### `Heading` component
+**Heading**
 
 The heading component is used for all headings. All typography components provide a `scale` prop to determine typography scale (font-size, line-height, and letter-spacing) based on the size token.
 
@@ -128,7 +128,7 @@ Heading renders a `h2` by default. If you would like to determine which HTML ele
 </Heading>
 ```
 
-#### `Text` component
+**Text**
 
 The text component is used for single line text.
 
@@ -148,7 +148,7 @@ Text renders a `span` by default. If you would like to determine which HTML elem
 </Heading>
 ```
 
-#### `Paragraph` component
+**Paragraph**
 
 Renders a paragraph-sized text by default
 
