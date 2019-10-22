@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { dimensions, breakpoints, colors, layerIndexes } from 'utils/variables';
+import { dimensions, breakpoints, colors, layerIndexes } from 'components/foundations/variables';
 
 interface ToggleableProps {
   isOpen?: boolean;

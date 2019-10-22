@@ -8,7 +8,7 @@ import { SkipNavLink } from '@reach/skip-nav';
 import { NavigationContextProvider } from 'components/layout/Navigation/NavigationContext';
 
 import { SiteMetadata } from 'interfaces/gatsby';
-import { breakpoints } from 'utils/variables';
+import { breakpoints } from 'components/foundations/variables';
 
 const StyledLayoutRoot = styled('div')`
   display: flex;

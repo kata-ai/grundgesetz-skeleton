@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { breakpoints, colors, dimensions, layerIndexes } from 'utils/variables';
+import { breakpoints, colors, dimensions, layerIndexes } from 'components/foundations/variables';
 
 interface HeaderProps {
   navigation?: boolean;

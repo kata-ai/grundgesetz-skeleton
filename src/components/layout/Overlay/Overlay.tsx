@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 
 import { NavigationContext } from '../Navigation/NavigationContext';
-import { breakpoints, layerIndexes } from 'utils/variables';
+import { breakpoints, layerIndexes } from 'components/foundations/variables';
 
 interface OverlayProps {
   visible?: boolean;

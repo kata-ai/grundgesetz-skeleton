@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { dimensions } from 'utils/variables';
+import { dimensions } from 'components/foundations/variables';
 
 interface PageProps {
   docsPage?: boolean;

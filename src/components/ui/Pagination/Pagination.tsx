@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { TocItem } from 'interfaces/nodes';
 import { Text, Heading } from 'components/foundations';
-import { space, breakpoints, colors } from 'utils/variables';
+import { space, breakpoints, colors } from 'components/foundations/variables';
 
 const Wrapper = styled('aside')`
   margin-bottom: ${space.xl}px;

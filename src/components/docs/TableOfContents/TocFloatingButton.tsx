@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, layerIndexes, breakpoints } from 'utils/variables';
+import { colors, layerIndexes, breakpoints } from 'components/foundations/variables';
 
 interface ToggleableProps {
   isOpen?: boolean;

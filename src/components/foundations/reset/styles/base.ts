@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { textSizes, colors } from 'utils/variables';
+import { textSizes, colors } from 'components/foundations/variables';
 
 const base = css`
   :root {

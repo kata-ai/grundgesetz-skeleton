@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { determineFontDimensions, Heading } from 'components/foundations';
-import { colors, layerIndexes, breakpoints, dimensions } from 'utils/variables';
+import { colors, layerIndexes, breakpoints, dimensions } from 'components/foundations/variables';
 import { isActive } from 'utils/helpers';
 
 import { NavigationContext, NavigationActionTypes } from './NavigationContext';

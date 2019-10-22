@@ -7,7 +7,7 @@ import { NavigationContext, NavigationActionTypes } from '../Navigation/Navigati
 import { Header, HeaderInner } from '../Header';
 import { NavButton } from '../Navigation';
 import { Edge, HeaderMenuItem } from 'interfaces/nodes';
-import { breakpoints, dimensions, colors, textSizes } from 'utils/variables';
+import { breakpoints, dimensions, colors, textSizes } from 'components/foundations/variables';
 import { isActive } from 'utils/helpers';
 import { determineFontDimensions } from 'components/foundations';
 
