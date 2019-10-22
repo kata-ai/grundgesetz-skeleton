@@ -12,7 +12,13 @@ Grundgesetz is initially built to solve internal issues in managing documentatio
 
 ## What's with the name?
 
-It's German for "constitution". We had a thing with German codenames here at Kata.ai.
+It's German for "constitution". We had a thing for German codenames here at Kata.ai.
+
+## Who's using it?
+
+- [Kata Platform Documentation](https://docs.kata.ai/)
+- [TinaCMS](https://tinacms.org/docs/getting-started/introduction)
+- [Accelero](https://docs.accelero.io/)
 
 ## Get Started
 
@@ -24,16 +30,16 @@ Getting started with Grundgesetz is as easy as 1-2-3! [Follow the documentation]
 
 Grundgesetz is set up for you to get up and running straight away. We know that writing proper documentation often takes a long time, so we aim to create this tool to standardise your documentation format.
 
-All your docs are written in the familiar Markdown format and go inside the `/docs` folder. After that, we sprinkle in some details to let Grundgesetz know how your docs are structured. You can customise the table of contents and the header menu through a JSON file. It will generate permalinks based on the directory tree, but you can override it anytime by setting a `permalink` frontmatter.
+All your docs are written in the familiar Markdown format and go inside the `/docs` folder. You can customise the table of contents and the header menu through a JSON file. It will generate pages with path names based on the directory tree, but you can override it anytime by setting a `permalink` frontmatter.
 
 ### Instantly Deployable
 
 Since Grundgesetz is a static site generator, you can instantly deploy to any static web host.
 
-Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using the built-in `deploy` task. You can also set up a continuous deployment pipeline for hosting providers like [Netlify](https://www.netlify.com/).
+Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using the built-in `deploy` task. You can also set up a continuous deployment pipeline for hosting providers like [Netlify](https://www.netlify.com/) or [ZEIT Now](https://zeit.co/now).
 
 ### Blazing Fast
 
-Grundgesetz is built on top of Gatsby, a blazing-fast static site generator for React. Want to learn more about Gatsby? [Click here](https://www.gatsbyjs.org).
+Grundgesetz is built on top of Gatsby, a blazing-fast static site generator for React. Also, putting the words "blazing fast" into any project's README seems to attract a lot of folks lately. So I put it in here. Sorry.
 
-Also, putting the words "blazing fast" into any project's README seems to attract a lot of folks lately. So I put it in here. Sorry.
+Want to learn more about Gatsby? [Click here](https://www.gatsbyjs.org).
