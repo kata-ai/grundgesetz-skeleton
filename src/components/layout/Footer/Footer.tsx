@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from 'utils/variables';
+import { colors } from 'components/foundations/variables';
 import { Paragraph } from 'components/foundations';
 
 const Wrapper = styled('footer')`

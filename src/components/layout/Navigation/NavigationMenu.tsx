@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 import { MenuNode } from 'interfaces/nodes';
 import { Heading, Box } from 'components/foundations';
-import { colors, space } from 'utils/variables';
+import { colors, space } from 'components/foundations/variables';
 import { isActive } from 'utils/helpers';
 
 interface NavigationMenuProps {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { space, breakpoints } from 'utils/variables';
+import { space, breakpoints } from 'components/foundations/variables';
 
 interface MarkdownContentProps {
   className?: string;

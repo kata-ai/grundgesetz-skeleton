@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { breakpoints, headingSizes, textSizes, colors, space, fonts, paragraphSizes } from 'utils/variables';
+import { breakpoints, headingSizes, textSizes, colors, space, fonts, paragraphSizes } from './variables';
 
 export const themeProps = {
   colors,

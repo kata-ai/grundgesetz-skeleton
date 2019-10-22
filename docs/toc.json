@@ -38,5 +38,25 @@
         "title": "Writing in Markdown"
       }
     ]
+  },
+  {
+    "title": "Theming",
+    "items": [
+      {
+        "id": "theming-overview",
+        "slug": "/theming/overview",
+        "title": "Overview"
+      },
+      {
+        "id": "theming-variables",
+        "slug": "/theming/variables",
+        "title": "Variables"
+      },
+      {
+        "id": "theming-helper-components",
+        "slug": "/theming/helper-components",
+        "title": "Helper Components"
+      }
+    ]
   }
 ]

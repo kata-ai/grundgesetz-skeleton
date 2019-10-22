@@ -1,4 +1,4 @@
-import { breakpoints } from 'utils/variables';
+import { breakpoints } from 'components/foundations/variables';
 import styled from 'styled-components';
 
 interface DocsWrapperProps {

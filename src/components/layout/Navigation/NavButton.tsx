@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { colors } from 'utils/variables';
+import { colors } from 'components/foundations/variables';
 
 type NavButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   height?: number;

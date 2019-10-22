@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { breakpoints } from 'utils/variables';
+import { breakpoints } from 'components/foundations/variables';
 
 interface HeaderInnerProps {
   className?: string;
