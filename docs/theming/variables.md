@@ -2,6 +2,7 @@
 id: theming-variables
 title: Variables
 prev: theming-overview
+next: theming-helper-components
 ---
 
 Since Grundgesetz utilises [styled-components](https://styled-components.com/) and [styled-system](https://styled-system.com/) under the hood, changing the look and feel of it is as simple as changing variables inside the [variables file](https://github.com/kata-ai/grundgesetz-skeleton/blob/master/src/components/foundations/variables.ts). We've provided some sample variables for you to play around, so you won't get overwhelmed.

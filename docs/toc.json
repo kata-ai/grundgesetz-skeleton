@@ -51,6 +51,11 @@
         "id": "theming-variables",
         "slug": "/theming/variables",
         "title": "Variables"
+      },
+      {
+        "id": "theming-helper-components",
+        "slug": "/theming/helper-components",
+        "title": "Helper Components"
       }
     ]
   }
