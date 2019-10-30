@@ -1,54 +1,33 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import {
-  background,
-  BackgroundProps,
-  bottom,
-  BottomProps,
-  color as styledColor,
-  ColorProps,
-  display,
-  DisplayProps,
-  height,
-  HeightProps,
-  left,
-  LeftProps,
-  maxWidth,
-  MaxWidthProps,
+  layout,
+  LayoutProps,
   position,
   PositionProps,
-  right,
-  RightProps,
-  space as styledSpace,
+  flexbox,
+  FlexboxProps,
+  grid,
+  GridProps,
+  space,
   SpaceProps,
-  textAlign,
-  TextAlignProps,
-  top,
-  TopProps,
-  width,
-  WidthProps,
-  zIndex,
-  ZIndexProps
+  background,
+  BackgroundProps,
+  color,
+  ColorProps,
+  typography,
+  TypographyProps
 } from 'styled-system';
 
 export interface BoxProps
-  extends BackgroundProps,
-    BottomProps,
-    BottomProps,
-    ColorProps,
-    DisplayProps,
-    HeightProps,
-    LeftProps,
-    LeftProps,
-    MaxWidthProps,
+  extends LayoutProps,
     PositionProps,
-    PositionProps,
-    RightProps,
+    FlexboxProps,
+    GridProps,
     SpaceProps,
-    TextAlignProps,
-    TopProps,
-    WidthProps,
-    ZIndexProps {
+    BackgroundProps,
+    ColorProps,
+    TypographyProps {
   /** Additional CSS classes to add to the component. */
   className?: string;
   /** Additional CSS properties to add to the component. */
@@ -60,20 +39,14 @@ export interface BoxProps
  * base component for all display elements.
  */
 export const Box = styled('div')<BoxProps>`
-  ${background};
-  ${bottom};
-  ${display};
-  ${height};
-  ${left};
-  ${maxWidth};
-  ${position};
-  ${right};
-  ${styledColor};
-  ${styledSpace};
-  ${textAlign};
-  ${top};
-  ${width};
-  ${zIndex};
+  ${layout}
+  ${position}
+  ${flexbox}
+  ${grid}
+  ${space}
+  ${background}
+  ${color}
+  ${typography}
 `;
 
 Box.displayName = 'Box';
