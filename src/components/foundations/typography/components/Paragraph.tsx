@@ -35,8 +35,7 @@ export const Paragraph: React.SFC<ParagraphProps> = ({ children, as, scale, ...r
 Paragraph.defaultProps = {
   as: 'p',
   color: 'grey07',
-  scale: 300,
-  margin: 0
+  scale: 300
 };
 
 Paragraph.displayName = 'Paragraph';

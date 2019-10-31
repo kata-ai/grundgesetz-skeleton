@@ -41,8 +41,7 @@ export const Heading: React.SFC<HeadingProps> = ({ children, as, scale: size, co
 Heading.defaultProps = {
   as: 'h2',
   color: 'grey09',
-  scale: 800,
-  margin: 0
+  scale: 800
 };
 
 Heading.displayName = 'Heading';
