@@ -176,7 +176,7 @@ const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
               <PaginationHeading scale={200} color="grey04" display="block">
                 Previous
               </PaginationHeading>
-              <PaginationTitle scale={400} display="inline-block" lineHeight="32px">
+              <PaginationTitle scale={400} display="inline-block" lineHeight="32px" m={0}>
                 {prevPage.title}
               </PaginationTitle>
             </PaginationBlock>
@@ -191,7 +191,7 @@ const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
               <PaginationHeading scale={200} color="grey04" display="block">
                 Next
               </PaginationHeading>
-              <PaginationTitle scale={400} display="inline-block" lineHeight="32px">
+              <PaginationTitle scale={400} display="inline-block" lineHeight="32px" m={0}>
                 {nextPage.title}
               </PaginationTitle>
             </PaginationBlock>
