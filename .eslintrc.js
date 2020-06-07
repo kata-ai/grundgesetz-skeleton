@@ -3,6 +3,7 @@ module.exports = {
   extends: ['kata/react', 'prettier', 'prettier/@typescript-eslint', 'plugin:prettier/recommended'],
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': 'error'
-  }
+    'import/no-extraneous-dependencies': 'off',
+    'prettier/prettier': 'error',
+  },
 };

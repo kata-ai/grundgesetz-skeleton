@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { SkipNavContent } from '@reach/skip-nav';
 
-import { NavigationContext, NavigationActionTypes } from '../Navigation/NavigationContext';
-import { Header, HeaderInner } from '../Header';
-import { NavButton } from '../Navigation';
 import { Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { breakpoints, dimensions, colors, textSizes } from 'components/foundations/variables';
 import { isActive } from 'utils/helpers';
 import { determineFontDimensions } from 'components/foundations';
+import { Header, HeaderInner } from '../Header';
+import { NavigationContext, NavigationActionTypes } from '../Navigation/NavigationContext';
+import { NavButton } from '../Navigation';
 
 interface LayoutMainInnerProps {
   className?: string;
@@ -128,7 +128,14 @@ const LayoutMain: React.SFC<LayoutMainProps> = ({ children, title, className, he
           </DocumentationMenu>
         </HeaderInner>
       </Header>
-      <SkipNavContent>{children}</SkipNavContent>
+      <SkipNavContent
+        css={{
+          display: 'flex',
+          flex: '1 1 auto',
+        }}
+      >
+        {children}
+      </SkipNavContent>
     </StyledLayoutMain>
   );
 };
