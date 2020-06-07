@@ -6,7 +6,7 @@ import { themeProps, TypeScale } from '../../Theme';
  * @param textType Either `text` or `heading`.
  * @param scale The size key.
  */
-export function determineFontDimensions(textType: keyof TypeScale, scale: number = 400) {
+export function determineFontDimensions(textType: keyof TypeScale, scale = 400) {
   const match: any = (themeProps.typeScale[textType] as any)[scale];
 
   if (textType === 'heading') {
@@ -14,18 +14,18 @@ export function determineFontDimensions(textType: keyof TypeScale, scale: number
       fontSize: `${match.fontSize}px`,
       lineHeight: `${match.lineHeight}px`,
       fontWeight: scale <= 400 ? 600 : 500,
-      letterSpacing: `${match.letterSpacing}px`
+      letterSpacing: `${match.letterSpacing}px`,
     };
 
     return {
       ...styleProps,
-      ...(scale === 100 ? { textTransform: 'uppercase' } : {})
+      ...(scale === 100 ? { textTransform: 'uppercase' } : {}),
     };
   }
 
   return {
     fontSize: `${match.fontSize}px`,
     lineHeight: `${match.lineHeight}px`,
-    fontWeight: 400
+    fontWeight: 400,
   };
 }

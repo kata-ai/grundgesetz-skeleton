@@ -11,14 +11,14 @@ interface NavigationContextValue {
 }
 
 const initialState = {
-  isOpen: false
+  isOpen: false,
 };
 
 const NavigationActionTypes = {
   RESET: 'NavigationContext/RESET',
   OPEN_DRAWER: 'NavigationContext/OPEN_DRAWER',
   CLOSE_DRAWER: 'NavigationContext/CLOSE_DRAWER',
-  TOGGLE_DRAWER: 'NavigationContext/TOGGLE_DRAWER'
+  TOGGLE_DRAWER: 'NavigationContext/TOGGLE_DRAWER',
 };
 
 // The only way TypeScript allows us to make a type-safe context value.

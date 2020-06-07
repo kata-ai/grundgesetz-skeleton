@@ -6,11 +6,11 @@ import {
   SpaceProps,
   borderRadius,
   BorderRadiusProps,
-  WidthProps
+  WidthProps,
 } from 'styled-system';
 
 import { getColor } from 'utils/helpers';
-import { Color } from 'components/foundations';
+import { Color } from '../../Theme';
 
 import { Box, BoxProps } from './Box';
 

@@ -34,7 +34,7 @@ export const Text: React.SFC<TextProps> = ({ children, as, scale: size, ...rest 
 
 Text.defaultProps = {
   as: 'span',
-  scale: 300
+  scale: 300,
 };
 
 Text.displayName = 'Text';
