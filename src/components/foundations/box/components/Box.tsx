@@ -16,7 +16,7 @@ import {
   color,
   ColorProps,
   typography,
-  TypographyProps
+  TypographyProps,
 } from 'styled-system';
 
 export interface BoxProps

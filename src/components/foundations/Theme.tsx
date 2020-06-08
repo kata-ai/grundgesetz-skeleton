@@ -10,14 +10,14 @@ export const themeProps = {
   typeScale: {
     heading: headingSizes,
     paragraph: paragraphSizes,
-    text: textSizes
-  }
+    text: textSizes,
+  },
 };
 
-export const Theme = (props: { children: React.ReactNode }) => {
+export const Theme = ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider theme={themeProps}>
-      <>{props.children}</>
+      <>{children}</>
     </ThemeProvider>
   );
 };

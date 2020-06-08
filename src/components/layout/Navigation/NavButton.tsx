@@ -88,7 +88,7 @@ NavButton.defaultProps = {
   height: 24,
   width: 24,
   fill: colors.grey05,
-  icon: 'hamburger'
+  icon: 'hamburger',
 };
 
 export default NavButton;

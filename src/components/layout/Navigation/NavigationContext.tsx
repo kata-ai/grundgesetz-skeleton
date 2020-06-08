@@ -11,14 +11,14 @@ interface NavigationContextValue {
 }
 
 const initialState = {
-  isOpen: false
+  isOpen: false,
 };
 
 const NavigationActionTypes = {
   RESET: 'NavigationContext/RESET',
   OPEN_DRAWER: 'NavigationContext/OPEN_DRAWER',
   CLOSE_DRAWER: 'NavigationContext/CLOSE_DRAWER',
-  TOGGLE_DRAWER: 'NavigationContext/TOGGLE_DRAWER'
+  TOGGLE_DRAWER: 'NavigationContext/TOGGLE_DRAWER',
 };
 
 // The only way TypeScript allows us to make a type-safe context value.
@@ -43,11 +43,11 @@ const reducer: React.Reducer<NavigationState, NavigationActions> = (state, actio
   }
 };
 
-function NavigationContextProvider(props: { children: React.ReactNode }) {
+function NavigationContextProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const value = { state, dispatch };
 
-  return <NavigationContext.Provider value={value}>{props.children}</NavigationContext.Provider>;
+  return <NavigationContext.Provider value={value}>{children}</NavigationContext.Provider>;
 }
 
 const NavigationContextConsumer = NavigationContext.Consumer;

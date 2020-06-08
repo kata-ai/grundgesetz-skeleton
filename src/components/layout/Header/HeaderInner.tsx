@@ -40,7 +40,7 @@ const HeaderInner: React.SFC<HeaderInnerProps> = ({ children, className, content
 
 HeaderInner.defaultProps = {
   className: undefined,
-  contents: 'space-between'
+  contents: 'space-between',
 };
 
 export default HeaderInner;

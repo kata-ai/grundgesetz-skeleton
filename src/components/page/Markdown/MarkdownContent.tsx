@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import styled from 'styled-components';
 import { space, breakpoints } from 'components/foundations/variables';
@@ -32,7 +33,7 @@ export default styled(MarkdownContent)`
     font-size: 85%;
     li[id^='fn-'] {
       p {
-        // Remark for some reason puts the footnote reflink *after* the 'p' tag.
+        /* Remark for some reason puts the footnote reflink *after* the 'p' tag. */
         display: inline;
       }
     }

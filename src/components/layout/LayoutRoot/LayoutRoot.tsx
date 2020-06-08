@@ -31,6 +31,25 @@ interface DataProps {
   };
 }
 
+const query = graphql`
+  query LayoutRootQuery {
+    site {
+      siteMetadata {
+        title
+        sidebarTitle
+        description
+        siteUrl
+        keywords
+        author {
+          name
+          url
+          email
+        }
+      }
+    }
+  }
+`;
+
 const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location }) => (
   <NavigationContextProvider>
     <StaticQuery query={query}>
@@ -58,22 +77,3 @@ const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location 
 );
 
 export default LayoutRoot;
-
-const query = graphql`
-  query LayoutRootQuery {
-    site {
-      siteMetadata {
-        title
-        sidebarTitle
-        description
-        siteUrl
-        keywords
-        author {
-          name
-          url
-          email
-        }
-      }
-    }
-  }
-`;

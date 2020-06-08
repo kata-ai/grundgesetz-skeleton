@@ -1,6 +1,6 @@
 import { LinkGetProps } from '@reach/router';
 import { MenuNode, TocItem, Edge } from 'interfaces/nodes';
-import { Color, themeProps, Space } from 'components/foundations';
+import { Color, themeProps, Space } from '../components/foundations/Theme';
 
 export const getColor = (colorKey: Color) => themeProps.colors[colorKey];
 

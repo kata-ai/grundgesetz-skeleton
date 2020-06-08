@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { breakpoints, colors, dimensions, layerIndexes } from 'components/foundations/variables';
