@@ -36,7 +36,7 @@ All your docs are written in the familiar Markdown format and go inside the `/do
 
 Since Grundgesetz is a static site generator, you can instantly deploy to any static web host.
 
-Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using the built-in `deploy` task. You can also set up a continuous deployment pipeline for hosting providers like [Netlify](https://www.netlify.com/) or [ZEIT Now](https://zeit.co/now).
+Have an instance of Grundgesetz set up on GitHub? You can easily deploy it using the built-in `deploy` task. You can also set up a continuous deployment pipeline for hosting providers like [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com).
 
 ### Blazing Fast
 
