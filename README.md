@@ -100,7 +100,7 @@ yarn dev
 
 The command above will start a development server with hot-reloading capabilities on `localhost:8000`. From now on, you can start writing your documentation with ease.
 
-Read the [docs](https://grundgesetz-skeleton.netlify.com/getting-started/deploying) for tips on how to deploy your new docs website to production.
+Read the [docs](https://grundgesetz-skeleton.kata-ai.now.sh/getting-started/deploying) for tips on how to deploy your new docs website to production.
 
 ## Credits
 
